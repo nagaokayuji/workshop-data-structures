@@ -1,0 +1,430 @@
+<!DOCTYPE HTML>
+<html lang="ja" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>workshop</title>
+                <meta name="robots" content="noindex" />
+                
+
+        <!-- Custom HTML head -->
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="workshop materials">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+                <link rel="icon" href="favicon.svg">
+                        <link rel="shortcut icon" href="favicon.png">
+                <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+                <link rel="stylesheet" href="css/print.css" media="print">
+        
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+                <link rel="stylesheet" href="fonts/fonts.css">
+        
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+            </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="data_structures.html">Kotlinデータ構造</a></li></ol>            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                                                <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                                            </div>
+
+                    <h1 class="menu-title">workshop</h1>
+
+                    <div class="right-buttons">
+                                                <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                                                                        
+                    </div>
+                </div>
+
+                                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+<h1 id="kotlinデータ構造入門"><a class="header" href="#kotlinデータ構造入門">Kotlinデータ構造入門</a></h1>
+<p>基本的なデータ構造の解説と Kotlin の List , Set , Map についての内容となります。</p>
+<p>計算量については各コレクションに格納するサイズを<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span></span>として記載します。</p>
+<p><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/">kotlin.collections - Kotlin Programming Language</a></p>
+<p>※ Javaの内容も含みます。</p>
+<p>■ 実行環境</p>
+<pre><code>macOS Big Sur
+MacBook Pro (13-inch, M1, 2020)
+Memory 16GB
+</code></pre>
+<h2 id="list"><a class="header" href="#list">List</a></h2>
+<p>順序付きのリストです。使う機会が多いと思います。</p>
+<pre><code class="language-kotlin">interface List&lt;out E&gt; : Collection&lt;E&gt;
+</code></pre>
+<p>一般的なArrayList, LinkedList を取り上げます。</p>
+<h3 id="arraylist"><a class="header" href="#arraylist">ArrayList</a></h3>
+<p>一般的な配列とほぼ同じですが、サイズが可変で末尾への追加が容易です。</p>
+<p>要素を追加すると、内部では自動で配列のサイズが拡張されます。</p>
+<p>各操作の計算量は以下です。</p>
+<ul>
+<li>i番目へのアクセス
+<ul>
+<li><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span></li>
+<li>速い</li>
+</ul>
+</li>
+<li>末尾へ追加
+<ul>
+<li><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span></li>
+<li>便利</li>
+</ul>
+</li>
+<li>値の検索
+<ul>
+<li>順番にループを回して比較していく必要がある</li>
+<li>最悪計算量は <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span></li>
+<li><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span>以上の実装になりがちなので注意 （後述）</li>
+</ul>
+</li>
+<li>i 番目の要素を削除
+<ul>
+<li><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span></li>
+<li>やらないほうが良い</li>
+</ul>
+</li>
+</ul>
+<h3 id="linkedlist"><a class="header" href="#linkedlist">LinkedList</a></h3>
+<p>ArrayList の弱点である挿入や削除に強いデータ構造です。</p>
+<p>各要素には「前の要素や後ろの要素が何か」の情報だけを持たせることにより、挿入や削除の処理を簡潔に実現しています。</p>
+<p><img src="https://res.cloudinary.com/ddaz9etkx/image/upload/v1628649602/ot/taiiku_maehe_narae_chiisaku_z6zval.png" alt="https://res.cloudinary.com/ddaz9etkx/image/upload/v1628649602/ot/taiiku_maehe_narae_chiisaku_z6zval.png" /></p>
+<p>このとき、「自分が全体の何番目の要素か」という情報は管理されないことに注意してください。i 番目の要素にアクセスするためには、先頭（または末尾）から順にたどっていく必要があります。</p>
+<ul>
+<li>
+<p>i番目へのアクセス</p>
+<ul>
+<li><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span></li>
+<li>順にたどっていく必要があるため、遅い</li>
+<li>軽い気持ちで使ってはいけない</li>
+</ul>
+<p><a href="https://qiita.com/neko_machi/items/d620c4a8958e74df3550">軽い気持ちでLinkedListを使ったら休出する羽目になった話 - Qiita</a></p>
+</li>
+<li>
+<p>特定の位置に挿入</p>
+<ul>
+<li><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span></li>
+</ul>
+</li>
+<li>
+<p>i 番目の要素を削除</p>
+<ul>
+<li><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span></li>
+</ul>
+</li>
+<li>
+<p>値の検索</p>
+<ul>
+<li><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span></li>
+<li>ArrayList と同様</li>
+</ul>
+</li>
+</ul>
+<h2 id="map"><a class="header" href="#map">Map</a></h2>
+<p>整数以外でも添字に取れる配列のように扱えることから、連想配列とも呼ばれます。Key-Value 型のデータ構造です。</p>
+<pre><code class="language-kotlin">interface Map&lt;K, out V&gt;
+</code></pre>
+<p>Key に該当するものが分かっている場合は高速にデータを取得することができます。</p>
+<h3 id="hashmap"><a class="header" href="#hashmap">HashMap</a></h3>
+<p>ハッシュテーブルを用いた実装です。</p>
+<p>Kotlin で <code>mapOf()</code> 等で宣言するHashMapになるようです。</p>
+<p>後述する TreeMap と比べて(平均)計算量に優れています。</p>
+<ul>
+<li>値の取得
+<ul>
+<li>平均 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span>, 最悪 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span></li>
+</ul>
+</li>
+<li>値の削除
+<ul>
+<li>平均 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span>, 最悪 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span></li>
+</ul>
+</li>
+<li>値の追加
+<ul>
+<li>平均 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span>, 最悪 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span></li>
+</ul>
+</li>
+</ul>
+<h3 id="treemap"><a class="header" href="#treemap">TreeMap</a></h3>
+<p>平衡二分探索木 の一種である <strong>赤黒木</strong> による実装です（難しいです）。HashMap と比べてメモリ使用量が少なく、最悪計算量の面では優れています。</p>
+<p>また、<strong>要素はソートされた状態を維持</strong>されます。</p>
+<ul>
+<li>値の取得
+<ul>
+<li><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span></li>
+</ul>
+</li>
+<li>値の削除
+<ul>
+<li><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span></li>
+</ul>
+</li>
+<li>値の追加
+<ul>
+<li><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span></li>
+</ul>
+</li>
+<li>null 不可</li>
+</ul>
+<p>順序を維持したい場合やメモリ使用量を節約したい場合には TreeMap を使用し、</p>
+<p>それ以外の場合は HashMap で良いと思います。</p>
+<h2 id="set"><a class="header" href="#set">Set</a></h2>
+<p>集合を管理するデータ構造です。List と同じ <code>Collection</code> を継承しているため、<code>filter</code>, <code>forEach</code> などのメソッドが利用できます。</p>
+<pre><code class="language-kotlin">interface Set&lt;out E&gt; : Collection&lt;E&gt;
+</code></pre>
+<p>HashSet, TreeSet などがありますが、</p>
+<p>内部の実装では Map が使用されているため 計算量も Map の場合と同様になります。</p>
+<h3 id="list-との違い"><a class="header" href="#list-との違い">List との違い</a></h3>
+<p>一般的なSetでは重複が許されません。</p>
+<p>また、順序を持たないため <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathnormal">i</span></span></span></span> 番目へのアクセス などの概念がありません。</p>
+<p>そのため、次のようなコードにより List から重複を排除することができます。</p>
+<pre><code class="language-kotlin">val list: List&lt;Int&gt; = listOf(1, 1, 2, 3, 5, 8, 13, 21)
+// dedupList: [1, 2, 3, 5, 8, 13, 21] になる
+val dedupList: List&lt;Int&gt; = list.toSet().toList()
+</code></pre>
+<p>Kotlin では <code>distinct()</code> メソッドがあるため、重複を排除したい場合は distinct() を使用するほうが分かりやすいです。</p>
+<p>※ 内部の実装では同様の操作を行っています。</p>
+<p><a href="https://github.com/JetBrains/kotlin/blob/80cce1dc5280eb9135390270c8644a7b8d198071/libraries/stdlib/common/src/generated/_Arrays.kt#L11828">kotlin/_Arrays.kt at 80cce1dc5280eb9135390270c8644a7b8d198071 · JetBrains/kotlin</a></p>
+<p>また、ArrayList では平均計算量 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span> となる存在確認の処理 ( <code>contains()</code>など) が Set を使用することで <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span> や <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span> で行えるため、計算量の改善が期待できます。</p>
+<h3 id="kotlin-のメソッドについて"><a class="header" href="#kotlin-のメソッドについて">Kotlin のメソッドについて</a></h3>
+<p>Kotlin の Collection インタフェースでは便利なメソッドがいくつか用意されています。</p>
+<p><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-collection/#kotlin.collections.Collection">Collection - Kotlin Programming Language</a></p>
+<p>これらのメソッドは気軽に使えますが、内部でどのような処理が走っているのかは気に留めるようにすると良いと思います。</p>
+<p>例えば、 Kotlin の List  で <code>contains</code> メソッドを使用して存在確認をすることがあると思います。 </p>
+<p>この操作自体は <strong>値の検索</strong> と同等の計算量が必要となるため、平均で<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span> の計算量となります。</p>
+<p>同様に、HashSet を使用すると値の検索は平均で <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span> になるため、 <code>contains</code> メソッドを使用しても <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span> で実行することができます。</p>
+<p>確認してみましょう。</p>
+<p>次のコードはそれぞれサイズN, サイズM のリスト中に何個の重複があるかを確認するためのものです。</p>
+<pre><code class="language-kotlin">const val N:Int = 100000
+const val M:Int = 100000
+fun main() {
+  val originalList = (0..1000000).toList()
+  // サイズNのリスト
+  val list1 = originalList.shuffled().take(N)
+  // サイズMのリスト
+  val list2 = originalList.shuffled().take(M)
+
+  val startTime = System.currentTimeMillis()
+  
+  // 問題の処理
+  val countInList2 = list1.filter{
+    list2.contains(it)
+  }.size
+
+  val endTime = System.currentTimeMillis()
+
+  println(&quot;${countInList2} 件見つかりました。&quot;)
+  println(&quot;[実行時間] ${endTime - startTime} ms&quot;)
+
+}
+</code></pre>
+<p>このコードを実行できるリンクを貼っておきます。</p>
+<p>タイムアウトが発生してしまう場合は N や M の値を少し小さくしてみてください。</p>
+<p><a href="https://play.kotlinlang.org/#eyJ2ZXJzaW9uIjoiMS41LjIxIiwicGxhdGZvcm0iOiJqYXZhIiwiYXJncyI6IiIsIm5vbmVNYXJrZXJzIjp0cnVlLCJ0aGVtZSI6ImlkZWEiLCJjb2RlIjoiY29uc3QgdmFsIE46SW50ID0gMTAwMDAwXG5jb25zdCB2YWwgTTpJbnQgPSAxMDAwMDBcbmZ1biBtYWluKCkge1xuICB2YWwgb3JpZ2luYWxMaXN0ID0gKDAuLjEwMDAwMDApLnRvTGlzdCgpXG4gIC8vIOOCteOCpOOCuk7jga7jg6rjgrnjg4hcbiAgdmFsIGxpc3QxID0gb3JpZ2luYWxMaXN0LnNodWZmbGVkKCkudGFrZShOKVxuICAvLyDjgrXjgqTjgrpN44Gu44Oq44K544OIXG4gIHZhbCBsaXN0MiA9IG9yaWdpbmFsTGlzdC5zaHVmZmxlZCgpLnRha2UoTSlcblxuXG4gIHZhbCBzdGFydFRpbWUgPSBTeXN0ZW0uY3VycmVudFRpbWVNaWxsaXMoKVxuICBcbiAgLy8g5ZWP6aGM44Gu5Yem55CGXG4gIHZhbCBjb3VudEluTGlzdDIgPSBsaXN0MS5maWx0ZXJ7XG4gICAgbGlzdDIuY29udGFpbnMoaXQpXG4gIH0uc2l6ZVxuXG4gIHZhbCBlbmRUaW1lID0gU3lzdGVtLmN1cnJlbnRUaW1lTWlsbGlzKClcblxuICBwcmludGxuKFwiJHtjb3VudEluTGlzdDJ9IOS7tuimi+OBpOOBi+OCiuOBvuOBl+OBn+OAglwiKVxuICBwcmludGxuKFwiW+Wun+ihjOaZgumWk10gJHtlbmRUaW1lIC0gc3RhcnRUaW1lfSBtc1wiKVxufSJ9">Playground</a></p>
+<p>私のローカル環境で実行してみると、以下のように出力されました。</p>
+<pre><code>9933 件見つかりました。
+[実行時間] 9369 ms
+</code></pre>
+<p><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">5</span></span></span></span></span></span></span></span></span></span></span> 件 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.897438em;vertical-align:-0.08333em;"></span><span class="mord">×</span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">5</span></span></span></span></span></span></span></span></span></span></span> 件の比較が行われるため、これは<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span>の処理となっており、<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mord mtight">0</span></span></span></span></span></span></span></span></span></span></span></span> ステップ程度の処理が発生してしまいます。</p>
+<p>このような値の検索が必要な処理には Set （または Map） が適しています。</p>
+<p>次に、list2 を Set に変換して同じ処理を実行してみます。</p>
+<pre><code class="language-kotlin">const val N:Int = 100000
+const val M:Int = 100000
+fun main() {
+  val originalList = (0..1000000).toList()
+  // サイズNのリスト
+  val list1 = originalList.shuffled().take(N)
+  // サイズMのリスト
+  val list2 = originalList.shuffled().take(M)
+
+  val startTime = System.currentTimeMillis()
+  
+  // 問題の処理
+  val list2Set = list2.toSet()
+  val countInList2 = list1.filter{
+    list2Set.contains(it)
+  }.size
+
+  val endTime = System.currentTimeMillis()
+
+  println(&quot;${countInList2} 件見つかりました。&quot;)
+  println(&quot;[実行時間] ${endTime - startTime} ms&quot;)
+}
+</code></pre>
+<p>こちらのコードのリンクは以下です。</p>
+<p><a href="https://play.kotlinlang.org/#eyJ2ZXJzaW9uIjoiMS41LjIxIiwicGxhdGZvcm0iOiJqYXZhIiwiYXJncyI6IiIsIm5vbmVNYXJrZXJzIjp0cnVlLCJ0aGVtZSI6ImlkZWEiLCJjb2RlIjoiY29uc3QgdmFsIE46SW50ID0gMTAwMDAwXG5jb25zdCB2YWwgTTpJbnQgPSAxMDAwMDBcbmZ1biBtYWluKCkge1xuICB2YWwgb3JpZ2luYWxMaXN0ID0gKDAuLjEwMDAwMDApLnRvTGlzdCgpXG4gIC8vIOOCteOCpOOCuk7jga7jg6rjgrnjg4hcbiAgdmFsIGxpc3QxID0gb3JpZ2luYWxMaXN0LnNodWZmbGVkKCkudGFrZShOKVxuICAvLyDjgrXjgqTjgrpN44Gu44Oq44K544OIXG4gIHZhbCBsaXN0MiA9IG9yaWdpbmFsTGlzdC5zaHVmZmxlZCgpLnRha2UoTSlcblxuXG4gIHZhbCBzdGFydFRpbWUgPSBTeXN0ZW0uY3VycmVudFRpbWVNaWxsaXMoKVxuICBcbiAgLy8g5ZWP6aGM44Gu5Yem55CGXG4gIHZhbCBsaXN0MlNldCA9IGxpc3QyLnRvSGFzaFNldCgpXG4gIHZhbCBjb3VudEluTGlzdDIgPSBsaXN0MS5maWx0ZXJ7XG4gICAgbGlzdDJTZXQuY29udGFpbnMoaXQpXG4gIH0uc2l6ZVxuXG4gIHZhbCBlbmRUaW1lID0gU3lzdGVtLmN1cnJlbnRUaW1lTWlsbGlzKClcblxuICBwcmludGxuKFwiJHtjb3VudEluTGlzdDJ9IOS7tuimi+OBpOOBi+OCiuOBvuOBl+OBn+OAglwiKVxuICBwcmludGxuKFwiW+Wun+ihjOaZgumWk10gJHtlbmRUaW1lIC0gc3RhcnRUaW1lfSBtc1wiKVxufSJ9">Playground</a></p>
+<p>結果は次のようになりました。</p>
+<pre><code>10137 件見つかりました。
+[実行時間] 102 ms
+</code></pre>
+<p>9369 ms だった処理が 102 ms に短縮されています。</p>
+<p>違いは <code>contains</code> メソッドの実装が異なっているためであり、<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span> での検索を実現していることです。</p>
+<p>よって、全体での計算量は <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span>となり、同等の処理を数十倍の速度で達成できました。</p>
+<p>また、オブジェクトの比較では、Map のキーに ID となる値を格納することで同様の高速化が期待できます。</p>
+<h3 id="問題"><a class="header" href="#問題">問題</a></h3>
+<p>上記コードにおいて、<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72243em;vertical-align:-0.0391em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&gt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span></span></span></span> の 場合と <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72243em;vertical-align:-0.0391em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span></span></span></span>  の場合で比較すると、どちらの効率が良いでしょうか？</p>
+<h2 id="番外編"><a class="header" href="#番外編">番外編</a></h2>
+<p>基本的なデータ構造であるスタック（Stack）やキュー（Queue）について扱います。</p>
+<p>これらはList構造などを用いて容易に実装できるため、「Listの上手な使い方の１つ」としてとらえられます。</p>
+<h2 id="stack"><a class="header" href="#stack">Stack</a></h2>
+<p>Stack は LIFO(Last In First Out) のデータ構造です。</p>
+<p>用途としてはundo処理などの戻る処理や幅優先探索などがあります。</p>
+<p><code>java.util.Stack</code> 、 <code>ArrayDeque</code> などで利用できます。</p>
+<h2 id="queue"><a class="header" href="#queue">Queue</a></h2>
+<p><img src="https://res.cloudinary.com/ddaz9etkx/image/upload/v1628516592/ot/toilet_gyouretsu_qigx4p.png" alt="https://res.cloudinary.com/ddaz9etkx/image/upload/v1628516592/ot/toilet_gyouretsu_qigx4p.png" /></p>
+<p>用途としてはジョブスケジューリング、トポロジカルソート、深さ優先探索などがあります。</p>
+<p><code>java.util.Queue</code> を継承した <code>java.util.LinkedList</code> 、<code>ArrayDeque</code> などで利用できます。</p>
+<h3 id="まとめ"><a class="header" href="#まとめ">まとめ</a></h3>
+<p>数万件以上などの大きなデータを扱う場合、線形時間の処理<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span> が <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span> や <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span> になると、実行時間はだいぶ変わってきます。</p>
+<p>Kotlin の collection 間の変換（List ⇔ Set など）は容易なため、使いこなせるようにすると楽に高速化が期待できます。</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                        
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                            </nav>
+
+        </div>
+
+        
+        
+        
+                <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+        
+                <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+                        <script type="text/javascript">
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+                
+    </body>
+</html>
