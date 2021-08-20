@@ -10,7 +10,5 @@
   - [遅い例と速い例](./compare_speed.md)
     - [問題](./compare_speed_question.md)
   - [その他のデータ構造](./others.md)
-    -[Stack](./others_stack.md)
-    -[Queue](./others_queue.md)
-    -[Deque](./others_deque.md)
   - [まとめ](./conclusion.md)
+  - [参考](./references.md)
