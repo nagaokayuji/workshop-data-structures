@@ -1,7 +1,5 @@
 # Set
 
-## Set
-
 集合を管理するデータ構造です。List と同じ `Collection` を継承しているため、`filter`, `forEach` などのメソッドが利用できます。
 
 ```kotlin
