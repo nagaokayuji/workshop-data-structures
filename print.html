@@ -83,7 +83,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="data_structures.html">Kotlinデータ構造</a></li><li class="chapter-item expanded "><a href="list.html"><strong aria-hidden="true">1.</strong> List</a></li><li class="chapter-item expanded "><a href="set.html"><strong aria-hidden="true">2.</strong> Set</a></li><li class="chapter-item expanded "><a href="map.html"><strong aria-hidden="true">3.</strong> Map</a></li><li class="chapter-item expanded "><a href="compare_speed.html"><strong aria-hidden="true">4.</strong> 遅い例と速い例</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="compare_speed_question.html"><strong aria-hidden="true">4.1.</strong> 問題</a></li></ol></li><li class="chapter-item expanded "><a href="others.html"><strong aria-hidden="true">5.</strong> その他のデータ構造</a></li><li class="chapter-item expanded "><a href="conclusion.html"><strong aria-hidden="true">6.</strong> おわりに</a></li></ol>            </div>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">Kotlinデータ構造</a></li><li class="chapter-item expanded "><a href="environment.html"><strong aria-hidden="true">1.</strong> 実行環境</a></li><li class="chapter-item expanded "><a href="list.html"><strong aria-hidden="true">2.</strong> List</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="list_arraylist.html"><strong aria-hidden="true">2.1.</strong> ArrayList</a></li><li class="chapter-item expanded "><a href="list_linkedlist.html"><strong aria-hidden="true">2.2.</strong> LinkedList</a></li></ol></li><li class="chapter-item expanded "><a href="map.html"><strong aria-hidden="true">3.</strong> Map</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="map_hashmap.html"><strong aria-hidden="true">3.1.</strong> HashMap</a></li><li class="chapter-item expanded "><a href="map_treemap.html"><strong aria-hidden="true">3.2.</strong> TreeMap</a></li></ol></li><li class="chapter-item expanded "><a href="set.html"><strong aria-hidden="true">4.</strong> Set</a></li><li class="chapter-item expanded "><a href="compare_speed.html"><strong aria-hidden="true">5.</strong> 遅い例と速い例</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="compare_speed_question.html"><strong aria-hidden="true">5.1.</strong> 問題</a></li></ol></li><li class="chapter-item expanded "><a href="others.html"><strong aria-hidden="true">6.</strong> その他のデータ構造</a></li><li class="chapter-item expanded "><a href="conclusion.html"><strong aria-hidden="true">7.</strong> まとめ</a></li><li class="chapter-item expanded "><a href="references.html"><strong aria-hidden="true">8.</strong> 参考</a></li></ol>            </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
 
@@ -150,7 +150,8 @@
 <p>計算量については各コレクションに格納するサイズを<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span></span>として記載します。</p>
 <p><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/">kotlin.collections - Kotlin Programming Language</a></p>
 <p>※ Javaの内容も含みます。</p>
-<p>■ 実行環境</p>
+<div style="break-before: page; page-break-before: always;"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+<h1 id="実行環境"><a class="header" href="#実行環境">実行環境</a></h1>
 <pre><code>macOS Big Sur
 MacBook Pro (13-inch, M1, 2020)
 Memory 16GB
@@ -161,7 +162,8 @@ Memory 16GB
 <pre><code class="language-kotlin">interface List&lt;out E&gt; : Collection&lt;E&gt;
 </code></pre>
 <p>一般的なArrayList, LinkedList を取り上げます。</p>
-<h2 id="arraylist"><a class="header" href="#arraylist">ArrayList</a></h2>
+<div style="break-before: page; page-break-before: always;"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+<h1 id="arraylist"><a class="header" href="#arraylist">ArrayList</a></h1>
 <p>一般的な配列とほぼ同じですが、サイズが可変で末尾への追加が容易です。</p>
 <p>要素を追加すると、内部では自動で配列のサイズが拡張されます。</p>
 <p>各操作の計算量は以下です。</p>
@@ -192,10 +194,13 @@ Memory 16GB
 </ul>
 </li>
 </ul>
-<h2 id="linkedlist"><a class="header" href="#linkedlist">LinkedList</a></h2>
+<div style="break-before: page; page-break-before: always;"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+<h1 id="linkedlist"><a class="header" href="#linkedlist">LinkedList</a></h1>
 <p>ArrayList の弱点である挿入や削除に強いデータ構造です。</p>
 <p>各要素には「前の要素や後ろの要素が何か」の情報だけを持たせることにより、挿入や削除の処理を簡潔に実現しています。</p>
-<p><img src="https://res.cloudinary.com/ddaz9etkx/image/upload/v1628649602/ot/taiiku_maehe_narae_chiisaku_z6zval.png" alt="https://res.cloudinary.com/ddaz9etkx/image/upload/v1628649602/ot/taiiku_maehe_narae_chiisaku_z6zval.png" /></p>
+<div align="center">
+<img src="https://res.cloudinary.com/ddaz9etkx/image/upload/v1628649602/ot/taiiku_maehe_narae_chiisaku_z6zval.png" width="50%">
+</div>
 <p>このとき、「自分が全体の何番目の要素か」という情報は管理されないことに注意してください。i 番目の要素にアクセスするためには、先頭（または末尾）から順にたどっていく必要があります。</p>
 <ul>
 <li>
@@ -228,33 +233,13 @@ Memory 16GB
 </li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
-<h1 id="set"><a class="header" href="#set">Set</a></h1>
-<h2 id="set-1"><a class="header" href="#set-1">Set</a></h2>
-<p>集合を管理するデータ構造です。List と同じ <code>Collection</code> を継承しているため、<code>filter</code>, <code>forEach</code> などのメソッドが利用できます。</p>
-<pre><code class="language-kotlin">interface Set&lt;out E&gt; : Collection&lt;E&gt;
-</code></pre>
-<p>HashSet, TreeSet などがありますが、</p>
-<p>内部の実装では Map が使用されているため 計算量も Map の場合と同様になります。</p>
-<h3 id="list-との違い"><a class="header" href="#list-との違い">List との違い</a></h3>
-<p>一般的なSetでは重複が許されません。</p>
-<p>また、順序を持たないため <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathnormal">i</span></span></span></span> 番目へのアクセス などの概念がありません。</p>
-<p>そのため、次のようなコードにより List から重複を排除することができます。</p>
-<pre><code class="language-kotlin">val list: List&lt;Int&gt; = listOf(1, 1, 2, 3, 5, 8, 13, 21)
-// dedupList: [1, 2, 3, 5, 8, 13, 21] になる
-val dedupList: List&lt;Int&gt; = list.toSet().toList()
-</code></pre>
-<p>Kotlin では <code>distinct()</code> メソッドがあるため、重複を排除したい場合は distinct() を使用するほうが分かりやすいです。</p>
-<p>※ 内部の実装では同様の操作を行っています。</p>
-<p><a href="https://github.com/JetBrains/kotlin/blob/80cce1dc5280eb9135390270c8644a7b8d198071/libraries/stdlib/common/src/generated/_Arrays.kt#L11828">kotlin/_Arrays.kt at 80cce1dc5280eb9135390270c8644a7b8d198071 · JetBrains/kotlin</a></p>
-<p>また、ArrayList では平均計算量 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span> となる存在確認の処理 ( <code>contains()</code>など) が Set を使用することで <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span> や <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span> で行えるため、計算量の改善が期待できます。</p>
-<div style="break-before: page; page-break-before: always;"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
 <h1 id="map"><a class="header" href="#map">Map</a></h1>
-<h2 id="map-1"><a class="header" href="#map-1">Map</a></h2>
 <p>整数以外でも添字に取れる配列のように扱えることから、連想配列とも呼ばれます。Key-Value 型のデータ構造です。</p>
 <pre><code class="language-kotlin">interface Map&lt;K, out V&gt;
 </code></pre>
 <p>Key に該当するものが分かっている場合は高速にデータを取得することができます。</p>
-<h3 id="hashmap"><a class="header" href="#hashmap">HashMap</a></h3>
+<div style="break-before: page; page-break-before: always;"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+<h1 id="hashmap"><a class="header" href="#hashmap">HashMap</a></h1>
 <p>ハッシュテーブルを用いた実装です。</p>
 <p>Kotlin で <code>mapOf()</code> 等で宣言するHashMapになるようです。</p>
 <p>後述する TreeMap と比べて(平均)計算量に優れています。</p>
@@ -275,7 +260,8 @@ val dedupList: List&lt;Int&gt; = list.toSet().toList()
 </ul>
 </li>
 </ul>
-<h3 id="treemap"><a class="header" href="#treemap">TreeMap</a></h3>
+<div style="break-before: page; page-break-before: always;"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+<h1 id="treemap"><a class="header" href="#treemap">TreeMap</a></h1>
 <p>平衡二分探索木 の一種である <strong>赤黒木</strong> による実装です（難しいです）。HashMap と比べてメモリ使用量が少なく、最悪計算量の面では優れています。</p>
 <p>また、<strong>要素はソートされた状態を維持</strong>されます。</p>
 <ul>
@@ -299,14 +285,34 @@ val dedupList: List&lt;Int&gt; = list.toSet().toList()
 <p>順序を維持したい場合やメモリ使用量を節約したい場合には TreeMap を使用し、</p>
 <p>それ以外の場合は HashMap で良いと思います。</p>
 <div style="break-before: page; page-break-before: always;"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+<h1 id="set"><a class="header" href="#set">Set</a></h1>
+<p>集合を管理するデータ構造です。List と同じ <code>Collection</code> を継承しているため、<code>filter</code>, <code>forEach</code> などのメソッドが利用できます。</p>
+<pre><code class="language-kotlin">interface Set&lt;out E&gt; : Collection&lt;E&gt;
+</code></pre>
+<p>HashSet, TreeSet などがありますが、</p>
+<p>内部の実装では Map が使用されているため 計算量も Map の場合と同様になります。</p>
+<h3 id="list-との違い"><a class="header" href="#list-との違い">List との違い</a></h3>
+<p>一般的なSetでは重複が許されません。</p>
+<p>また、順序を持たないため <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathnormal">i</span></span></span></span> 番目へのアクセス などの概念がありません。</p>
+<p>そのため、次のようなコードにより List から重複を排除することができます。</p>
+<pre><code class="language-kotlin">val list: List&lt;Int&gt; = listOf(1, 1, 2, 3, 5, 8, 13, 21)
+// dedupList: [1, 2, 3, 5, 8, 13, 21] になる
+val dedupList: List&lt;Int&gt; = list.toSet().toList()
+</code></pre>
+<p>Kotlin では <code>distinct()</code> メソッドがあるため、重複を排除したい場合は distinct() を使用するほうが分かりやすいです。</p>
+<p>※ 内部の実装では同様の操作を行っています。</p>
+<p><a href="https://github.com/JetBrains/kotlin/blob/80cce1dc5280eb9135390270c8644a7b8d198071/libraries/stdlib/common/src/generated/_Arrays.kt#L11828">kotlin/_Arrays.kt at 80cce1dc5280eb9135390270c8644a7b8d198071 · JetBrains/kotlin</a></p>
+<p>また、ArrayList では平均計算量 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span> となる存在確認の処理 ( <code>contains()</code>など) が Set を使用することで <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span> や <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span> で行えるため、計算量の改善が期待できます。</p>
+<div style="break-before: page; page-break-before: always;"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
 <h1 id="遅い例と速い例"><a class="header" href="#遅い例と速い例">遅い例と速い例</a></h1>
-<h3 id="kotlin-のメソッドについて"><a class="header" href="#kotlin-のメソッドについて">Kotlin のメソッドについて</a></h3>
+<h2 id="kotlin-のメソッドについて"><a class="header" href="#kotlin-のメソッドについて">Kotlin のメソッドについて</a></h2>
 <p>Kotlin の Collection インタフェースでは便利なメソッドがいくつか用意されています。</p>
 <p><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-collection/#kotlin.collections.Collection">Collection - Kotlin Programming Language</a></p>
 <p>これらのメソッドは気軽に使えますが、内部でどのような処理が走っているのかは気に留めるようにすると良いと思います。</p>
 <p>例えば、 Kotlin の List  で <code>contains</code> メソッドを使用して存在確認をすることがあると思います。 </p>
 <p>この操作自体は <strong>値の検索</strong> と同等の計算量が必要となるため、平均で<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span> の計算量となります。</p>
 <p>同様に、HashSet を使用すると値の検索は平均で <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span> になるため、 <code>contains</code> メソッドを使用しても <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span> で実行することができます。</p>
+<h2 id="確認してみる"><a class="header" href="#確認してみる">確認してみる</a></h2>
 <p>確認してみましょう。</p>
 <p>次のコードはそれぞれサイズN, サイズM のリスト中に何個の重複があるかを確認するためのものです。</p>
 <pre><code class="language-kotlin">const val N:Int = 100000
@@ -375,25 +381,40 @@ fun main() {
 <p>違いは <code>contains</code> メソッドの実装が異なっているためであり、<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span> での検索を実現していることです。</p>
 <p>よって、全体での計算量は <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span>となり、同等の処理を数十倍の速度で達成できました。</p>
 <p>また、オブジェクトの比較では、Map のキーに ID となる値を格納することで同様の高速化が期待できます。</p>
-<div style="break-before: page; page-break-before: always;"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
-<h1 id="問題"><a class="header" href="#問題">問題</a></h1>
+<h2 id="問題"><a class="header" href="#問題">問題</a></h2>
 <p>上記コードにおいて、<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72243em;vertical-align:-0.0391em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&gt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span></span></span></span> の 場合と <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72243em;vertical-align:-0.0391em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span></span></span></span>  の場合で比較すると、どちらの効率が良いでしょうか？</p>
 <div style="break-before: page; page-break-before: always;"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+<div style="break-before: page; page-break-before: always;"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
 <h1 id="その他のデータ構造"><a class="header" href="#その他のデータ構造">その他のデータ構造</a></h1>
-<p>基本的なデータ構造であるスタック（Stack）やキュー（Queue）について扱います。</p>
+<p>基本的なデータ構造であるスタック（Stack）やキュー（Queue）について触れておきます。</p>
 <p>これらはList構造などを用いて容易に実装できるため、「Listの上手な使い方の１つ」としてとらえられます。</p>
 <h2 id="stack"><a class="header" href="#stack">Stack</a></h2>
 <p>Stack は LIFO(Last In First Out) のデータ構造です。</p>
 <p>用途としてはundo処理などの戻る処理や幅優先探索などがあります。</p>
 <p><code>java.util.Stack</code> 、 <code>ArrayDeque</code> などで利用できます。</p>
 <h2 id="queue"><a class="header" href="#queue">Queue</a></h2>
-<p><img src="https://res.cloudinary.com/ddaz9etkx/image/upload/v1628516592/ot/toilet_gyouretsu_qigx4p.png" alt="https://res.cloudinary.com/ddaz9etkx/image/upload/v1628516592/ot/toilet_gyouretsu_qigx4p.png" /></p>
-<p>用途としてはジョブスケジューリング、トポロジカルソート、深さ優先探索などがあります。</p>
+<div align="center">
+<img src="https://res.cloudinary.com/ddaz9etkx/image/upload/v1628516592/ot/toilet_gyouretsu_qigx4p.png" width="50%">
+</div>
+<p>用途としてはジョブスケジューリング、トポロジカルソート<sup class="footnote-reference"><a href="#1">1</a></sup>、深さ優先探索などがあります。</p>
 <p><code>java.util.Queue</code> を継承した <code>java.util.LinkedList</code> 、<code>ArrayDeque</code> などで利用できます。</p>
+<h2 id="deque"><a class="header" href="#deque">Deque</a></h2>
+<p>Stack と Queue 両方の機能を持ったデータ構造です(!)</p>
+<p>先頭または末尾へのデータ追加・参照・削除がすべて<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span> で行えます。</p>
+<hr>
+<div class="footnote-definition" id="1"><sup class="footnote-definition-label">1</sup>
+<p>有向非巡回グラフ（一般的にDAGと呼ばれる）に順序をつける操作です。</p>
+</div>
 <div style="break-before: page; page-break-before: always;"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
 <h1 id="おわりに"><a class="header" href="#おわりに">おわりに</a></h1>
 <p>数万件以上などの大きなデータを扱う場合、線形時間の処理<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span> が <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span> や <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span> になると、実行時間はだいぶ変わってきます。</p>
 <p>Kotlin の collection 間の変換（List ⇔ Set など）は容易なため、使いこなせるようにすると楽に高速化が期待できます。</p>
+<div style="break-before: page; page-break-before: always;"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+<h1 id="参考"><a class="header" href="#参考">参考</a></h1>
+<ul>
+<li><a href="https://atcoder.jp/contests/apg4b/tasks/APG4b_aa">STLのコンテナ</a></li>
+<li><a href="https://qiita.com/p_shiki37/items/3902f4e3adc3aeb382f1">Javaで競技プログラミングをするときによく使う標準ライブラリ</a></li>
+</ul>
 
                     </main>
 
