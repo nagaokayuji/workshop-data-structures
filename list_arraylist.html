@@ -145,6 +145,7 @@
                     <main>
                         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
 <h1 id="arraylist"><a class="header" href="#arraylist">ArrayList</a></h1>
+<p>ArrayList は最も基本的なリスト構造です。</p>
 <p>一般的な配列とほぼ同じように使えますが、<strong>サイズが可変</strong> で末尾への追加が容易です。</p>
 <p>要素を追加すると、内部では自動で配列のサイズが拡張されます。</p>
 <p>各操作の計算量は以下です。</p>
@@ -171,6 +172,7 @@
 <ul>
 <li><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span></li>
 <li>やらないほうが良い</li>
+<li>末尾の要素だけ <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span> <sup class="footnote-reference"><a href="#1">1</a></sup></li>
 </ul>
 </li>
 </ul>
@@ -189,6 +191,12 @@
 <li>可変長の配列が欲しい場合</li>
 </ul>
 <p>大体のケースでは <code>ArrayList</code> を使用しておけば間違いないと思います。</p>
+<h3 id="注意"><a class="header" href="#注意">注意</a></h3>
+<p>末尾以外に要素を挿入する場合や削除する場合は遅いため注意が必要です。</p>
+<hr />
+<div class="footnote-definition" id="1"><sup class="footnote-definition-label">1</sup>
+<p><a href="http://hg.openjdk.java.net/jdk8/jdk8/jdk/file/tip/src/share/classes/java/util/ArrayList.java">OpenJDK のコード</a></p>
+</div>
 
                     </main>
 
