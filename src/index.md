@@ -1,4 +1,4 @@
-# Kotlinデータ構造入門
+# Kotlin, Java データ構造入門
 
 基本的なデータ構造の解説と Kotlin の List , Set , Map についての内容となります。
 
