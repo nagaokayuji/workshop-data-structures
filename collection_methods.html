@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>その他のデータ構造 - Kotlin, Java データ構造について</title>
+        <title>便利な関数 - Kotlin, Java データ構造について</title>
                 
 
         <!-- Custom HTML head -->
@@ -82,7 +82,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">Kotlinデータ構造</a></li><li class="chapter-item expanded "><a href="collection.html"><strong aria-hidden="true">1.</strong> Collection</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="collection_basic.html"><strong aria-hidden="true">1.1.</strong> 基本的な機能</a></li><li class="chapter-item expanded "><a href="collection_methods.html"><strong aria-hidden="true">1.2.</strong> 便利な関数</a></li></ol></li><li class="chapter-item expanded "><a href="list.html"><strong aria-hidden="true">2.</strong> List</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="list_arraylist.html"><strong aria-hidden="true">2.1.</strong> ArrayList</a></li><li class="chapter-item expanded "><a href="list_linkedlist.html"><strong aria-hidden="true">2.2.</strong> LinkedList</a></li></ol></li><li class="chapter-item expanded "><a href="map.html"><strong aria-hidden="true">3.</strong> Map</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="map_hashmap.html"><strong aria-hidden="true">3.1.</strong> HashMap</a></li><li class="chapter-item expanded "><a href="map_treemap.html"><strong aria-hidden="true">3.2.</strong> TreeMap</a></li></ol></li><li class="chapter-item expanded "><a href="set.html"><strong aria-hidden="true">4.</strong> Set</a></li><li class="chapter-item expanded "><a href="compare_speed.html"><strong aria-hidden="true">5.</strong> 遅い例と速い例</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="environment.html"><strong aria-hidden="true">5.1.</strong> 実行環境</a></li><li class="chapter-item expanded "><a href="compare_speed_question.html"><strong aria-hidden="true">5.2.</strong> 問題</a></li></ol></li><li class="chapter-item expanded "><a href="others.html" class="active"><strong aria-hidden="true">6.</strong> その他のデータ構造</a></li><li class="chapter-item expanded "><a href="conclusion.html"><strong aria-hidden="true">7.</strong> まとめ</a></li><li class="chapter-item expanded "><a href="references.html"><strong aria-hidden="true">8.</strong> 参考</a></li></ol>            </div>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">Kotlinデータ構造</a></li><li class="chapter-item expanded "><a href="collection.html"><strong aria-hidden="true">1.</strong> Collection</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="collection_basic.html"><strong aria-hidden="true">1.1.</strong> 基本的な機能</a></li><li class="chapter-item expanded "><a href="collection_methods.html" class="active"><strong aria-hidden="true">1.2.</strong> 便利な関数</a></li></ol></li><li class="chapter-item expanded "><a href="list.html"><strong aria-hidden="true">2.</strong> List</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="list_arraylist.html"><strong aria-hidden="true">2.1.</strong> ArrayList</a></li><li class="chapter-item expanded "><a href="list_linkedlist.html"><strong aria-hidden="true">2.2.</strong> LinkedList</a></li></ol></li><li class="chapter-item expanded "><a href="map.html"><strong aria-hidden="true">3.</strong> Map</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="map_hashmap.html"><strong aria-hidden="true">3.1.</strong> HashMap</a></li><li class="chapter-item expanded "><a href="map_treemap.html"><strong aria-hidden="true">3.2.</strong> TreeMap</a></li></ol></li><li class="chapter-item expanded "><a href="set.html"><strong aria-hidden="true">4.</strong> Set</a></li><li class="chapter-item expanded "><a href="compare_speed.html"><strong aria-hidden="true">5.</strong> 遅い例と速い例</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="environment.html"><strong aria-hidden="true">5.1.</strong> 実行環境</a></li><li class="chapter-item expanded "><a href="compare_speed_question.html"><strong aria-hidden="true">5.2.</strong> 問題</a></li></ol></li><li class="chapter-item expanded "><a href="others.html"><strong aria-hidden="true">6.</strong> その他のデータ構造</a></li><li class="chapter-item expanded "><a href="conclusion.html"><strong aria-hidden="true">7.</strong> まとめ</a></li><li class="chapter-item expanded "><a href="references.html"><strong aria-hidden="true">8.</strong> 参考</a></li></ol>            </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
 
@@ -144,36 +144,50 @@
                 <div id="content" class="content">
                     <main>
                         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
-<h1 id="その他のデータ構造"><a class="header" href="#その他のデータ構造">その他のデータ構造</a></h1>
-<p>基本的なデータ構造であるスタック（Stack）やキュー（Queue）について触れておきます。</p>
-<p>これらはList構造などを用いて容易に実装できるため、「Listの上手な使い方の１つ」としてとらえられます。</p>
-<h2 id="stack"><a class="header" href="#stack">Stack</a></h2>
-<p>Stack は LIFO(Last In First Out) のデータ構造です。</p>
-<p>用途としてはundo処理などの戻る処理や幅優先探索などがあります。</p>
-<p><code>java.util.Stack</code> 、 <code>ArrayDeque</code> などで利用できます。</p>
-<h2 id="queue"><a class="header" href="#queue">Queue</a></h2>
-<div align="center">
-<img src="https://res.cloudinary.com/ddaz9etkx/image/upload/v1628516592/ot/toilet_gyouretsu_qigx4p.png" width="50%">
-</div>
-<p>用途としてはジョブスケジューリング、トポロジカルソート<sup class="footnote-reference"><a href="#1">1</a></sup>、深さ優先探索などがあります。</p>
-<p><code>java.util.Queue</code> を継承した <code>java.util.LinkedList</code> 、<code>ArrayDeque</code> などで利用できます。</p>
-<h2 id="deque"><a class="header" href="#deque">Deque</a></h2>
-<p>Stack と Queue 両方の機能を持ったデータ構造です(!)</p>
-<p>先頭または末尾へのデータ追加・参照・削除がすべて<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span> で行えます。</p>
-<hr>
-<div class="footnote-definition" id="1"><sup class="footnote-definition-label">1</sup>
-<p>有向非巡回グラフ（一般的にDAGと呼ばれる）に順序をつける操作です。</p>
-</div>
+<h1 id="collection-の便利な関数"><a class="header" href="#collection-の便利な関数">Collection の便利な関数</a></h1>
+<p>知っておくと便利なメソッドをご紹介します。</p>
+<h2 id="chunked"><a class="header" href="#chunked">chunked</a></h2>
+<p>collection を 複数のリストに分割できます。</p>
+<pre><code class="language-kotlin">fun &lt;T, R&gt; Iterable&lt;T&gt;.chunked(
+    size: Int,
+    transform: (List&lt;T&gt;) -&gt; R
+): List&lt;R&gt;
+</code></pre>
+<p><code>size</code> に指定した個数ごとに List に分割し、関数を適用できます。</p>
+<pre><code class="language-kotlin">fun main() {
+  val l = listOf(1,1,2,3,5,8,13,21,34,55)
+  println(l.chunked(3)) // [[1, 1, 2], [3, 5, 8], [13, 21, 34], [55]]
+}
+</code></pre>
+<h2 id="reduce"><a class="header" href="#reduce">reduce</a></h2>
+<p>畳み込み関数です。
+順々に関数を適用していきます。</p>
+<pre><code class="language-kotlin">fun &lt;T, R&gt; Iterable&lt;T&gt;.fold(
+    initial: R,
+    operation: (acc: R, T) -&gt; R
+): R
+</code></pre>
+<p>例えば、次のようにすると簡単に階乗が計算できます。</p>
+<pre><code class="language-kotlin">fun main() {
+  println((1..10).reduce{a, b -&gt; a * b}) // 9! = 362880
+}
+</code></pre>
+<p>また、<code>reduce</code> の 初期値ありバージョンが <code>fold</code> です。</p>
+<p>これを利用すると以下のようにフィボナッチ数列の項も求められます。</p>
+<pre><code class="language-kotlin">fun main() {
+  println((3..10).fold(Pair(1,1)){(a,b), _ -&gt; Pair(b, a+b)}.second) // 55
+}
+</code></pre>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                                                    <a rel="prev" href="compare_speed_question.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                                    <a rel="prev" href="collection_basic.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
                         
-                                                    <a rel="next" href="conclusion.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                                    <a rel="next" href="list.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         
@@ -183,11 +197,11 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                                    <a rel="prev" href="compare_speed_question.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                    <a rel="prev" href="collection_basic.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
                 
-                                    <a rel="next" href="conclusion.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                    <a rel="next" href="list.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
                             </nav>
