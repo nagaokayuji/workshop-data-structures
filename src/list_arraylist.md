@@ -30,3 +30,10 @@ fun main() {
   // class java.util.ArrayList (Kotlin reflection is not available)
 }
 ```
+
+## ユースケース
+
+- 高機能な配列が欲しい場合
+- 可変長の配列が欲しい場合
+
+大体のケースでは `ArrayList` を使用しておけば間違いないと思います。
