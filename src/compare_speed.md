@@ -19,8 +19,8 @@ fun main() {
   }.size
 
   val endTime = System.currentTimeMillis()
-  println("${countInLists} 件見つかりました。")
-  println("[実行時間] ${endTime - startTime} ms")
+  println("\${countInLists} 件見つかりました。")
+  println("[実行時間] \${endTime - startTime} ms")
 }
 ```
 [playground](https://play.kotlinlang.org/#eyJ2ZXJzaW9uIjoiMS4zLjcwIiwiY29kZSI6ImNvbnN0IHZhbCBOOkludCA9IDEwMDAwMFxuY29uc3QgdmFsIE06SW50ID0gMTAwMDAwXG5mdW4gbWFpbigpIHtcbiAgdmFsIG9yaWdpbmFsTGlzdCA9ICgwLi4xMDEwMDApLnRvTGlzdCgpXG4gIC8vIOOCteOCpOOCuk7jga7jg6rjgrnjg4hcbiAgdmFsIGxpc3QxID0gb3JpZ2luYWxMaXN0LnNodWZmbGVkKCkudGFrZShOKVxuICAvLyDjgrXjgqTjgrpN44Gu44Oq44K544OIXG4gIHZhbCBsaXN0MiA9IG9yaWdpbmFsTGlzdC5zaHVmZmxlZCgpLnRha2UoTSlcbiAgdmFsIHN0YXJ0VGltZSA9IFN5c3RlbS5jdXJyZW50VGltZU1pbGxpcygpXG4gIC8vIOWVj+mhjOOBruWHpueQhlxuICB2YWwgY291bnRJbkxpc3RzID0gbGlzdDEuZmlsdGVye1xuICAgIGxpc3QyLmNvbnRhaW5zKGl0KVxuICB9LnNpemVcblxuICB2YWwgZW5kVGltZSA9IFN5c3RlbS5jdXJyZW50VGltZU1pbGxpcygpXG4gIHByaW50bG4oXCIke2NvdW50SW5MaXN0c30g5Lu26KaL44Gk44GL44KK44G+44GX44Gf44CCXCIpXG4gIHByaW50bG4oXCJb5a6f6KGM5pmC6ZaTXSAke2VuZFRpbWUgLSBzdGFydFRpbWV9IG1zXCIpXG59IiwicGxhdGZvcm0iOiJqYXZhIiwiYXJncyI6IiJ9)
@@ -54,8 +54,8 @@ fun main() {
   }.size
 
   val endTime = System.currentTimeMillis()
-  println("${countInLists} 件見つかりました。")
-  println("[実行時間] ${endTime - startTime} ms")
+  println("\${countInLists} 件見つかりました。")
+  println("[実行時間] \${endTime - startTime} ms")
 }
 ```
 
@@ -92,6 +92,8 @@ fun main() {
 
 ### List で処理する
 
+以下は最小値の検索に `minOrNull()`、インデックスの検索に `indexOf()` を用いた実装です。
+
 ```kotlin
 const val N:Int = 100000
 const val M:Int = 10000
@@ -109,12 +111,12 @@ fun main() {
       list[index] = min * 2
   }
   val endTime = System.currentTimeMillis()
-  println("[実行時間] ${endTime - startTime} ms")
+  println("[実行時間] \${endTime - startTime} ms")
 }
 ```
 [playground](https://play.kotlinlang.org/#eyJ2ZXJzaW9uIjoiMS4zLjcwIiwiY29kZSI6ImNvbnN0IHZhbCBOOkludCA9IDEwMDAwMFxuY29uc3QgdmFsIE06SW50ID0gMTAwMDBcbmZ1biBtYWluKCkge1xuICB2YWwgb3JpZ2luYWxMaXN0ID0gKDEuLjEwMTAwMCkudG9MaXN0KClcbiAgLy8g44K144Kk44K6TuOBruODquOCueODiFxuICB2YWwgbGlzdCA9IG9yaWdpbmFsTGlzdC5zaHVmZmxlZCgpLnRha2UoTikudG9NdXRhYmxlTGlzdCgpXG4gIFxuICB2YWwgc3RhcnRUaW1lID0gU3lzdGVtLmN1cnJlbnRUaW1lTWlsbGlzKClcbiAgLy8g5Lul5LiL44Gu5pON5L2c44KSIE0g5Zue6KGM44GE44Gf44GE77yBXG4gIC8vIC0g6KaB57Sg44Gu5Lit44GL44KJ5pyA5bCP5YCk44KS6KaL44Gk44GR44CBMuWAjeOBl+OBn+OBhFxuICByZXBlYXQoTSl7XG4gICAgICB2YWwgbWluID0gbGlzdC5taW5Pck51bGwoKSEhXG4gICAgICB2YWwgaW5kZXggPSBsaXN0LmluZGV4T2YobWluKVxuICAgICAgbGlzdFtpbmRleF0gPSBtaW4gKiAyXG4gIH1cbiAgdmFsIGVuZFRpbWUgPSBTeXN0ZW0uY3VycmVudFRpbWVNaWxsaXMoKVxuICBwcmludGxuKFwiW+Wun+ihjOaZgumWk10gJHtlbmRUaW1lIC0gc3RhcnRUaW1lfSBtc1wiKVxufSIsInBsYXRmb3JtIjoiamF2YSIsImFyZ3MiOiIifQ==)
 
-実行結果は以下です。
+実行すると以下のようになりました。
 
 ```
 [実行時間] 4027 ms
@@ -147,7 +149,7 @@ fun main() {
   }
   val result = map.map{ (key, value) -> List<Int>(value, {key})}.flatten().toList()
   val endTime = System.currentTimeMillis()
-  println("[実行時間] ${endTime - startTime} ms")
+  println("[実行時間] \${endTime - startTime} ms")
 }
 ```
 [playground](https://play.kotlinlang.org/#eyJ2ZXJzaW9uIjoiMS4zLjcwIiwiY29kZSI6ImNvbnN0IHZhbCBOOkludCA9IDEwMDAwMFxuY29uc3QgdmFsIE06SW50ID0gMTAwMDBcbmZ1biBtYWluKCkge1xuICB2YWwgb3JpZ2luYWxMaXN0ID0gKDEuLjEwMTAwMCkudG9MaXN0KClcbiAgLy8g44K144Kk44K6TuOBruODquOCueODiFxuICB2YWwgbGlzdCA9IG9yaWdpbmFsTGlzdC5zaHVmZmxlZCgpLnRha2UoTikudG9MaXN0KClcbiAgXG4gIHZhbCBzdGFydFRpbWUgPSBTeXN0ZW0uY3VycmVudFRpbWVNaWxsaXMoKVxuICAvLyDku6XkuIvjga7mk43kvZzjgpIgTSDlm57ooYzjgYTjgZ/jgYTvvIFcbiAgLy8gLSDopoHntKDjga7kuK3jgYvjgonmnIDlsI/lgKTjgpLopovjgaTjgZHjgIEy5YCN44GX44Gf44GEXG5cbiAgdmFsIG1hcCA9IGxpc3QuZ3JvdXBpbmdCeXtpdH0uZWFjaENvdW50KCkudG9Tb3J0ZWRNYXAoKSAvLyBrZXk6IOimgee0oOOBruWApCwgdmFsdWU6IOWAi+aVsFxuICByZXBlYXQoTSl7XG4gICAgdmFsIG1pbkVsZW1lbnQgPSBtYXAuYXNTZXF1ZW5jZSgpLmZpcnN0KClcbiAgICB2YWwgbWluID0gbWluRWxlbWVudC5rZXlcbiAgICBtYXBbbWluXSA9IG1pbkVsZW1lbnQudmFsdWUgLSAxXG4gICAgaWYgKG1hcFttaW5dID09IDApIHtcbiAgICAgICAgbWFwLnJlbW92ZShtaW4pXG4gICAgfVxuICAgIG1hcFttaW4qMl0gPSBtYXAuZ2V0T3JEZWZhdWx0KG1pbioyLCAwKSArIDFcbiAgfVxuICB2YWwgcmVzdWx0ID0gbWFwLm1hcHsgKGtleSwgdmFsdWUpIC0+IExpc3Q8SW50Pih2YWx1ZSwge2tleX0pfS5mbGF0dGVuKCkudG9MaXN0KClcbiAgdmFsIGVuZFRpbWUgPSBTeXN0ZW0uY3VycmVudFRpbWVNaWxsaXMoKVxuICBwcmludGxuKFwiW+Wun+ihjOaZgumWk10gJHtlbmRUaW1lIC0gc3RhcnRUaW1lfSBtc1wiKVxufSIsInBsYXRmb3JtIjoiamF2YSIsImFyZ3MiOiIifQ==)
