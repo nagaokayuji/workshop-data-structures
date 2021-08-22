@@ -5,6 +5,7 @@
   - [List](./list.md)
     - [ArrayList](./list_arraylist.md)
     - [LinkedList](./list_linkedlist.md)
+    - [ArrayList v.s. LinkedList](./list_arraylist_vs_linkedlist.md)
   - [Map](./map.md)
     - [HashMap](./map_hashmap.md)
     - [TreeMap](./map_treemap.md)
