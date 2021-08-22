@@ -12,10 +12,20 @@
 
 Stack は LIFO(Last In First Out) のデータ構造です。
 
+以下のメソッドが用意されており、いずれも$O(1)$ です。
+
+- 要素数を取得
+- 先頭に追加(push)
+- 先頭の値を取得(peek)
+- 先頭の値を削除(pop)
+
 
 用途としてはundo処理などの戻る処理や幅優先探索などがあります。
 
-`java.util.Stack` 、 `ArrayDeque` などで利用できます。
+`java.util.Stack` などで利用できます。
+
+
+
 
 ## Queue
 
@@ -23,15 +33,23 @@ Stack は LIFO(Last In First Out) のデータ構造です。
 <img src="https://res.cloudinary.com/ddaz9etkx/image/upload/v1628516592/ot/toilet_gyouretsu_qigx4p.png" width="50%">
 </div>
 
+Queue は FIFO(First In First Out) のデータ構造です。
+
+以下のようなメソッドが用意されており、いずれも$O(1)$ です。
+
+- 要素数を取得
+- 末尾に追加(add)
+- 先頭の値を取得(peek)
+- 先頭の値を削除(remove)
 
 用途としてはジョブスケジューリング、トポロジカルソート[^1]、深さ優先探索などがあります。
 
-`java.util.Queue` を継承した `java.util.LinkedList` 、`ArrayDeque` などで利用できます。
+`java.util.Queue` などで利用できます。
 
 
 ## Deque
 
-Stack と Queue 両方の機能を持ったデータ構造です(!)
+Stack と Queue 両方の機能を持ったデータ構造です！
 
 先頭または末尾へのデータ追加・参照・削除がすべて$O(1)$ で行えます。
 
