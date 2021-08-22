@@ -82,7 +82,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">Kotlinデータ構造</a></li><li class="chapter-item expanded "><a href="collection.html"><strong aria-hidden="true">1.</strong> Collection</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="collection_basic.html"><strong aria-hidden="true">1.1.</strong> 基本的な機能</a></li><li class="chapter-item expanded "><a href="collection_methods.html"><strong aria-hidden="true">1.2.</strong> 便利な関数</a></li></ol></li><li class="chapter-item expanded "><a href="list.html"><strong aria-hidden="true">2.</strong> List</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="list_arraylist.html"><strong aria-hidden="true">2.1.</strong> ArrayList</a></li><li class="chapter-item expanded "><a href="list_linkedlist.html"><strong aria-hidden="true">2.2.</strong> LinkedList</a></li></ol></li><li class="chapter-item expanded "><a href="map.html"><strong aria-hidden="true">3.</strong> Map</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="map_hashmap.html"><strong aria-hidden="true">3.1.</strong> HashMap</a></li><li class="chapter-item expanded "><a href="map_treemap.html" class="active"><strong aria-hidden="true">3.2.</strong> TreeMap</a></li></ol></li><li class="chapter-item expanded "><a href="set.html"><strong aria-hidden="true">4.</strong> Set</a></li><li class="chapter-item expanded "><a href="compare_speed.html"><strong aria-hidden="true">5.</strong> 遅い例と速い例</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="environment.html"><strong aria-hidden="true">5.1.</strong> 実行環境</a></li><li class="chapter-item expanded "><a href="compare_speed_question.html"><strong aria-hidden="true">5.2.</strong> 問題</a></li></ol></li><li class="chapter-item expanded "><a href="others.html"><strong aria-hidden="true">6.</strong> その他のデータ構造</a></li><li class="chapter-item expanded "><a href="conclusion.html"><strong aria-hidden="true">7.</strong> まとめ</a></li><li class="chapter-item expanded "><a href="references.html"><strong aria-hidden="true">8.</strong> 参考</a></li></ol>            </div>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">Kotlinデータ構造</a></li><li class="chapter-item expanded "><a href="collection.html"><strong aria-hidden="true">1.</strong> Collection</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="collection_basic.html"><strong aria-hidden="true">1.1.</strong> 基本的な機能</a></li><li class="chapter-item expanded "><a href="collection_methods.html"><strong aria-hidden="true">1.2.</strong> 便利な関数</a></li></ol></li><li class="chapter-item expanded "><a href="list.html"><strong aria-hidden="true">2.</strong> List</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="list_arraylist.html"><strong aria-hidden="true">2.1.</strong> ArrayList</a></li><li class="chapter-item expanded "><a href="list_linkedlist.html"><strong aria-hidden="true">2.2.</strong> LinkedList</a></li><li class="chapter-item expanded "><a href="list_arraylist_vs_linkedlist.html"><strong aria-hidden="true">2.3.</strong> ArrayList v.s. LinkedList</a></li></ol></li><li class="chapter-item expanded "><a href="map.html"><strong aria-hidden="true">3.</strong> Map</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="map_hashmap.html"><strong aria-hidden="true">3.1.</strong> HashMap</a></li><li class="chapter-item expanded "><a href="map_treemap.html" class="active"><strong aria-hidden="true">3.2.</strong> TreeMap</a></li></ol></li><li class="chapter-item expanded "><a href="set.html"><strong aria-hidden="true">4.</strong> Set</a></li><li class="chapter-item expanded "><a href="compare_speed.html"><strong aria-hidden="true">5.</strong> 遅い例と速い例</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="compare_speed_question.html"><strong aria-hidden="true">5.1.</strong> 問題</a></li></ol></li><li class="chapter-item expanded "><a href="others.html"><strong aria-hidden="true">6.</strong> その他のデータ構造</a></li><li class="chapter-item expanded "><a href="conclusion.html"><strong aria-hidden="true">7.</strong> まとめ</a></li><li class="chapter-item expanded "><a href="references.html"><strong aria-hidden="true">8.</strong> 参考</a></li></ol>            </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
 
@@ -145,7 +145,8 @@
                     <main>
                         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
 <h1 id="treemap"><a class="header" href="#treemap">TreeMap</a></h1>
-<p>平衡二分探索木 の一種である <strong>赤黒木</strong> による実装です（難しいです）。HashMap と比べてメモリ使用量が少なく、最悪計算量の面では優れています。</p>
+<p>平衡二分探索木 による実装<sup class="footnote-reference"><a href="#1">1</a></sup>です。</p>
+<p>HashMap と比べてメモリ使用量が少なく、最悪計算量の面で優れています。</p>
 <p>また、<strong>要素はソートされた状態を維持</strong>されます。</p>
 <ul>
 <li>値の取得
@@ -165,8 +166,39 @@
 </li>
 <li>null 不可</li>
 </ul>
-<p>順序を維持したい場合やメモリ使用量を節約したい場合には TreeMap を使用し、</p>
-<p>それ以外の場合は HashMap で良いと思います。</p>
+<h2 id="kotlin-で使用する場合"><a class="header" href="#kotlin-で使用する場合">Kotlin で使用する場合</a></h2>
+<p><code>java.util.TreeMap</code> が使用できます。</p>
+<pre><code class="language-kotlin">import java.util.TreeMap
+</code></pre>
+<p>もしくは <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/sorted-map-of.html"><code>sortedMapOf()</code></a>
+や<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/to-sorted-map.html"><code>toSortedMap()</code></a> などで<code>java.util.TreeMap</code>が使用されます。</p>
+<h2 id="特徴"><a class="header" href="#特徴">特徴</a></h2>
+<ul>
+<li>キーがソートされる</li>
+</ul>
+<pre><code class="language-kotlin">fun main() {
+    val items = sortedMapOf&lt;String, String&gt;()
+    items[&quot;A&quot;] = &quot;VALUE_A&quot;
+    items[&quot;1&quot;] = &quot;VALUE_1&quot;
+    items[&quot;X&quot;] = &quot;VALUE_X&quot;
+    println(items.keys) // [1, A, X]
+}
+</code></pre>
+<p><a href="https://play.kotlinlang.org/#eyJ2ZXJzaW9uIjoiMS4zLjcwIiwiY29kZSI6ImZ1biBtYWluKCkge1xuICAgIHZhbCBpdGVtcyA9IHNvcnRlZE1hcE9mPFN0cmluZywgU3RyaW5nPigpXG4gICAgaXRlbXNbXCJBXCJdID0gXCJWQUxVRV9BXCJcbiAgICBpdGVtc1tcIjFcIl0gPSBcIlZBTFVFXzFcIlxuICAgIGl0ZW1zW1wiWFwiXSA9IFwiVkFMVUVfWFwiXG4gICAgcHJpbnRsbihpdGVtcy5rZXlzKSAvLyBbMSwgQSwgWF1cbn0iLCJwbGF0Zm9ybSI6ImphdmEiLCJhcmdzIjoiIn0=">playground</a></p>
+<ul>
+<li>key は null 不可</li>
+</ul>
+<pre><code class="language-kotlin">sortedMapOf&lt;String?, String&gt;() // error
+</code></pre>
+<h2 id="ユースケース"><a class="header" href="#ユースケース">ユースケース　</a></h2>
+<ul>
+<li>順序を維持したい場合</li>
+<li>メモリ使用量を節約したい場合</li>
+</ul>
+<hr />
+<div class="footnote-definition" id="1"><sup class="footnote-definition-label">1</sup>
+<p><a href="https://docs.oracle.com/javase/jp/8/docs/api/java/util/TreeMap.html">TreeMap (Java Platform SE 8 )</a></p>
+</div>
 
                     </main>
 

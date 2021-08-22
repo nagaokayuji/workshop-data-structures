@@ -82,7 +82,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">Kotlinデータ構造</a></li><li class="chapter-item expanded "><a href="collection.html"><strong aria-hidden="true">1.</strong> Collection</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="collection_basic.html"><strong aria-hidden="true">1.1.</strong> 基本的な機能</a></li><li class="chapter-item expanded "><a href="collection_methods.html"><strong aria-hidden="true">1.2.</strong> 便利な関数</a></li></ol></li><li class="chapter-item expanded "><a href="list.html"><strong aria-hidden="true">2.</strong> List</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="list_arraylist.html"><strong aria-hidden="true">2.1.</strong> ArrayList</a></li><li class="chapter-item expanded "><a href="list_linkedlist.html"><strong aria-hidden="true">2.2.</strong> LinkedList</a></li></ol></li><li class="chapter-item expanded "><a href="map.html"><strong aria-hidden="true">3.</strong> Map</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="map_hashmap.html" class="active"><strong aria-hidden="true">3.1.</strong> HashMap</a></li><li class="chapter-item expanded "><a href="map_treemap.html"><strong aria-hidden="true">3.2.</strong> TreeMap</a></li></ol></li><li class="chapter-item expanded "><a href="set.html"><strong aria-hidden="true">4.</strong> Set</a></li><li class="chapter-item expanded "><a href="compare_speed.html"><strong aria-hidden="true">5.</strong> 遅い例と速い例</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="environment.html"><strong aria-hidden="true">5.1.</strong> 実行環境</a></li><li class="chapter-item expanded "><a href="compare_speed_question.html"><strong aria-hidden="true">5.2.</strong> 問題</a></li></ol></li><li class="chapter-item expanded "><a href="others.html"><strong aria-hidden="true">6.</strong> その他のデータ構造</a></li><li class="chapter-item expanded "><a href="conclusion.html"><strong aria-hidden="true">7.</strong> まとめ</a></li><li class="chapter-item expanded "><a href="references.html"><strong aria-hidden="true">8.</strong> 参考</a></li></ol>            </div>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">Kotlinデータ構造</a></li><li class="chapter-item expanded "><a href="collection.html"><strong aria-hidden="true">1.</strong> Collection</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="collection_basic.html"><strong aria-hidden="true">1.1.</strong> 基本的な機能</a></li><li class="chapter-item expanded "><a href="collection_methods.html"><strong aria-hidden="true">1.2.</strong> 便利な関数</a></li></ol></li><li class="chapter-item expanded "><a href="list.html"><strong aria-hidden="true">2.</strong> List</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="list_arraylist.html"><strong aria-hidden="true">2.1.</strong> ArrayList</a></li><li class="chapter-item expanded "><a href="list_linkedlist.html"><strong aria-hidden="true">2.2.</strong> LinkedList</a></li><li class="chapter-item expanded "><a href="list_arraylist_vs_linkedlist.html"><strong aria-hidden="true">2.3.</strong> ArrayList v.s. LinkedList</a></li></ol></li><li class="chapter-item expanded "><a href="map.html"><strong aria-hidden="true">3.</strong> Map</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="map_hashmap.html" class="active"><strong aria-hidden="true">3.1.</strong> HashMap</a></li><li class="chapter-item expanded "><a href="map_treemap.html"><strong aria-hidden="true">3.2.</strong> TreeMap</a></li></ol></li><li class="chapter-item expanded "><a href="set.html"><strong aria-hidden="true">4.</strong> Set</a></li><li class="chapter-item expanded "><a href="compare_speed.html"><strong aria-hidden="true">5.</strong> 遅い例と速い例</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="compare_speed_question.html"><strong aria-hidden="true">5.1.</strong> 問題</a></li></ol></li><li class="chapter-item expanded "><a href="others.html"><strong aria-hidden="true">6.</strong> その他のデータ構造</a></li><li class="chapter-item expanded "><a href="conclusion.html"><strong aria-hidden="true">7.</strong> まとめ</a></li><li class="chapter-item expanded "><a href="references.html"><strong aria-hidden="true">8.</strong> 参考</a></li></ol>            </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
 
@@ -146,7 +146,7 @@
                         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
 <h1 id="hashmap"><a class="header" href="#hashmap">HashMap</a></h1>
 <p>ハッシュテーブルを用いた実装です。</p>
-<p>Kotlin で <code>mapOf()</code> 等で宣言するHashMapになるようです。</p>
+<p>Kotlin で <code>mapOf()</code> 等で宣言すると <code>HashMap</code> になるようです。</p>
 <p>後述する TreeMap と比べて(平均)計算量に優れています。</p>
 <ul>
 <li>値の取得
@@ -164,7 +164,21 @@
 <li>平均 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span>, 最悪 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span></li>
 </ul>
 </li>
+<li>値の検索
+<ul>
+<li><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span></li>
 </ul>
+</li>
+</ul>
+<pre><code class="language-kotlin">fun main() {
+    val items = HashMap&lt;String, String&gt;()
+    items[&quot;A&quot;] = &quot;VALUE_A&quot;
+    items[&quot;1&quot;] = &quot;VALUE_1&quot;
+    items[&quot;X&quot;] = &quot;VALUE_X&quot;
+    println(items.keys) // [A, 1, X]
+}
+</code></pre>
+<p><a href="https://play.kotlinlang.org/#eyJ2ZXJzaW9uIjoiMS4zLjcwIiwiY29kZSI6ImZ1biBtYWluKCkge1xuICAgIHZhbCBpdGVtcyA9IEhhc2hNYXA8U3RyaW5nLCBTdHJpbmc+KClcbiAgICBpdGVtc1tcIkFcIl0gPSBcIlZBTFVFX0FcIlxuICAgIGl0ZW1zW1wiMVwiXSA9IFwiVkFMVUVfMVwiXG4gICAgaXRlbXNbXCJYXCJdID0gXCJWQUxVRV9YXCJcbiAgICBwcmludGxuKGl0ZW1zLmtleXMpIC8vIFtBLCAxLCBYXVxufSIsInBsYXRmb3JtIjoiamF2YSIsImFyZ3MiOiIifQ==">playground</a></p>
 
                     </main>
 

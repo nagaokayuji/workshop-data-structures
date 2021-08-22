@@ -83,7 +83,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">Kotlinデータ構造</a></li><li class="chapter-item expanded "><a href="collection.html"><strong aria-hidden="true">1.</strong> Collection</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="collection_basic.html"><strong aria-hidden="true">1.1.</strong> 基本的な機能</a></li><li class="chapter-item expanded "><a href="collection_methods.html"><strong aria-hidden="true">1.2.</strong> 便利な関数</a></li></ol></li><li class="chapter-item expanded "><a href="list.html"><strong aria-hidden="true">2.</strong> List</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="list_arraylist.html"><strong aria-hidden="true">2.1.</strong> ArrayList</a></li><li class="chapter-item expanded "><a href="list_linkedlist.html"><strong aria-hidden="true">2.2.</strong> LinkedList</a></li></ol></li><li class="chapter-item expanded "><a href="map.html"><strong aria-hidden="true">3.</strong> Map</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="map_hashmap.html"><strong aria-hidden="true">3.1.</strong> HashMap</a></li><li class="chapter-item expanded "><a href="map_treemap.html"><strong aria-hidden="true">3.2.</strong> TreeMap</a></li></ol></li><li class="chapter-item expanded "><a href="set.html"><strong aria-hidden="true">4.</strong> Set</a></li><li class="chapter-item expanded "><a href="compare_speed.html"><strong aria-hidden="true">5.</strong> 遅い例と速い例</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="environment.html"><strong aria-hidden="true">5.1.</strong> 実行環境</a></li><li class="chapter-item expanded "><a href="compare_speed_question.html"><strong aria-hidden="true">5.2.</strong> 問題</a></li></ol></li><li class="chapter-item expanded "><a href="others.html"><strong aria-hidden="true">6.</strong> その他のデータ構造</a></li><li class="chapter-item expanded "><a href="conclusion.html"><strong aria-hidden="true">7.</strong> まとめ</a></li><li class="chapter-item expanded "><a href="references.html"><strong aria-hidden="true">8.</strong> 参考</a></li></ol>            </div>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">Kotlinデータ構造</a></li><li class="chapter-item expanded "><a href="collection.html"><strong aria-hidden="true">1.</strong> Collection</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="collection_basic.html"><strong aria-hidden="true">1.1.</strong> 基本的な機能</a></li><li class="chapter-item expanded "><a href="collection_methods.html"><strong aria-hidden="true">1.2.</strong> 便利な関数</a></li></ol></li><li class="chapter-item expanded "><a href="list.html"><strong aria-hidden="true">2.</strong> List</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="list_arraylist.html"><strong aria-hidden="true">2.1.</strong> ArrayList</a></li><li class="chapter-item expanded "><a href="list_linkedlist.html"><strong aria-hidden="true">2.2.</strong> LinkedList</a></li><li class="chapter-item expanded "><a href="list_arraylist_vs_linkedlist.html"><strong aria-hidden="true">2.3.</strong> ArrayList v.s. LinkedList</a></li></ol></li><li class="chapter-item expanded "><a href="map.html"><strong aria-hidden="true">3.</strong> Map</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="map_hashmap.html"><strong aria-hidden="true">3.1.</strong> HashMap</a></li><li class="chapter-item expanded "><a href="map_treemap.html"><strong aria-hidden="true">3.2.</strong> TreeMap</a></li></ol></li><li class="chapter-item expanded "><a href="set.html"><strong aria-hidden="true">4.</strong> Set</a></li><li class="chapter-item expanded "><a href="compare_speed.html"><strong aria-hidden="true">5.</strong> 遅い例と速い例</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="compare_speed_question.html"><strong aria-hidden="true">5.1.</strong> 問題</a></li></ol></li><li class="chapter-item expanded "><a href="others.html"><strong aria-hidden="true">6.</strong> その他のデータ構造</a></li><li class="chapter-item expanded "><a href="conclusion.html"><strong aria-hidden="true">7.</strong> まとめ</a></li><li class="chapter-item expanded "><a href="references.html"><strong aria-hidden="true">8.</strong> 参考</a></li></ol>            </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
 
@@ -228,10 +228,11 @@
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
 <h1 id="list"><a class="header" href="#list">List</a></h1>
+<div align="center">
+<img src="https://res.cloudinary.com/ddaz9etkx/image/upload/v1628649602/ot/taiiku_maehe_narae_chiisaku_z6zval.png" width="50%">
+</div>
 <p>順序付きのリスト構造です。
 添字を使用して<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathnormal">i</span></span></span></span>番目の要素にアクセスすることができます。</p>
-<pre><code class="language-kotlin">interface List&lt;out E&gt; : Collection&lt;E&gt;
-</code></pre>
 <p>次項からは一般的な実装である ArrayList, LinkedList を取り上げます。</p>
 <div style="break-before: page; page-break-before: always;"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
 <h1 id="arraylist"><a class="header" href="#arraylist">ArrayList</a></h1>
@@ -242,7 +243,11 @@
 <ul>
 <li><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathnormal">i</span></span></span></span>番目へのアクセス
 <ul>
-<li><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span></li>
+<li>平均<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span>
+<ul>
+<li>最悪<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span></li>
+</ul>
+</li>
 <li>速い</li>
 </ul>
 </li>
@@ -291,30 +296,46 @@
 <h1 id="linkedlist"><a class="header" href="#linkedlist">LinkedList</a></h1>
 <p>ArrayList の弱点である挿入や削除に強いデータ構造です。</p>
 <p>各要素には「前の要素や後ろの要素が何か」の情報だけを持たせることにより、挿入や削除の処理を簡潔に実現しています。</p>
-<div align="center">
-<img src="https://res.cloudinary.com/ddaz9etkx/image/upload/v1628649602/ot/taiiku_maehe_narae_chiisaku_z6zval.png" width="50%">
-</div>
 <p>このとき、「自分が全体の何番目の要素か」という情報は管理されないことに注意してください。i 番目の要素にアクセスするためには、先頭（または末尾）から順にたどっていく必要があります。</p>
 <ul>
 <li>
 <p>i番目へのアクセス</p>
 <ul>
 <li><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span></li>
-<li>順にたどっていく必要があるため、遅い</li>
-<li>軽い気持ちで使ってはいけない</li>
+<li>順にたどっていく必要があるため遅い</li>
+<li>軽い気持ちで使ってはいけない
+<ul>
+<li><a href="https://qiita.com/neko_machi/items/d620c4a8958e74df3550">軽い気持ちでLinkedListを使ったら休出する羽目になった話 - Qiita</a></li>
 </ul>
-<p><a href="https://qiita.com/neko_machi/items/d620c4a8958e74df3550">軽い気持ちでLinkedListを使ったら休出する羽目になった話 - Qiita</a></p>
+</li>
+</ul>
 </li>
 <li>
 <p>特定の位置に挿入</p>
 <ul>
-<li><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span></li>
+<li><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span></li>
+<li>ArrayList よりは軽い</li>
 </ul>
 </li>
 <li>
 <p>i 番目の要素を削除</p>
 <ul>
-<li><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span></li>
+<li><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span>
+<ul>
+<li><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathnormal">i</span></span></span></span>番目の要素にアクセスするために<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span>かかる</li>
+</ul>
+</li>
+<li>ArrayList よりは軽い</li>
+</ul>
+</li>
+<li>
+<p>特定要素を削除</p>
+<ul>
+<li><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span>
+<ul>
+<li>リンクをつなぎ替えるだけでよい</li>
+</ul>
+</li>
 </ul>
 </li>
 <li>
@@ -325,16 +346,139 @@
 </ul>
 </li>
 </ul>
+<h2 id="kotlin-から使用する場合"><a class="header" href="#kotlin-から使用する場合">Kotlin から使用する場合</a></h2>
+<p><code>java.util.LinkedList</code> を import して双方向リンクリストを使用できます。</p>
+<pre><code class="language-kotlin">import java.util.LinkedList
+fun main() {
+    val linkedList: LinkedList&lt;Int&gt; =  LinkedList&lt;Int&gt;()
+    linkedList.addAll(listOf(123,777,2,0,-999,50)) // この順番で挿入
+    println(linkedList[2]) // 2
+    println(linkedList.contains(777)) // true
+    println(linkedList.filter{it==777}) // [777]
+    println(linkedList.size) // 6
+}
+</code></pre>
+<p><a href="https://play.kotlinlang.org/#eyJ2ZXJzaW9uIjoiMS4zLjcwIiwiY29kZSI6ImltcG9ydCBqYXZhLnV0aWwuTGlua2VkTGlzdFxuZnVuIG1haW4oKSB7XG4gICAgdmFsIGxpbmtlZExpc3Q6IExpbmtlZExpc3Q8SW50PiA9ICBMaW5rZWRMaXN0PEludD4oKVxuICAgIGxpbmtlZExpc3QuYWRkQWxsKGxpc3RPZigxMjMsNzc3LDIsMCwtOTk5LDUwKSkgLy8g44GT44Gu6aCG55Wq44Gn5oy/5YWlXG4gICAgcHJpbnRsbihsaW5rZWRMaXN0WzJdKSAvLyAyXG4gICAgcHJpbnRsbihsaW5rZWRMaXN0LmNvbnRhaW5zKDc3NykpIC8vIHRydWVcbiAgICBwcmludGxuKGxpbmtlZExpc3QuZmlsdGVye2l0PT03Nzd9KSAvLyBbNzc3XVxuICAgIHByaW50bG4obGlua2VkTGlzdC5zaXplKSAvLyA2XG59IiwicGxhdGZvcm0iOiJqYXZhIiwiYXJncyI6IiJ9">playground</a></p>
+<h2 id="ユースケース-1"><a class="header" href="#ユースケース-1">ユースケース</a></h2>
+<ul>
+<li>ランダムなアクセスが不要の場合
+<ul>
+<li>前から順番に処理をしていく場合などは使いやすい</li>
+</ul>
+</li>
+<li>要素の追加・削除が必要な場合
+<ul>
+<li>ArrayList より速い</li>
+</ul>
+</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+<h1 id="arraylist-vs-linkedlist"><a class="header" href="#arraylist-vs-linkedlist">ArrayList v.s. LinkedList</a></h1>
+<p>比較すると以下のようになります。</p>
+<p><strong>比較結果</strong> にはより効率の良い方を載せています。</p>
+<table><thead><tr><th>操作</th><th>ArrayList</th><th>LinkedList</th><th>比較結果</th></tr></thead><tbody>
+<tr><td>末尾に挿入</td><td><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span>(平均), <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span>(最悪)</td><td><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span></td><td>LinkedList</td></tr>
+<tr><td><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathnormal">i</span></span></span></span>番目に挿入</td><td><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span></td><td><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span></td><td>LinkedList<sup class="footnote-reference"><a href="#1">1</a></sup></td></tr>
+<tr><td>値で検索</td><td><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span></td><td><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span></td><td>ArrayList<sup class="footnote-reference"><a href="#2">2</a></sup></td></tr>
+<tr><td><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathnormal">i</span></span></span></span>番目を取得</td><td><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span></td><td><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span></td><td>ArrayList</td></tr>
+<tr><td>値を削除</td><td><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span></td><td><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span></td><td>LinkedList<sup class="footnote-reference"><a href="#3">3</a></sup></td></tr>
+<tr><td><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathnormal">i</span></span></span></span>番目を削除</td><td><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span></td><td><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span></td><td>LinkedList<sup class="footnote-reference"><a href="#4">4</a></sup></td></tr>
+</tbody></table>
+<hr />
+<div class="footnote-definition" id="1"><sup class="footnote-definition-label">1</sup>
+<p>LinkedList では配列のコピーが不要であり、イテレーションのほうが低コストであるため。</p>
+</div>
+<div class="footnote-definition" id="2"><sup class="footnote-definition-label">2</sup>
+<p>ArrayList では連続したメモリ領域に格納されるため、読み込み効率が高いため。</p>
+</div>
+<div class="footnote-definition" id="3"><sup class="footnote-definition-label">3</sup>
+<p>ArrayList は配列のシフト操作が必要となるため。</p>
+</div>
+<div class="footnote-definition" id="4"><sup class="footnote-definition-label">4</sup>
+<p>同上。配列シフトは LinkedList でのイテレーションよりもコストが高いため。</p>
+</div>
 <div style="break-before: page; page-break-before: always;"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
 <h1 id="map-1"><a class="header" href="#map-1">Map</a></h1>
-<p>整数以外でも添字に取れる配列のように扱えることから、連想配列とも呼ばれます。Key-Value 型のデータ構造です。</p>
+<p>整数以外でも添字に取れる配列のように扱えることから <strong>連想配列</strong> とも呼ばれます。Key-Value 型のデータ構造です。</p>
+<p><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-map/">Map - Kotlin Programming Language</a></p>
 <pre><code class="language-kotlin">interface Map&lt;K, out V&gt;
 </code></pre>
 <p>Key に該当するものが分かっている場合は高速にデータを取得することができます。</p>
+<h2 id="例"><a class="header" href="#例">例</a></h2>
+<p>適当な Map を作成し、キーに対応する値を取得するには以下のようにします。</p>
+<pre><code class="language-kotlin">fun main() {
+    val items = mapOf&lt;String, String&gt;(&quot;A&quot; to &quot;VALUE_A&quot;, &quot;B&quot; to &quot;VALUE_B&quot;)
+    println(items.get(&quot;A&quot;)) // VALUE_A
+}
+</code></pre>
+<h2 id="特徴"><a class="header" href="#特徴">特徴</a></h2>
+<ul>
+<li>一意なキーが必要</li>
+<li>キーの存在判定が速い</li>
+<li>キーを指定した場合の値へのアクセスが速い</li>
+<li>値の検索は速くない
+<ul>
+<li>順番に見ていく必要がある</li>
+</ul>
+</li>
+</ul>
+<p>したがって、うまくキーが選べれば非常に便利な使い方ができます。</p>
+<h2 id="list-から-map-に変換する"><a class="header" href="#list-から-map-に変換する">List から Map に変換する</a></h2>
+<p>いくつか方法があるので紹介します。</p>
+<h3 id="a-hrefhttpskotlinlangorgapilatestjvmstdlibkotlincollectionsto-maphtmltomapa"><a class="header" href="#a-hrefhttpskotlinlangorgapilatestjvmstdlibkotlincollectionsto-maphtmltomapa"><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/to-map.html"><code>toMap</code></a></a></h3>
+<pre><code class="language-kotlin">fun &lt;K, V&gt; Iterable&lt;Pair&lt;K, V&gt;&gt;.toMap(): Map&lt;K, V&gt;
+</code></pre>
+<p>Key-Value の Pair から Map に変換できます。</p>
+<h3 id="a-hrefhttpskotlinlangorgapilatestjvmstdlibkotlincollectionsassociatehtmlassociatea"><a class="header" href="#a-hrefhttpskotlinlangorgapilatestjvmstdlibkotlincollectionsassociatehtmlassociatea"><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/associate.html"><code>associate</code></a></a></h3>
+<pre><code class="language-kotlin">inline fun &lt;T, K, V&gt; Iterable&lt;T&gt;.associate(
+    transform: (T) -&gt; Pair&lt;K, V&gt;
+): Map&lt;K, V&gt;
+</code></pre>
+<p>次のような使い方ができます。</p>
+<pre><code class="language-kotlin">data class User(val name: String, val score: Int)
+fun main() {
+  val list = listOf(User(&quot;Tom&quot;, 30), User(&quot;John&quot;, 99), User(&quot;James&quot;, 77))
+  val map = list.associate{it.name to it}
+  println(map) //{Tom=User(name=Tom, score=30), John=User(name=John, score=99), James=User(name=James, score=77)}
+}
+</code></pre>
+<p><a href="https://play.kotlinlang.org/#eyJ2ZXJzaW9uIjoiMS4zLjcwIiwiY29kZSI6ImRhdGEgY2xhc3MgVXNlcih2YWwgbmFtZTogU3RyaW5nLCB2YWwgc2NvcmU6IEludClcbmZ1biBtYWluKCkge1xuICB2YWwgbGlzdCA9IGxpc3RPZihVc2VyKFwiVG9tXCIsIDMwKSwgVXNlcihcIkpvaG5cIiwgOTkpLCBVc2VyKFwiSmFtZXNcIiwgNzcpKVxuICB2YWwgbWFwID0gbGlzdC5hc3NvY2lhdGV7aXQubmFtZSB0byBpdH1cbiAgcHJpbnRsbihtYXApIC8ve1RvbT1Vc2VyKG5hbWU9VG9tLCBzY29yZT0zMCksIEpvaG49VXNlcihuYW1lPUpvaG4sIHNjb3JlPTk5KSwgSmFtZXM9VXNlcihuYW1lPUphbWVzLCBzY29yZT03Nyl9XG59IiwicGxhdGZvcm0iOiJqYXZhIiwiYXJncyI6IiJ9">playground</a></p>
+<p>上述の <code>toMap</code> を使用して以下のように書くこともできます。</p>
+<pre><code class="language-kotlin">data class User(val name: String, val score: Int)
+fun main() {
+  val list = listOf(User(&quot;Tom&quot;, 30), User(&quot;John&quot;, 99), User(&quot;James&quot;, 77))
+  val map = list.map{it.name to it}.toMap()
+  println(map) //{Tom=User(name=Tom, score=30), John=User(name=John, score=99), James=User(name=James, score=77)}
+}
+</code></pre>
+<p><a href="https://play.kotlinlang.org/#eyJ2ZXJzaW9uIjoiMS4zLjcwIiwiY29kZSI6ImRhdGEgY2xhc3MgVXNlcih2YWwgbmFtZTogU3RyaW5nLCB2YWwgc2NvcmU6IEludClcbmZ1biBtYWluKCkge1xuICB2YWwgbGlzdCA9IGxpc3RPZihVc2VyKFwiVG9tXCIsIDMwKSwgVXNlcihcIkpvaG5cIiwgOTkpLCBVc2VyKFwiSmFtZXNcIiwgNzcpKVxuICB2YWwgbWFwID0gbGlzdC5tYXB7aXQubmFtZSB0byBpdH0udG9NYXAoKVxuICBwcmludGxuKG1hcCkgLy97VG9tPVVzZXIobmFtZT1Ub20sIHNjb3JlPTMwKSwgSm9obj1Vc2VyKG5hbWU9Sm9obiwgc2NvcmU9OTkpLCBKYW1lcz1Vc2VyKG5hbWU9SmFtZXMsIHNjb3JlPTc3KX1cbn0iLCJwbGF0Zm9ybSI6ImphdmEiLCJhcmdzIjoiIn0=">playground</a></p>
+<h3 id="a-hrefhttpskotlinlangorgapilatestjvmstdlibkotlincollectionsgroup-byhtmlgroupbya"><a class="header" href="#a-hrefhttpskotlinlangorgapilatestjvmstdlibkotlincollectionsgroup-byhtmlgroupbya"><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/group-by.html"><code>groupBy</code></a></a></h3>
+<p>value に List を使用したい場合に便利です。</p>
+<pre><code class="language-kotlin">inline fun &lt;T, K&gt; Iterable&lt;T&gt;.groupBy(
+    keySelector: (T) -&gt; K
+): Map&lt;K, List&lt;T&gt;&gt;
+</code></pre>
+<p>次のように使用することができます。</p>
+<p>桁数ごとにグルーピング</p>
+<pre><code class="language-kotlin">fun main() {
+  val list = listOf(1234,12,2,34,1234,6,1,0,-9587,-95,-921)
+  val map = list.groupBy{ 
+      var ret = 0
+      var value = if (it &gt; 0) {it} else {-it}
+      while (value &gt; 0) {
+          ret = ret + 1
+          value = value / 10
+      }
+      ret
+  }
+  println(map) // {4=[1234, 1234, -9587], 2=[12, 34, -95], 1=[2, 6, 1], 0=[0], 3=[-921]}
+}
+</code></pre>
+<p><a href="https://play.kotlinlang.org/#eyJ2ZXJzaW9uIjoiMS4zLjcwIiwiY29kZSI6ImZ1biBtYWluKCkge1xuICB2YWwgbGlzdCA9IGxpc3RPZigxMjM0LDEyLDIsMzQsMTIzNCw2LDEsMCwtOTU4NywtOTUsLTkyMSlcbiAgdmFsIG1hcCA9IGxpc3QuZ3JvdXBCeXsgXG4gICAgICB2YXIgcmV0ID0gMFxuICAgICAgdmFyIHZhbHVlID0gaWYgKGl0ID4gMCkge2l0fSBlbHNlIHstaXR9XG4gICAgICB3aGlsZSAodmFsdWUgPiAwKSB7XG4gICAgICAgICAgcmV0ID0gcmV0ICsgMVxuICAgICAgICAgIHZhbHVlID0gdmFsdWUgLyAxMFxuICAgICAgfVxuICAgICAgcmV0XG4gIH1cbiAgcHJpbnRsbihtYXApIC8vIHs0PVsxMjM0LCAxMjM0LCAtOTU4N10sIDI9WzEyLCAzNCwgLTk1XSwgMT1bMiwgNiwgMV0sIDA9WzBdLCAzPVstOTIxXX1cbn0iLCJwbGF0Zm9ybSI6ImphdmEiLCJhcmdzIjoiIn0=">playground</a></p>
 <div style="break-before: page; page-break-before: always;"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
 <h1 id="hashmap"><a class="header" href="#hashmap">HashMap</a></h1>
 <p>ハッシュテーブルを用いた実装です。</p>
-<p>Kotlin で <code>mapOf()</code> 等で宣言するHashMapになるようです。</p>
+<p>Kotlin で <code>mapOf()</code> 等で宣言すると <code>HashMap</code> になるようです。</p>
 <p>後述する TreeMap と比べて(平均)計算量に優れています。</p>
 <ul>
 <li>値の取得
@@ -352,10 +496,25 @@
 <li>平均 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span>, 最悪 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span></li>
 </ul>
 </li>
+<li>値の検索
+<ul>
+<li><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span></li>
 </ul>
+</li>
+</ul>
+<pre><code class="language-kotlin">fun main() {
+    val items = HashMap&lt;String, String&gt;()
+    items[&quot;A&quot;] = &quot;VALUE_A&quot;
+    items[&quot;1&quot;] = &quot;VALUE_1&quot;
+    items[&quot;X&quot;] = &quot;VALUE_X&quot;
+    println(items.keys) // [A, 1, X]
+}
+</code></pre>
+<p><a href="https://play.kotlinlang.org/#eyJ2ZXJzaW9uIjoiMS4zLjcwIiwiY29kZSI6ImZ1biBtYWluKCkge1xuICAgIHZhbCBpdGVtcyA9IEhhc2hNYXA8U3RyaW5nLCBTdHJpbmc+KClcbiAgICBpdGVtc1tcIkFcIl0gPSBcIlZBTFVFX0FcIlxuICAgIGl0ZW1zW1wiMVwiXSA9IFwiVkFMVUVfMVwiXG4gICAgaXRlbXNbXCJYXCJdID0gXCJWQUxVRV9YXCJcbiAgICBwcmludGxuKGl0ZW1zLmtleXMpIC8vIFtBLCAxLCBYXVxufSIsInBsYXRmb3JtIjoiamF2YSIsImFyZ3MiOiIifQ==">playground</a></p>
 <div style="break-before: page; page-break-before: always;"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
 <h1 id="treemap"><a class="header" href="#treemap">TreeMap</a></h1>
-<p>平衡二分探索木 の一種である <strong>赤黒木</strong> による実装です（難しいです）。HashMap と比べてメモリ使用量が少なく、最悪計算量の面では優れています。</p>
+<p>平衡二分探索木 による実装<sup class="footnote-reference"><a href="#1">1</a></sup>です。</p>
+<p>HashMap と比べてメモリ使用量が少なく、最悪計算量の面で優れています。</p>
 <p>また、<strong>要素はソートされた状態を維持</strong>されます。</p>
 <ul>
 <li>値の取得
@@ -375,15 +534,46 @@
 </li>
 <li>null 不可</li>
 </ul>
-<p>順序を維持したい場合やメモリ使用量を節約したい場合には TreeMap を使用し、</p>
-<p>それ以外の場合は HashMap で良いと思います。</p>
+<h2 id="kotlin-で使用する場合"><a class="header" href="#kotlin-で使用する場合">Kotlin で使用する場合</a></h2>
+<p><code>java.util.TreeMap</code> が使用できます。</p>
+<pre><code class="language-kotlin">import java.util.TreeMap
+</code></pre>
+<p>もしくは <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/sorted-map-of.html"><code>sortedMapOf()</code></a>
+や<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/to-sorted-map.html"><code>toSortedMap()</code></a> などで<code>java.util.TreeMap</code>が使用されます。</p>
+<h2 id="特徴-1"><a class="header" href="#特徴-1">特徴</a></h2>
+<ul>
+<li>キーがソートされる</li>
+</ul>
+<pre><code class="language-kotlin">fun main() {
+    val items = sortedMapOf&lt;String, String&gt;()
+    items[&quot;A&quot;] = &quot;VALUE_A&quot;
+    items[&quot;1&quot;] = &quot;VALUE_1&quot;
+    items[&quot;X&quot;] = &quot;VALUE_X&quot;
+    println(items.keys) // [1, A, X]
+}
+</code></pre>
+<p><a href="https://play.kotlinlang.org/#eyJ2ZXJzaW9uIjoiMS4zLjcwIiwiY29kZSI6ImZ1biBtYWluKCkge1xuICAgIHZhbCBpdGVtcyA9IHNvcnRlZE1hcE9mPFN0cmluZywgU3RyaW5nPigpXG4gICAgaXRlbXNbXCJBXCJdID0gXCJWQUxVRV9BXCJcbiAgICBpdGVtc1tcIjFcIl0gPSBcIlZBTFVFXzFcIlxuICAgIGl0ZW1zW1wiWFwiXSA9IFwiVkFMVUVfWFwiXG4gICAgcHJpbnRsbihpdGVtcy5rZXlzKSAvLyBbMSwgQSwgWF1cbn0iLCJwbGF0Zm9ybSI6ImphdmEiLCJhcmdzIjoiIn0=">playground</a></p>
+<ul>
+<li>key は null 不可</li>
+</ul>
+<pre><code class="language-kotlin">sortedMapOf&lt;String?, String&gt;() // error
+</code></pre>
+<h2 id="ユースケース-2"><a class="header" href="#ユースケース-2">ユースケース　</a></h2>
+<ul>
+<li>順序を維持したい場合</li>
+<li>メモリ使用量を節約したい場合</li>
+</ul>
+<hr />
+<div class="footnote-definition" id="1"><sup class="footnote-definition-label">1</sup>
+<p><a href="https://docs.oracle.com/javase/jp/8/docs/api/java/util/TreeMap.html">TreeMap (Java Platform SE 8 )</a></p>
+</div>
 <div style="break-before: page; page-break-before: always;"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
 <h1 id="set"><a class="header" href="#set">Set</a></h1>
 <p>集合を管理するデータ構造です。List と同じ <code>Collection</code> を継承しているため、<code>filter</code>, <code>forEach</code> などのメソッドが利用できます。</p>
 <pre><code class="language-kotlin">interface Set&lt;out E&gt; : Collection&lt;E&gt;
 </code></pre>
-<p>HashSet, TreeSet などがありますが、</p>
-<p>内部の実装では Map が使用されているため 計算量も Map の場合と同様になります。</p>
+<p>Map 同様に HashSet, TreeSet などの種類がありますが、
+内部の実装では Map が使用されているため 計算量も Map の場合と同様になります。</p>
 <h3 id="list-との違い"><a class="header" href="#list-との違い">List との違い</a></h3>
 <p>一般的なSetでは重複が許されません。</p>
 <p>また、順序を持たないため <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathnormal">i</span></span></span></span> 番目へのアクセス などの概念がありません。</p>
@@ -392,96 +582,160 @@
 // dedupList: [1, 2, 3, 5, 8, 13, 21] になる
 val dedupList: List&lt;Int&gt; = list.toSet().toList()
 </code></pre>
-<p>Kotlin では <code>distinct()</code> メソッドがあるため、重複を排除したい場合は distinct() を使用するほうが分かりやすいです。</p>
-<p>※ 内部の実装では同様の操作を行っています。</p>
-<p><a href="https://github.com/JetBrains/kotlin/blob/80cce1dc5280eb9135390270c8644a7b8d198071/libraries/stdlib/common/src/generated/_Arrays.kt#L11828">kotlin/_Arrays.kt at 80cce1dc5280eb9135390270c8644a7b8d198071 · JetBrains/kotlin</a></p>
-<p>また、ArrayList では平均計算量 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span> となる存在確認の処理 ( <code>contains()</code>など) が Set を使用することで <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span> や <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span> で行えるため、計算量の改善が期待できます。</p>
+<p>Kotlin では <code>distinct()</code> メソッドがあるため、重複を排除したい場合は distinct() メソッドを使用するほうが分かりやすいです。</p>
+<p>※ 
+<a href="https://github.com/JetBrains/kotlin/blob/80cce1dc5280eb9135390270c8644a7b8d198071/libraries/stdlib/common/src/generated/_Arrays.kt#L11828">内部の実装</a>
+では同様の操作を行っています。</p>
 <div style="break-before: page; page-break-before: always;"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
 <h1 id="遅い例と速い例"><a class="header" href="#遅い例と速い例">遅い例と速い例</a></h1>
-<h2 id="kotlin-のメソッドについて"><a class="header" href="#kotlin-のメソッドについて">Kotlin のメソッドについて</a></h2>
-<p>Kotlin の Collection インタフェースでは便利なメソッドがいくつか用意されています。</p>
-<p><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-collection/#kotlin.collections.Collection">Collection - Kotlin Programming Language</a></p>
-<p>これらのメソッドは気軽に使えますが、内部でどのような処理が走っているのかは気に留めるようにすると良いと思います。</p>
-<p>例えば、 Kotlin の List  で <code>contains</code> メソッドを使用して存在確認をすることがあると思います。 </p>
-<p>この操作自体は <strong>値の検索</strong> と同等の計算量が必要となるため、平均で<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span> の計算量となります。</p>
-<p>同様に、HashSet を使用すると値の検索は平均で <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span> になるため、 <code>contains</code> メソッドを使用しても <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span> で実行することができます。</p>
-<h2 id="確認してみる"><a class="header" href="#確認してみる">確認してみる</a></h2>
-<p>確認してみましょう。</p>
+<h2 id="実行環境"><a class="header" href="#実行環境">実行環境</a></h2>
+<pre><code>macOS Big Sur
+MacBook Pro (13-inch, M1, 2020)
+Memory 16GB
+</code></pre>
+<h2 id="存在確認"><a class="header" href="#存在確認">存在確認</a></h2>
 <p>次のコードはそれぞれサイズN, サイズM のリスト中に何個の重複があるかを確認するためのものです。</p>
 <pre><code class="language-kotlin">const val N:Int = 100000
 const val M:Int = 100000
 fun main() {
-  val originalList = (0..1000000).toList()
+  val originalList = (0..101000).toList()
   // サイズNのリスト
   val list1 = originalList.shuffled().take(N)
   // サイズMのリスト
   val list2 = originalList.shuffled().take(M)
-
   val startTime = System.currentTimeMillis()
-  
   // 問題の処理
-  val countInList2 = list1.filter{
+  val countInLists = list1.filter{
     list2.contains(it)
   }.size
 
   val endTime = System.currentTimeMillis()
-
-  println(&quot;${countInList2} 件見つかりました。&quot;)
-  println(&quot;[実行時間] ${endTime - startTime} ms&quot;)
-
+  println(&quot;&lt;span class=&quot;katex&quot;&gt;&lt;span class=&quot;katex-html&quot; aria-hidden=&quot;true&quot;&gt;&lt;span class=&quot;base&quot;&gt;&lt;span class=&quot;strut&quot; style=&quot;height:1em;vertical-align:-0.25em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mord&quot;&gt;&lt;span class=&quot;mord mathnormal&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;mord mathnormal&quot;&gt;o&lt;/span&gt;&lt;span class=&quot;mord mathnormal&quot;&gt;u&lt;/span&gt;&lt;span class=&quot;mord mathnormal&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;mord mathnormal&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;mord mathnormal&quot; style=&quot;margin-right:0.07847em;&quot;&gt;I&lt;/span&gt;&lt;span class=&quot;mord mathnormal&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;mord mathnormal&quot;&gt;L&lt;/span&gt;&lt;span class=&quot;mord mathnormal&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;mord mathnormal&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;mord mathnormal&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;mord mathnormal&quot;&gt;s&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;mord cjk_fallback&quot;&gt;件&lt;/span&gt;&lt;span class=&quot;mord cjk_fallback&quot;&gt;見&lt;/span&gt;&lt;span class=&quot;mord cjk_fallback&quot;&gt;つ&lt;/span&gt;&lt;span class=&quot;mord cjk_fallback&quot;&gt;か&lt;/span&gt;&lt;span class=&quot;mord cjk_fallback&quot;&gt;り&lt;/span&gt;&lt;span class=&quot;mord cjk_fallback&quot;&gt;ま&lt;/span&gt;&lt;span class=&quot;mord cjk_fallback&quot;&gt;し&lt;/span&gt;&lt;span class=&quot;mord cjk_fallback&quot;&gt;た&lt;/span&gt;&lt;span class=&quot;mord cjk_fallback&quot;&gt;。&lt;/span&gt;&lt;span class=&quot;mord&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;mclose&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;mord mathnormal&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;mord mathnormal&quot; style=&quot;margin-right:0.02778em;&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;mord mathnormal&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;mord mathnormal&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;mord mathnormal&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;mord mathnormal&quot; style=&quot;margin-right:0.01968em;&quot;&gt;l&lt;/span&gt;&lt;span class=&quot;mord mathnormal&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;mopen&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mord&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;mopen&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mord cjk_fallback&quot;&gt;実&lt;/span&gt;&lt;span class=&quot;mord cjk_fallback&quot;&gt;行&lt;/span&gt;&lt;span class=&quot;mord cjk_fallback&quot;&gt;時&lt;/span&gt;&lt;span class=&quot;mord cjk_fallback&quot;&gt;間&lt;/span&gt;&lt;span class=&quot;mclose&quot;&gt;]&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;{endTime - startTime} ms&quot;)
 }
 </code></pre>
-<p>このコードを実行できるリンクを貼っておきます。</p>
-<p>タイムアウトが発生してしまう場合は N や M の値を少し小さくしてみてください。</p>
-<p><a href="https://play.kotlinlang.org/#eyJ2ZXJzaW9uIjoiMS41LjIxIiwicGxhdGZvcm0iOiJqYXZhIiwiYXJncyI6IiIsIm5vbmVNYXJrZXJzIjp0cnVlLCJ0aGVtZSI6ImlkZWEiLCJjb2RlIjoiY29uc3QgdmFsIE46SW50ID0gMTAwMDAwXG5jb25zdCB2YWwgTTpJbnQgPSAxMDAwMDBcbmZ1biBtYWluKCkge1xuICB2YWwgb3JpZ2luYWxMaXN0ID0gKDAuLjEwMDAwMDApLnRvTGlzdCgpXG4gIC8vIOOCteOCpOOCuk7jga7jg6rjgrnjg4hcbiAgdmFsIGxpc3QxID0gb3JpZ2luYWxMaXN0LnNodWZmbGVkKCkudGFrZShOKVxuICAvLyDjgrXjgqTjgrpN44Gu44Oq44K544OIXG4gIHZhbCBsaXN0MiA9IG9yaWdpbmFsTGlzdC5zaHVmZmxlZCgpLnRha2UoTSlcblxuXG4gIHZhbCBzdGFydFRpbWUgPSBTeXN0ZW0uY3VycmVudFRpbWVNaWxsaXMoKVxuICBcbiAgLy8g5ZWP6aGM44Gu5Yem55CGXG4gIHZhbCBjb3VudEluTGlzdDIgPSBsaXN0MS5maWx0ZXJ7XG4gICAgbGlzdDIuY29udGFpbnMoaXQpXG4gIH0uc2l6ZVxuXG4gIHZhbCBlbmRUaW1lID0gU3lzdGVtLmN1cnJlbnRUaW1lTWlsbGlzKClcblxuICBwcmludGxuKFwiJHtjb3VudEluTGlzdDJ9IOS7tuimi+OBpOOBi+OCiuOBvuOBl+OBn+OAglwiKVxuICBwcmludGxuKFwiW+Wun+ihjOaZgumWk10gJHtlbmRUaW1lIC0gc3RhcnRUaW1lfSBtc1wiKVxufSJ9">Playground</a></p>
-<p>私のローカル環境で実行してみると、以下のように出力されました。</p>
-<pre><code>9933 件見つかりました。
-[実行時間] 9369 ms
+<p><a href="https://play.kotlinlang.org/#eyJ2ZXJzaW9uIjoiMS4zLjcwIiwiY29kZSI6ImNvbnN0IHZhbCBOOkludCA9IDEwMDAwMFxuY29uc3QgdmFsIE06SW50ID0gMTAwMDAwXG5mdW4gbWFpbigpIHtcbiAgdmFsIG9yaWdpbmFsTGlzdCA9ICgwLi4xMDEwMDApLnRvTGlzdCgpXG4gIC8vIOOCteOCpOOCuk7jga7jg6rjgrnjg4hcbiAgdmFsIGxpc3QxID0gb3JpZ2luYWxMaXN0LnNodWZmbGVkKCkudGFrZShOKVxuICAvLyDjgrXjgqTjgrpN44Gu44Oq44K544OIXG4gIHZhbCBsaXN0MiA9IG9yaWdpbmFsTGlzdC5zaHVmZmxlZCgpLnRha2UoTSlcbiAgdmFsIHN0YXJ0VGltZSA9IFN5c3RlbS5jdXJyZW50VGltZU1pbGxpcygpXG4gIC8vIOWVj+mhjOOBruWHpueQhlxuICB2YWwgY291bnRJbkxpc3RzID0gbGlzdDEuZmlsdGVye1xuICAgIGxpc3QyLmNvbnRhaW5zKGl0KVxuICB9LnNpemVcblxuICB2YWwgZW5kVGltZSA9IFN5c3RlbS5jdXJyZW50VGltZU1pbGxpcygpXG4gIHByaW50bG4oXCIke2NvdW50SW5MaXN0c30g5Lu26KaL44Gk44GL44KK44G+44GX44Gf44CCXCIpXG4gIHByaW50bG4oXCJb5a6f6KGM5pmC6ZaTXSAke2VuZFRpbWUgLSBzdGFydFRpbWV9IG1zXCIpXG59IiwicGxhdGZvcm0iOiJqYXZhIiwiYXJncyI6IiJ9">playground</a></p>
+<p>これを実行してみると、以下のように出力されました。</p>
+<pre><code>99005 件見つかりました。
+[実行時間] 7080 ms
 </code></pre>
 <p><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">5</span></span></span></span></span></span></span></span></span></span></span> 件 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.897438em;vertical-align:-0.08333em;"></span><span class="mord">×</span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">5</span></span></span></span></span></span></span></span></span></span></span> 件の比較が行われるため、これは<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span>の処理となっており、<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mord mtight">0</span></span></span></span></span></span></span></span></span></span></span></span> ステップ程度の処理が発生してしまいます。</p>
-<p>このような値の検索が必要な処理には Set （または Map） が適しています。</p>
 <p>次に、list2 を Set に変換して同じ処理を実行してみます。</p>
 <pre><code class="language-kotlin">const val N:Int = 100000
 const val M:Int = 100000
 fun main() {
-  val originalList = (0..1000000).toList()
+  val originalList = (0..101000).toList()
   // サイズNのリスト
   val list1 = originalList.shuffled().take(N)
   // サイズMのリスト
   val list2 = originalList.shuffled().take(M)
-
   val startTime = System.currentTimeMillis()
-  
   // 問題の処理
-  val list2Set = list2.toSet()
-  val countInList2 = list1.filter{
+  val list2Set = list2.toSet() // Set に変換しておく
+  val countInLists = list1.filter{
     list2Set.contains(it)
   }.size
 
   val endTime = System.currentTimeMillis()
-
-  println(&quot;${countInList2} 件見つかりました。&quot;)
-  println(&quot;[実行時間] ${endTime - startTime} ms&quot;)
+  println(&quot;&lt;span class=&quot;katex&quot;&gt;&lt;span class=&quot;katex-html&quot; aria-hidden=&quot;true&quot;&gt;&lt;span class=&quot;base&quot;&gt;&lt;span class=&quot;strut&quot; style=&quot;height:1em;vertical-align:-0.25em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mord&quot;&gt;&lt;span class=&quot;mord mathnormal&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;mord mathnormal&quot;&gt;o&lt;/span&gt;&lt;span class=&quot;mord mathnormal&quot;&gt;u&lt;/span&gt;&lt;span class=&quot;mord mathnormal&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;mord mathnormal&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;mord mathnormal&quot; style=&quot;margin-right:0.07847em;&quot;&gt;I&lt;/span&gt;&lt;span class=&quot;mord mathnormal&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;mord mathnormal&quot;&gt;L&lt;/span&gt;&lt;span class=&quot;mord mathnormal&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;mord mathnormal&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;mord mathnormal&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;mord mathnormal&quot;&gt;s&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;mord cjk_fallback&quot;&gt;件&lt;/span&gt;&lt;span class=&quot;mord cjk_fallback&quot;&gt;見&lt;/span&gt;&lt;span class=&quot;mord cjk_fallback&quot;&gt;つ&lt;/span&gt;&lt;span class=&quot;mord cjk_fallback&quot;&gt;か&lt;/span&gt;&lt;span class=&quot;mord cjk_fallback&quot;&gt;り&lt;/span&gt;&lt;span class=&quot;mord cjk_fallback&quot;&gt;ま&lt;/span&gt;&lt;span class=&quot;mord cjk_fallback&quot;&gt;し&lt;/span&gt;&lt;span class=&quot;mord cjk_fallback&quot;&gt;た&lt;/span&gt;&lt;span class=&quot;mord cjk_fallback&quot;&gt;。&lt;/span&gt;&lt;span class=&quot;mord&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;mclose&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;mord mathnormal&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;mord mathnormal&quot; style=&quot;margin-right:0.02778em;&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;mord mathnormal&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;mord mathnormal&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;mord mathnormal&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;mord mathnormal&quot; style=&quot;margin-right:0.01968em;&quot;&gt;l&lt;/span&gt;&lt;span class=&quot;mord mathnormal&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;mopen&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mord&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;mopen&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mord cjk_fallback&quot;&gt;実&lt;/span&gt;&lt;span class=&quot;mord cjk_fallback&quot;&gt;行&lt;/span&gt;&lt;span class=&quot;mord cjk_fallback&quot;&gt;時&lt;/span&gt;&lt;span class=&quot;mord cjk_fallback&quot;&gt;間&lt;/span&gt;&lt;span class=&quot;mclose&quot;&gt;]&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;{endTime - startTime} ms&quot;)
 }
 </code></pre>
 <p>こちらのコードのリンクは以下です。</p>
-<p><a href="https://play.kotlinlang.org/#eyJ2ZXJzaW9uIjoiMS41LjIxIiwicGxhdGZvcm0iOiJqYXZhIiwiYXJncyI6IiIsIm5vbmVNYXJrZXJzIjp0cnVlLCJ0aGVtZSI6ImlkZWEiLCJjb2RlIjoiY29uc3QgdmFsIE46SW50ID0gMTAwMDAwXG5jb25zdCB2YWwgTTpJbnQgPSAxMDAwMDBcbmZ1biBtYWluKCkge1xuICB2YWwgb3JpZ2luYWxMaXN0ID0gKDAuLjEwMDAwMDApLnRvTGlzdCgpXG4gIC8vIOOCteOCpOOCuk7jga7jg6rjgrnjg4hcbiAgdmFsIGxpc3QxID0gb3JpZ2luYWxMaXN0LnNodWZmbGVkKCkudGFrZShOKVxuICAvLyDjgrXjgqTjgrpN44Gu44Oq44K544OIXG4gIHZhbCBsaXN0MiA9IG9yaWdpbmFsTGlzdC5zaHVmZmxlZCgpLnRha2UoTSlcblxuXG4gIHZhbCBzdGFydFRpbWUgPSBTeXN0ZW0uY3VycmVudFRpbWVNaWxsaXMoKVxuICBcbiAgLy8g5ZWP6aGM44Gu5Yem55CGXG4gIHZhbCBsaXN0MlNldCA9IGxpc3QyLnRvSGFzaFNldCgpXG4gIHZhbCBjb3VudEluTGlzdDIgPSBsaXN0MS5maWx0ZXJ7XG4gICAgbGlzdDJTZXQuY29udGFpbnMoaXQpXG4gIH0uc2l6ZVxuXG4gIHZhbCBlbmRUaW1lID0gU3lzdGVtLmN1cnJlbnRUaW1lTWlsbGlzKClcblxuICBwcmludGxuKFwiJHtjb3VudEluTGlzdDJ9IOS7tuimi+OBpOOBi+OCiuOBvuOBl+OBn+OAglwiKVxuICBwcmludGxuKFwiW+Wun+ihjOaZgumWk10gJHtlbmRUaW1lIC0gc3RhcnRUaW1lfSBtc1wiKVxufSJ9">Playground</a></p>
+<p><a href="https://play.kotlinlang.org/#eyJ2ZXJzaW9uIjoiMS4zLjcwIiwiY29kZSI6ImNvbnN0IHZhbCBOOkludCA9IDEwMDAwMFxuY29uc3QgdmFsIE06SW50ID0gMTAwMDAwXG5mdW4gbWFpbigpIHtcbiAgdmFsIG9yaWdpbmFsTGlzdCA9ICgwLi4xMDEwMDApLnRvTGlzdCgpXG4gIC8vIOOCteOCpOOCuk7jga7jg6rjgrnjg4hcbiAgdmFsIGxpc3QxID0gb3JpZ2luYWxMaXN0LnNodWZmbGVkKCkudGFrZShOKVxuICAvLyDjgrXjgqTjgrpN44Gu44Oq44K544OIXG4gIHZhbCBsaXN0MiA9IG9yaWdpbmFsTGlzdC5zaHVmZmxlZCgpLnRha2UoTSlcbiAgdmFsIHN0YXJ0VGltZSA9IFN5c3RlbS5jdXJyZW50VGltZU1pbGxpcygpXG4gIC8vIOWVj+mhjOOBruWHpueQhlxuICB2YWwgbGlzdDJTZXQgPSBsaXN0Mi50b1NldCgpIC8vIFNldCDjgavlpInmj5vjgZfjgabjgYrjgY9cbiAgdmFsIGNvdW50SW5MaXN0cyA9IGxpc3QxLmZpbHRlcntcbiAgICBsaXN0MlNldC5jb250YWlucyhpdClcbiAgfS5zaXplXG5cbiAgdmFsIGVuZFRpbWUgPSBTeXN0ZW0uY3VycmVudFRpbWVNaWxsaXMoKVxuICBwcmludGxuKFwiJHtjb3VudEluTGlzdHN9IOS7tuimi+OBpOOBi+OCiuOBvuOBl+OBn+OAglwiKVxuICBwcmludGxuKFwiW+Wun+ihjOaZgumWk10gJHtlbmRUaW1lIC0gc3RhcnRUaW1lfSBtc1wiKVxufSIsInBsYXRmb3JtIjoiamF2YSIsImFyZ3MiOiIifQ==">playground</a></p>
 <p>結果は次のようになりました。</p>
-<pre><code>10137 件見つかりました。
-[実行時間] 102 ms
+<pre><code>99005 件見つかりました。
+[実行時間] 77 ms
 </code></pre>
-<p>9369 ms だった処理が 102 ms に短縮されています。</p>
+<p><strong>7080 ms</strong> だった処理が <strong>77 ms</strong> に短縮されています。</p>
 <p>違いは <code>contains</code> メソッドの実装が異なっているためであり、<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span> での検索を実現していることです。</p>
 <p>よって、全体での計算量は <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span>となり、同等の処理を数十倍の速度で達成できました。</p>
 <p>また、オブジェクトの比較では、Map のキーに ID となる値を格納することで同様の高速化が期待できます。</p>
 <h2 id="問題"><a class="header" href="#問題">問題</a></h2>
 <p>上記コードにおいて、<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72243em;vertical-align:-0.0391em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&gt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span></span></span></span> の 場合と <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72243em;vertical-align:-0.0391em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span></span></span></span>  の場合で比較すると、どちらの効率が良いでしょうか？</p>
-<div style="break-before: page; page-break-before: always;"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
-<h1 id="実行環境"><a class="header" href="#実行環境">実行環境</a></h1>
-<pre><code>macOS Big Sur
-MacBook Pro (13-inch, M1, 2020)
-Memory 16GB
+<h2 id="最小値の検索"><a class="header" href="#最小値の検索">最小値の検索</a></h2>
+<p>次のような処理を考えます。</p>
+<ul>
+<li>以下を<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span></span></span></span>回繰り返す</li>
+<li>長さ<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span></span>のリストの中から最小値を探し、2倍したものに置き換える</li>
+</ul>
+<h3 id="list-で処理する"><a class="header" href="#list-で処理する">List で処理する</a></h3>
+<pre><code class="language-kotlin">const val N:Int = 100000
+const val M:Int = 10000
+fun main() {
+  val originalList = (1..101000).toList()
+  // サイズNのリスト
+  val list = originalList.shuffled().take(N).toMutableList()
+  
+  val startTime = System.currentTimeMillis()
+  // 以下の操作を M 回行いたい！
+  // - 要素の中から最小値を見つけ、2倍したい
+  repeat(M){
+      val min = list.minOrNull()!!
+      val index = list.indexOf(min)
+      list[index] = min * 2
+  }
+  val endTime = System.currentTimeMillis()
+  println(&quot;[実行時間] {endTime - startTime} ms&quot;)
+}
 </code></pre>
+<p><a href="https://play.kotlinlang.org/#eyJ2ZXJzaW9uIjoiMS4zLjcwIiwiY29kZSI6ImNvbnN0IHZhbCBOOkludCA9IDEwMDAwMFxuY29uc3QgdmFsIE06SW50ID0gMTAwMDBcbmZ1biBtYWluKCkge1xuICB2YWwgb3JpZ2luYWxMaXN0ID0gKDEuLjEwMTAwMCkudG9MaXN0KClcbiAgLy8g44K144Kk44K6TuOBruODquOCueODiFxuICB2YWwgbGlzdCA9IG9yaWdpbmFsTGlzdC5zaHVmZmxlZCgpLnRha2UoTikudG9NdXRhYmxlTGlzdCgpXG4gIFxuICB2YWwgc3RhcnRUaW1lID0gU3lzdGVtLmN1cnJlbnRUaW1lTWlsbGlzKClcbiAgLy8g5Lul5LiL44Gu5pON5L2c44KSIE0g5Zue6KGM44GE44Gf44GE77yBXG4gIC8vIC0g6KaB57Sg44Gu5Lit44GL44KJ5pyA5bCP5YCk44KS6KaL44Gk44GR44CBMuWAjeOBl+OBn+OBhFxuICByZXBlYXQoTSl7XG4gICAgICB2YWwgbWluID0gbGlzdC5taW5Pck51bGwoKSEhXG4gICAgICB2YWwgaW5kZXggPSBsaXN0LmluZGV4T2YobWluKVxuICAgICAgbGlzdFtpbmRleF0gPSBtaW4gKiAyXG4gIH1cbiAgdmFsIGVuZFRpbWUgPSBTeXN0ZW0uY3VycmVudFRpbWVNaWxsaXMoKVxuICBwcmludGxuKFwiW+Wun+ihjOaZgumWk10gJHtlbmRUaW1lIC0gc3RhcnRUaW1lfSBtc1wiKVxufSIsInBsYXRmb3JtIjoiamF2YSIsImFyZ3MiOiIifQ==">playground</a></p>
+<p>実行結果は以下です。</p>
+<pre><code>[実行時間] 4027 ms
+</code></pre>
+<h3 id="map-で処理する"><a class="header" href="#map-で処理する">Map で処理する</a></h3>
+<p>一方、TreeMap を利用して以下のように同様の処理を実施できます。</p>
+<pre><code class="language-kotlin">const val N:Int = 100000
+const val M:Int = 10000
+fun main() {
+  val originalList = (1..101000).toList()
+  // サイズNのリスト
+  val list = originalList.shuffled().take(N).toList()
+  
+  val startTime = System.currentTimeMillis()
+
+  // 以下の操作を M 回行いたい！
+  // - 要素の中から最小値を見つけ、2倍したい
+  val map = list.groupingBy{it}.eachCount().toSortedMap() // key: 要素の値, value: 個数
+  repeat(M){
+    val minElement = map.asSequence().first() // 先頭の要素 = 最小値
+    val min = minElement.key
+    map[min] = minElement.value - 1
+    if (map[min] == 0) {
+        map.remove(min)
+    }
+    map[min*2] = map.getOrDefault(min*2, 0) + 1
+  }
+  val result = map.map{ (key, value) -&gt; List&lt;Int&gt;(value, {key})}.flatten().toList()
+  val endTime = System.currentTimeMillis()
+  println(&quot;[実行時間] {endTime - startTime} ms&quot;)
+}
+</code></pre>
+<p><a href="https://play.kotlinlang.org/#eyJ2ZXJzaW9uIjoiMS4zLjcwIiwiY29kZSI6ImNvbnN0IHZhbCBOOkludCA9IDEwMDAwMFxuY29uc3QgdmFsIE06SW50ID0gMTAwMDBcbmZ1biBtYWluKCkge1xuICB2YWwgb3JpZ2luYWxMaXN0ID0gKDEuLjEwMTAwMCkudG9MaXN0KClcbiAgLy8g44K144Kk44K6TuOBruODquOCueODiFxuICB2YWwgbGlzdCA9IG9yaWdpbmFsTGlzdC5zaHVmZmxlZCgpLnRha2UoTikudG9MaXN0KClcbiAgXG4gIHZhbCBzdGFydFRpbWUgPSBTeXN0ZW0uY3VycmVudFRpbWVNaWxsaXMoKVxuICAvLyDku6XkuIvjga7mk43kvZzjgpIgTSDlm57ooYzjgYTjgZ/jgYTvvIFcbiAgLy8gLSDopoHntKDjga7kuK3jgYvjgonmnIDlsI/lgKTjgpLopovjgaTjgZHjgIEy5YCN44GX44Gf44GEXG5cbiAgdmFsIG1hcCA9IGxpc3QuZ3JvdXBpbmdCeXtpdH0uZWFjaENvdW50KCkudG9Tb3J0ZWRNYXAoKSAvLyBrZXk6IOimgee0oOOBruWApCwgdmFsdWU6IOWAi+aVsFxuICByZXBlYXQoTSl7XG4gICAgdmFsIG1pbkVsZW1lbnQgPSBtYXAuYXNTZXF1ZW5jZSgpLmZpcnN0KClcbiAgICB2YWwgbWluID0gbWluRWxlbWVudC5rZXlcbiAgICBtYXBbbWluXSA9IG1pbkVsZW1lbnQudmFsdWUgLSAxXG4gICAgaWYgKG1hcFttaW5dID09IDApIHtcbiAgICAgICAgbWFwLnJlbW92ZShtaW4pXG4gICAgfVxuICAgIG1hcFttaW4qMl0gPSBtYXAuZ2V0T3JEZWZhdWx0KG1pbioyLCAwKSArIDFcbiAgfVxuICB2YWwgcmVzdWx0ID0gbWFwLm1hcHsgKGtleSwgdmFsdWUpIC0+IExpc3Q8SW50Pih2YWx1ZSwge2tleX0pfS5mbGF0dGVuKCkudG9MaXN0KClcbiAgdmFsIGVuZFRpbWUgPSBTeXN0ZW0uY3VycmVudFRpbWVNaWxsaXMoKVxuICBwcmludGxuKFwiW+Wun+ihjOaZgumWk10gJHtlbmRUaW1lIC0gc3RhcnRUaW1lfSBtc1wiKVxufSIsInBsYXRmb3JtIjoiamF2YSIsImFyZ3MiOiIifQ==">playground</a></p>
+<p>この実行結果は以下のようになりました。</p>
+<pre><code>[実行時間] 494 ms
+</code></pre>
+<p>なお、この結果は List <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.36687em;vertical-align:0em;"></span><span class="mrel">⇔</span></span></span></span> Map の変換時間も含んでいます。</p>
+<p>このように List を使用していたところを Map (TreeMap) に変更することにより、</p>
+<p><strong>4027 ms</strong> が <strong>494 ms</strong> に短縮されました。</p>
+<h3 id="計算量を見積もる"><a class="header" href="#計算量を見積もる">計算量を見積もる</a></h3>
+<ul>
+<li>List の場合
+<ul>
+<li>最小値の検索 平均 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span></li>
+<li>インデックスの取得 平均 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span></li>
+<li>2倍して置き換える処理 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span></li>
+</ul>
+</li>
+</ul>
+<p>より、時間計算量は<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span> となります。</p>
+<ul>
+<li>Map の場合
+<ul>
+<li>最小値の検索・取得 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span></li>
+<li>2倍して置き換える処理 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span></li>
+</ul>
+</li>
+</ul>
+<p>より、時間計算量は<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span> となります。</p>
 <div style="break-before: page; page-break-before: always;"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
 <div style="break-before: page; page-break-before: always;"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
 <h1 id="その他のデータ構造"><a class="header" href="#その他のデータ構造">その他のデータ構造</a></h1>
@@ -513,6 +767,7 @@ Memory 16GB
 <ul>
 <li><a href="https://atcoder.jp/contests/apg4b/tasks/APG4b_aa">STLのコンテナ</a></li>
 <li><a href="https://qiita.com/p_shiki37/items/3902f4e3adc3aeb382f1">Javaで競技プログラミングをするときによく使う標準ライブラリ</a></li>
+<li><a href="https://dzone.com/articles/performance-analysis-of-arraylist-and-linkedlist-i">Performance Analysis of ArrayList and LinkedList in Java</a></li>
 </ul>
 
                     </main>

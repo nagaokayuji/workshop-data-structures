@@ -82,7 +82,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">Kotlinデータ構造</a></li><li class="chapter-item expanded "><a href="collection.html"><strong aria-hidden="true">1.</strong> Collection</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="collection_basic.html"><strong aria-hidden="true">1.1.</strong> 基本的な機能</a></li><li class="chapter-item expanded "><a href="collection_methods.html"><strong aria-hidden="true">1.2.</strong> 便利な関数</a></li></ol></li><li class="chapter-item expanded "><a href="list.html"><strong aria-hidden="true">2.</strong> List</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="list_arraylist.html"><strong aria-hidden="true">2.1.</strong> ArrayList</a></li><li class="chapter-item expanded "><a href="list_linkedlist.html"><strong aria-hidden="true">2.2.</strong> LinkedList</a></li></ol></li><li class="chapter-item expanded "><a href="map.html" class="active"><strong aria-hidden="true">3.</strong> Map</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="map_hashmap.html"><strong aria-hidden="true">3.1.</strong> HashMap</a></li><li class="chapter-item expanded "><a href="map_treemap.html"><strong aria-hidden="true">3.2.</strong> TreeMap</a></li></ol></li><li class="chapter-item expanded "><a href="set.html"><strong aria-hidden="true">4.</strong> Set</a></li><li class="chapter-item expanded "><a href="compare_speed.html"><strong aria-hidden="true">5.</strong> 遅い例と速い例</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="environment.html"><strong aria-hidden="true">5.1.</strong> 実行環境</a></li><li class="chapter-item expanded "><a href="compare_speed_question.html"><strong aria-hidden="true">5.2.</strong> 問題</a></li></ol></li><li class="chapter-item expanded "><a href="others.html"><strong aria-hidden="true">6.</strong> その他のデータ構造</a></li><li class="chapter-item expanded "><a href="conclusion.html"><strong aria-hidden="true">7.</strong> まとめ</a></li><li class="chapter-item expanded "><a href="references.html"><strong aria-hidden="true">8.</strong> 参考</a></li></ol>            </div>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">Kotlinデータ構造</a></li><li class="chapter-item expanded "><a href="collection.html"><strong aria-hidden="true">1.</strong> Collection</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="collection_basic.html"><strong aria-hidden="true">1.1.</strong> 基本的な機能</a></li><li class="chapter-item expanded "><a href="collection_methods.html"><strong aria-hidden="true">1.2.</strong> 便利な関数</a></li></ol></li><li class="chapter-item expanded "><a href="list.html"><strong aria-hidden="true">2.</strong> List</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="list_arraylist.html"><strong aria-hidden="true">2.1.</strong> ArrayList</a></li><li class="chapter-item expanded "><a href="list_linkedlist.html"><strong aria-hidden="true">2.2.</strong> LinkedList</a></li><li class="chapter-item expanded "><a href="list_arraylist_vs_linkedlist.html"><strong aria-hidden="true">2.3.</strong> ArrayList v.s. LinkedList</a></li></ol></li><li class="chapter-item expanded "><a href="map.html" class="active"><strong aria-hidden="true">3.</strong> Map</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="map_hashmap.html"><strong aria-hidden="true">3.1.</strong> HashMap</a></li><li class="chapter-item expanded "><a href="map_treemap.html"><strong aria-hidden="true">3.2.</strong> TreeMap</a></li></ol></li><li class="chapter-item expanded "><a href="set.html"><strong aria-hidden="true">4.</strong> Set</a></li><li class="chapter-item expanded "><a href="compare_speed.html"><strong aria-hidden="true">5.</strong> 遅い例と速い例</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="compare_speed_question.html"><strong aria-hidden="true">5.1.</strong> 問題</a></li></ol></li><li class="chapter-item expanded "><a href="others.html"><strong aria-hidden="true">6.</strong> その他のデータ構造</a></li><li class="chapter-item expanded "><a href="conclusion.html"><strong aria-hidden="true">7.</strong> まとめ</a></li><li class="chapter-item expanded "><a href="references.html"><strong aria-hidden="true">8.</strong> 参考</a></li></ol>            </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
 
@@ -145,16 +145,88 @@
                     <main>
                         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
 <h1 id="map"><a class="header" href="#map">Map</a></h1>
-<p>整数以外でも添字に取れる配列のように扱えることから、連想配列とも呼ばれます。Key-Value 型のデータ構造です。</p>
+<p>整数以外でも添字に取れる配列のように扱えることから <strong>連想配列</strong> とも呼ばれます。Key-Value 型のデータ構造です。</p>
+<p><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-map/">Map - Kotlin Programming Language</a></p>
 <pre><code class="language-kotlin">interface Map&lt;K, out V&gt;
 </code></pre>
 <p>Key に該当するものが分かっている場合は高速にデータを取得することができます。</p>
+<h2 id="例"><a class="header" href="#例">例</a></h2>
+<p>適当な Map を作成し、キーに対応する値を取得するには以下のようにします。</p>
+<pre><code class="language-kotlin">fun main() {
+    val items = mapOf&lt;String, String&gt;(&quot;A&quot; to &quot;VALUE_A&quot;, &quot;B&quot; to &quot;VALUE_B&quot;)
+    println(items.get(&quot;A&quot;)) // VALUE_A
+}
+</code></pre>
+<h2 id="特徴"><a class="header" href="#特徴">特徴</a></h2>
+<ul>
+<li>一意なキーが必要</li>
+<li>キーの存在判定が速い</li>
+<li>キーを指定した場合の値へのアクセスが速い</li>
+<li>値の検索は速くない
+<ul>
+<li>順番に見ていく必要がある</li>
+</ul>
+</li>
+</ul>
+<p>したがって、うまくキーが選べれば非常に便利な使い方ができます。</p>
+<h2 id="list-から-map-に変換する"><a class="header" href="#list-から-map-に変換する">List から Map に変換する</a></h2>
+<p>いくつか方法があるので紹介します。</p>
+<h3 id="a-hrefhttpskotlinlangorgapilatestjvmstdlibkotlincollectionsto-maphtmltomapa"><a class="header" href="#a-hrefhttpskotlinlangorgapilatestjvmstdlibkotlincollectionsto-maphtmltomapa"><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/to-map.html"><code>toMap</code></a></a></h3>
+<pre><code class="language-kotlin">fun &lt;K, V&gt; Iterable&lt;Pair&lt;K, V&gt;&gt;.toMap(): Map&lt;K, V&gt;
+</code></pre>
+<p>Key-Value の Pair から Map に変換できます。</p>
+<h3 id="a-hrefhttpskotlinlangorgapilatestjvmstdlibkotlincollectionsassociatehtmlassociatea"><a class="header" href="#a-hrefhttpskotlinlangorgapilatestjvmstdlibkotlincollectionsassociatehtmlassociatea"><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/associate.html"><code>associate</code></a></a></h3>
+<pre><code class="language-kotlin">inline fun &lt;T, K, V&gt; Iterable&lt;T&gt;.associate(
+    transform: (T) -&gt; Pair&lt;K, V&gt;
+): Map&lt;K, V&gt;
+</code></pre>
+<p>次のような使い方ができます。</p>
+<pre><code class="language-kotlin">data class User(val name: String, val score: Int)
+fun main() {
+  val list = listOf(User(&quot;Tom&quot;, 30), User(&quot;John&quot;, 99), User(&quot;James&quot;, 77))
+  val map = list.associate{it.name to it}
+  println(map) //{Tom=User(name=Tom, score=30), John=User(name=John, score=99), James=User(name=James, score=77)}
+}
+</code></pre>
+<p><a href="https://play.kotlinlang.org/#eyJ2ZXJzaW9uIjoiMS4zLjcwIiwiY29kZSI6ImRhdGEgY2xhc3MgVXNlcih2YWwgbmFtZTogU3RyaW5nLCB2YWwgc2NvcmU6IEludClcbmZ1biBtYWluKCkge1xuICB2YWwgbGlzdCA9IGxpc3RPZihVc2VyKFwiVG9tXCIsIDMwKSwgVXNlcihcIkpvaG5cIiwgOTkpLCBVc2VyKFwiSmFtZXNcIiwgNzcpKVxuICB2YWwgbWFwID0gbGlzdC5hc3NvY2lhdGV7aXQubmFtZSB0byBpdH1cbiAgcHJpbnRsbihtYXApIC8ve1RvbT1Vc2VyKG5hbWU9VG9tLCBzY29yZT0zMCksIEpvaG49VXNlcihuYW1lPUpvaG4sIHNjb3JlPTk5KSwgSmFtZXM9VXNlcihuYW1lPUphbWVzLCBzY29yZT03Nyl9XG59IiwicGxhdGZvcm0iOiJqYXZhIiwiYXJncyI6IiJ9">playground</a></p>
+<p>上述の <code>toMap</code> を使用して以下のように書くこともできます。</p>
+<pre><code class="language-kotlin">data class User(val name: String, val score: Int)
+fun main() {
+  val list = listOf(User(&quot;Tom&quot;, 30), User(&quot;John&quot;, 99), User(&quot;James&quot;, 77))
+  val map = list.map{it.name to it}.toMap()
+  println(map) //{Tom=User(name=Tom, score=30), John=User(name=John, score=99), James=User(name=James, score=77)}
+}
+</code></pre>
+<p><a href="https://play.kotlinlang.org/#eyJ2ZXJzaW9uIjoiMS4zLjcwIiwiY29kZSI6ImRhdGEgY2xhc3MgVXNlcih2YWwgbmFtZTogU3RyaW5nLCB2YWwgc2NvcmU6IEludClcbmZ1biBtYWluKCkge1xuICB2YWwgbGlzdCA9IGxpc3RPZihVc2VyKFwiVG9tXCIsIDMwKSwgVXNlcihcIkpvaG5cIiwgOTkpLCBVc2VyKFwiSmFtZXNcIiwgNzcpKVxuICB2YWwgbWFwID0gbGlzdC5tYXB7aXQubmFtZSB0byBpdH0udG9NYXAoKVxuICBwcmludGxuKG1hcCkgLy97VG9tPVVzZXIobmFtZT1Ub20sIHNjb3JlPTMwKSwgSm9obj1Vc2VyKG5hbWU9Sm9obiwgc2NvcmU9OTkpLCBKYW1lcz1Vc2VyKG5hbWU9SmFtZXMsIHNjb3JlPTc3KX1cbn0iLCJwbGF0Zm9ybSI6ImphdmEiLCJhcmdzIjoiIn0=">playground</a></p>
+<h3 id="a-hrefhttpskotlinlangorgapilatestjvmstdlibkotlincollectionsgroup-byhtmlgroupbya"><a class="header" href="#a-hrefhttpskotlinlangorgapilatestjvmstdlibkotlincollectionsgroup-byhtmlgroupbya"><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/group-by.html"><code>groupBy</code></a></a></h3>
+<p>value に List を使用したい場合に便利です。</p>
+<pre><code class="language-kotlin">inline fun &lt;T, K&gt; Iterable&lt;T&gt;.groupBy(
+    keySelector: (T) -&gt; K
+): Map&lt;K, List&lt;T&gt;&gt;
+</code></pre>
+<p>次のように使用することができます。</p>
+<p>桁数ごとにグルーピング</p>
+<pre><code class="language-kotlin">fun main() {
+  val list = listOf(1234,12,2,34,1234,6,1,0,-9587,-95,-921)
+  val map = list.groupBy{ 
+      var ret = 0
+      var value = if (it &gt; 0) {it} else {-it}
+      while (value &gt; 0) {
+          ret = ret + 1
+          value = value / 10
+      }
+      ret
+  }
+  println(map) // {4=[1234, 1234, -9587], 2=[12, 34, -95], 1=[2, 6, 1], 0=[0], 3=[-921]}
+}
+</code></pre>
+<p><a href="https://play.kotlinlang.org/#eyJ2ZXJzaW9uIjoiMS4zLjcwIiwiY29kZSI6ImZ1biBtYWluKCkge1xuICB2YWwgbGlzdCA9IGxpc3RPZigxMjM0LDEyLDIsMzQsMTIzNCw2LDEsMCwtOTU4NywtOTUsLTkyMSlcbiAgdmFsIG1hcCA9IGxpc3QuZ3JvdXBCeXsgXG4gICAgICB2YXIgcmV0ID0gMFxuICAgICAgdmFyIHZhbHVlID0gaWYgKGl0ID4gMCkge2l0fSBlbHNlIHstaXR9XG4gICAgICB3aGlsZSAodmFsdWUgPiAwKSB7XG4gICAgICAgICAgcmV0ID0gcmV0ICsgMVxuICAgICAgICAgIHZhbHVlID0gdmFsdWUgLyAxMFxuICAgICAgfVxuICAgICAgcmV0XG4gIH1cbiAgcHJpbnRsbihtYXApIC8vIHs0PVsxMjM0LCAxMjM0LCAtOTU4N10sIDI9WzEyLCAzNCwgLTk1XSwgMT1bMiwgNiwgMV0sIDA9WzBdLCAzPVstOTIxXX1cbn0iLCJwbGF0Zm9ybSI6ImphdmEiLCJhcmdzIjoiIn0=">playground</a></p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                                                    <a rel="prev" href="list_linkedlist.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                                    <a rel="prev" href="list_arraylist_vs_linkedlist.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
                         
@@ -168,7 +240,7 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                                    <a rel="prev" href="list_linkedlist.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                    <a rel="prev" href="list_arraylist_vs_linkedlist.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
                 
