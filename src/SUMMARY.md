@@ -11,7 +11,6 @@
     - [TreeMap](./map_treemap.md)
   - [Set](./set.md)
   - [遅い例と速い例](./compare_speed.md)
-    - [実行環境](./environment.md)
     - [問題](./compare_speed_question.md)
   - [その他のデータ構造](./others.md)
   - [まとめ](./conclusion.md)
