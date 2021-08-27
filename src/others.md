@@ -24,6 +24,31 @@ Stack は LIFO(Last In First Out) のデータ構造です。
 
 `java.util.Stack` などで利用できます。
 
+### 使用例: 括弧列のバリデーション
+<pre class="kt">
+import java.util.Stack
+
+fun main() {
+    println(varidate("(あ)((ああ)あああ)(ああ)()"))  // true
+    println(varidate("(あ)((ああ))あああ)(ああ)()")) // false
+}
+
+fun varidate(target: String):Boolean {
+  val stack = Stack&lt;Char&gt;() // スタックを初期化
+
+  for (character in target) {
+    when (character) {
+      '(' -> stack.push(character)
+      ')' -> if (stack.empty()) {
+          return false
+      } else {
+          stack.pop()
+      }
+    }
+  }
+  return stack.empty()
+}
+</pre>
 
 
 
