@@ -1,4 +1,4 @@
-- [Kotlinデータ構造](./index.md)
+- [Kotlin, Java データ構造](./index.md)
   - [Collection](./collection.md)
     - [基本的な機能](./collection_basic.md)
     - [便利な関数](./collection_methods.md)
@@ -11,6 +11,7 @@
     - [TreeMap](./map_treemap.md)
   - [Set](./set.md)
   - [遅い例と速い例](./compare_speed.md)
+    - [何度もfilterする](./compare_filters.md)
   - [その他のデータ構造](./others.md)
   - [まとめ](./conclusion.md)
   - [参考](./references.md)

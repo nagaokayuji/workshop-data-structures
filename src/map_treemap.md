@@ -37,7 +37,7 @@ fun main() {
     println(items.keys) // [1, A, X]
 }
 ```
-[playground](https://play.kotlinlang.org/#eyJ2ZXJzaW9uIjoiMS4zLjcwIiwiY29kZSI6ImZ1biBtYWluKCkge1xuICAgIHZhbCBpdGVtcyA9IHNvcnRlZE1hcE9mPFN0cmluZywgU3RyaW5nPigpXG4gICAgaXRlbXNbXCJBXCJdID0gXCJWQUxVRV9BXCJcbiAgICBpdGVtc1tcIjFcIl0gPSBcIlZBTFVFXzFcIlxuICAgIGl0ZW1zW1wiWFwiXSA9IFwiVkFMVUVfWFwiXG4gICAgcHJpbnRsbihpdGVtcy5rZXlzKSAvLyBbMSwgQSwgWF1cbn0iLCJwbGF0Zm9ybSI6ImphdmEiLCJhcmdzIjoiIn0=)
+[playground🔗](https://play.kotlinlang.org/#eyJ2ZXJzaW9uIjoiMS4zLjcwIiwiY29kZSI6ImZ1biBtYWluKCkge1xuICAgIHZhbCBpdGVtcyA9IHNvcnRlZE1hcE9mPFN0cmluZywgU3RyaW5nPigpXG4gICAgaXRlbXNbXCJBXCJdID0gXCJWQUxVRV9BXCJcbiAgICBpdGVtc1tcIjFcIl0gPSBcIlZBTFVFXzFcIlxuICAgIGl0ZW1zW1wiWFwiXSA9IFwiVkFMVUVfWFwiXG4gICAgcHJpbnRsbihpdGVtcy5rZXlzKSAvLyBbMSwgQSwgWF1cbn0iLCJwbGF0Zm9ybSI6ImphdmEiLCJhcmdzIjoiIn0=)
 
 
 - key は null 不可
