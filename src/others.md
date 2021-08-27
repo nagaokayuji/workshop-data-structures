@@ -70,6 +70,23 @@ Queue は FIFO(First In First Out) のデータ構造です。
 用途としてはジョブスケジューリング、トポロジカルソート[^1]、深さ優先探索などがあります。
 
 `java.util.Queue` などで利用できます。
+### 使用例: ラウンドロビン
+
+<pre class="kt">
+import java.util.*
+
+fun main() {
+  val st:Queue&lt;String&gt; = LinkedList&lt;String&gt;().apply{
+      add("hoge")
+      add("fuga")
+      add("piyo")
+  }
+  repeat(10) {
+      println(st.peek()) // Queue の先頭を取得
+      st.add(st.poll())  // Queue の先頭を取り出し、末尾に追加
+  }
+}
+</pre>
 
 
 ## Deque
