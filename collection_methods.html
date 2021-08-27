@@ -148,12 +148,11 @@
 <p>知っておくと便利なメソッドをご紹介します。</p>
 <h2 id="chunked"><a class="header" href="#chunked">chunked</a></h2>
 <p>collection を 複数のリストに分割できます。</p>
-<pre class="kt">
-fun <T, R> Iterable<T>.chunked(
+<pre><code class="language-kotlin">fun &lt;T, R&gt; Iterable&lt;T&gt;.chunked(
     size: Int,
-    transform: (List<T>) -> R
-): List<R>
-</pre>
+    transform: (List&lt;T&gt;) -&gt; R
+): List&lt;R&gt;
+</code></pre>
 <p><code>size</code> に指定した個数ごとに List に分割し、関数を適用できます。</p>
 <pre class="kt">
 fun main() {
@@ -164,12 +163,11 @@ fun main() {
 <h2 id="reduce"><a class="header" href="#reduce">reduce</a></h2>
 <p>畳み込み関数です。
 順々に関数を適用していきます。</p>
-<pre class="kt">
-fun <T, R> Iterable<T>.fold(
+<pre><code class="language-kotlin">fun &lt;T, R&gt; Iterable&lt;T&gt;.fold(
     initial: R,
-    operation: (acc: R, T) -> R
+    operation: (acc: R, T) -&gt; R
 ): R
-</pre>
+</code></pre>
 <p>例えば、次のようにすると簡単に階乗が計算できます。</p>
 <pre class="kt">
 fun main() {
