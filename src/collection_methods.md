@@ -3,30 +3,29 @@
 知っておくと便利なメソッドをご紹介します。
 
 
-## chunked
+## intersect
 
-collection を 複数のリストに分割できます。
+重複する要素だけ取り出すことができます。
+
 
 ```kotlin
-fun <T, R> Iterable<T>.chunked(
-    size: Int,
-    transform: (List<T>) -> R
-): List<R>
+infix fun <T> Iterable<T>.intersect(
+    other: Iterable<T>
+): Set<T>
 ```
 
-`size` に指定した個数ごとに List に分割し、関数を適用できます。
+以下のように使用します。
 
 <pre class="kt">
 fun main() {
-  val l = listOf(1,1,2,3,5,8,13,21,34,55)
-  println(l.chunked(3)) // [[1, 1, 2], [3, 5, 8], [13, 21, 34], [55]]
+  val list1 = listOf(1,2,3,4,5,6,7,8,9)
+  val list2 = listOf(1,4,7,9,11,13)
+  println(list1.intersect(list2)) // [1, 4, 7, 9]
 }
 </pre>
 
 
-
-
-## reduce
+## reduce, fold
 
 畳み込み関数です。
 順々に関数を適用していきます。
