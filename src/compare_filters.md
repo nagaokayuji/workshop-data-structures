@@ -1,10 +1,4 @@
 # 何度もfilterする
-<script src="https://unpkg.com/kotlin-playground@1"></script>
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  KotlinPlayground('.kt');
-});
-</script>
 <pre class="kt">
 const val N:Int = 500000
 fun main() {

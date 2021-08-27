@@ -32,7 +32,7 @@ ArrayList の弱点である挿入や削除に強いデータ構造です。
 `java.util.LinkedList` を import して双方向リンクリストを使用できます。
 
 
-```kotlin
+<pre class="kt">
 import java.util.LinkedList
 fun main() {
     val linkedList: LinkedList<Int> =  LinkedList<Int>()
@@ -42,7 +42,7 @@ fun main() {
     println(linkedList.filter{it==777}) // [777]
     println(linkedList.size) // 6
 }
-```
+</pre>
 [playground🔗](https://play.kotlinlang.org/#eyJ2ZXJzaW9uIjoiMS4zLjcwIiwiY29kZSI6ImltcG9ydCBqYXZhLnV0aWwuTGlua2VkTGlzdFxuZnVuIG1haW4oKSB7XG4gICAgdmFsIGxpbmtlZExpc3Q6IExpbmtlZExpc3Q8SW50PiA9ICBMaW5rZWRMaXN0PEludD4oKVxuICAgIGxpbmtlZExpc3QuYWRkQWxsKGxpc3RPZigxMjMsNzc3LDIsMCwtOTk5LDUwKSkgLy8g44GT44Gu6aCG55Wq44Gn5oy/5YWlXG4gICAgcHJpbnRsbihsaW5rZWRMaXN0WzJdKSAvLyAyXG4gICAgcHJpbnRsbihsaW5rZWRMaXN0LmNvbnRhaW5zKDc3NykpIC8vIHRydWVcbiAgICBwcmludGxuKGxpbmtlZExpc3QuZmlsdGVye2l0PT03Nzd9KSAvLyBbNzc3XVxuICAgIHByaW50bG4obGlua2VkTGlzdC5zaXplKSAvLyA2XG59IiwicGxhdGZvcm0iOiJqYXZhIiwiYXJncyI6IiJ9)
 
 

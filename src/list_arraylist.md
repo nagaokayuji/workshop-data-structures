@@ -25,7 +25,7 @@ ArrayList は最も基本的なリスト構造です。
 
 一般的に`listOf()` などでリスト化すると `ArrayList`が使用されます。
 
-```kotlin
+<pre class="kt">
 fun main() {
   println(listOf(0,1,2).javaClass.kotlin)
   // class java.util.Arrays$ArrayList (Kotlin reflection is not available)
@@ -33,7 +33,7 @@ fun main() {
   println(mutableListOf(0,1,2).javaClass.kotlin)
   // class java.util.ArrayList (Kotlin reflection is not available)
 }
-```
+</pre>
 
 ## ユースケース
 

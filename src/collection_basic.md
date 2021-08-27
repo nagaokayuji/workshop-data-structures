@@ -6,24 +6,24 @@
 
 要素数を取得できます。
 
-```kotlin
+<pre class="kt">
 fun main() {
   val l = listOf(1,1,2)
   println(l.size) // 3
 }
-```
+</pre>
 
 ## `contains()`
 
 ある要素を含むかどうかを返します。
 存在判定を簡潔に書けるため重宝します。
 
-```kotlin
+<pre class="kt">
 fun main() {
   val l = listOf(1,1,2)
   println(l.contains(1)) // true
 }
-```
+</pre>
 
 ## `map()`
 
@@ -33,20 +33,20 @@ fun main() {
 
 例えば、各要素を二乗する場合は次のようになります。
 
-```kotlin
+<pre class="kt">
 fun main() {
   val l = listOf(1,1,2)
   println(l.map{it * it}) // [1, 1, 4]
 }
-```
+</pre>
 
 ## `filter()`
 
 条件に合致する（渡した関数での評価結果が真となる）要素のみ残します。
 
-```kotlin
+<pre class="kt">
 fun main() {
   val l = listOf(1,1,2)
   println(l.filter{it == 1}) // [1, 1]
 }
-```
+</pre>

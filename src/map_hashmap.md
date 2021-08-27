@@ -16,7 +16,7 @@ Kotlin で `mapOf()` 等で宣言すると `HashMap` になるようです。
   - $O(N)$
 
 
-```kotlin
+<pre class="kt">
 fun main() {
     val items = HashMap<String, String>()
     items["A"] = "VALUE_A"
@@ -24,5 +24,5 @@ fun main() {
     items["X"] = "VALUE_X"
     println(items.keys) // [A, 1, X]
 }
-```
+</pre>
 [playground🔗](https://play.kotlinlang.org/#eyJ2ZXJzaW9uIjoiMS4zLjcwIiwiY29kZSI6ImZ1biBtYWluKCkge1xuICAgIHZhbCBpdGVtcyA9IEhhc2hNYXA8U3RyaW5nLCBTdHJpbmc+KClcbiAgICBpdGVtc1tcIkFcIl0gPSBcIlZBTFVFX0FcIlxuICAgIGl0ZW1zW1wiMVwiXSA9IFwiVkFMVUVfMVwiXG4gICAgaXRlbXNbXCJYXCJdID0gXCJWQUxVRV9YXCJcbiAgICBwcmludGxuKGl0ZW1zLmtleXMpIC8vIFtBLCAxLCBYXVxufSIsInBsYXRmb3JtIjoiamF2YSIsImFyZ3MiOiIifQ==)
