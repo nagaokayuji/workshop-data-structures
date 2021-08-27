@@ -199,16 +199,17 @@
 </ul>
 <h2 id="kotlin-から使用する場合"><a class="header" href="#kotlin-から使用する場合">Kotlin から使用する場合</a></h2>
 <p><code>java.util.LinkedList</code> を import して双方向リンクリストを使用できます。</p>
-<pre><code class="language-kotlin">import java.util.LinkedList
+<pre class="kt">
+import java.util.LinkedList
 fun main() {
-    val linkedList: LinkedList&lt;Int&gt; =  LinkedList&lt;Int&gt;()
+    val linkedList: LinkedList<Int> =  LinkedList<Int>()
     linkedList.addAll(listOf(123,777,2,0,-999,50)) // この順番で挿入
     println(linkedList[2]) // 2
     println(linkedList.contains(777)) // true
     println(linkedList.filter{it==777}) // [777]
     println(linkedList.size) // 6
 }
-</code></pre>
+</pre>
 <p><a href="https://play.kotlinlang.org/#eyJ2ZXJzaW9uIjoiMS4zLjcwIiwiY29kZSI6ImltcG9ydCBqYXZhLnV0aWwuTGlua2VkTGlzdFxuZnVuIG1haW4oKSB7XG4gICAgdmFsIGxpbmtlZExpc3Q6IExpbmtlZExpc3Q8SW50PiA9ICBMaW5rZWRMaXN0PEludD4oKVxuICAgIGxpbmtlZExpc3QuYWRkQWxsKGxpc3RPZigxMjMsNzc3LDIsMCwtOTk5LDUwKSkgLy8g44GT44Gu6aCG55Wq44Gn5oy/5YWlXG4gICAgcHJpbnRsbihsaW5rZWRMaXN0WzJdKSAvLyAyXG4gICAgcHJpbnRsbihsaW5rZWRMaXN0LmNvbnRhaW5zKDc3NykpIC8vIHRydWVcbiAgICBwcmludGxuKGxpbmtlZExpc3QuZmlsdGVye2l0PT03Nzd9KSAvLyBbNzc3XVxuICAgIHByaW50bG4obGlua2VkTGlzdC5zaXplKSAvLyA2XG59IiwicGxhdGZvcm0iOiJqYXZhIiwiYXJncyI6IiJ9">playground🔗</a></p>
 <h2 id="ユースケース"><a class="header" href="#ユースケース">ユースケース</a></h2>
 <ul>
@@ -270,6 +271,7 @@ fun main() {
         <script src="book.js" type="text/javascript" charset="utf-8"></script>
 
         <!-- Custom JS scripts -->
+                <script type="text/javascript" src="kotlin-pg.js"></script>
         
         
     </body>

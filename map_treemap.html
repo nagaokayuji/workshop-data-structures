@@ -176,14 +176,15 @@
 <ul>
 <li>キーがソートされる</li>
 </ul>
-<pre><code class="language-kotlin">fun main() {
-    val items = sortedMapOf&lt;String, String&gt;()
-    items[&quot;A&quot;] = &quot;VALUE_A&quot;
-    items[&quot;1&quot;] = &quot;VALUE_1&quot;
-    items[&quot;X&quot;] = &quot;VALUE_X&quot;
+<pre class="kt">
+fun main() {
+    val items = sortedMapOf<String, String>()
+    items["A"] = "VALUE_A"
+    items["1"] = "VALUE_1"
+    items["X"] = "VALUE_X"
     println(items.keys) // [1, A, X]
 }
-</code></pre>
+</pre>
 <p><a href="https://play.kotlinlang.org/#eyJ2ZXJzaW9uIjoiMS4zLjcwIiwiY29kZSI6ImZ1biBtYWluKCkge1xuICAgIHZhbCBpdGVtcyA9IHNvcnRlZE1hcE9mPFN0cmluZywgU3RyaW5nPigpXG4gICAgaXRlbXNbXCJBXCJdID0gXCJWQUxVRV9BXCJcbiAgICBpdGVtc1tcIjFcIl0gPSBcIlZBTFVFXzFcIlxuICAgIGl0ZW1zW1wiWFwiXSA9IFwiVkFMVUVfWFwiXG4gICAgcHJpbnRsbihpdGVtcy5rZXlzKSAvLyBbMSwgQSwgWF1cbn0iLCJwbGF0Zm9ybSI6ImphdmEiLCJhcmdzIjoiIn0=">playground🔗</a></p>
 <ul>
 <li>key は null 不可</li>
@@ -246,6 +247,7 @@
         <script src="book.js" type="text/javascript" charset="utf-8"></script>
 
         <!-- Custom JS scripts -->
+                <script type="text/javascript" src="kotlin-pg.js"></script>
         
         
     </body>

@@ -152,11 +152,12 @@
 <p>Key に該当するものが分かっている場合は高速にデータを取得することができます。</p>
 <h2 id="例"><a class="header" href="#例">例</a></h2>
 <p>適当な Map を作成し、キーに対応する値を取得するには以下のようにします。</p>
-<pre><code class="language-kotlin">fun main() {
-    val items = mapOf&lt;String, String&gt;(&quot;A&quot; to &quot;VALUE_A&quot;, &quot;B&quot; to &quot;VALUE_B&quot;)
-    println(items.get(&quot;A&quot;)) // VALUE_A
+<pre class="kt">
+fun main() {
+    val items = mapOf<String, String>("A" to "VALUE_A", "B" to "VALUE_B")
+    println(items.get("A")) // VALUE_A
 }
-</code></pre>
+</pre>
 <h2 id="特徴"><a class="header" href="#特徴">特徴</a></h2>
 <ul>
 <li>一意なキーが必要</li>
@@ -181,22 +182,24 @@
 ): Map&lt;K, V&gt;
 </code></pre>
 <p>次のような使い方ができます。</p>
-<pre><code class="language-kotlin">data class User(val name: String, val score: Int)
+<pre class="kt">
+data class User(val name: String, val score: Int)
 fun main() {
-  val list = listOf(User(&quot;Tom&quot;, 30), User(&quot;John&quot;, 99), User(&quot;James&quot;, 77))
+  val list = listOf(User("Tom", 30), User("John", 99), User("James", 77))
   val map = list.associate{it.name to it}
   println(map) //{Tom=User(name=Tom, score=30), John=User(name=John, score=99), James=User(name=James, score=77)}
 }
-</code></pre>
+</pre>
 <p><a href="https://play.kotlinlang.org/#eyJ2ZXJzaW9uIjoiMS4zLjcwIiwiY29kZSI6ImRhdGEgY2xhc3MgVXNlcih2YWwgbmFtZTogU3RyaW5nLCB2YWwgc2NvcmU6IEludClcbmZ1biBtYWluKCkge1xuICB2YWwgbGlzdCA9IGxpc3RPZihVc2VyKFwiVG9tXCIsIDMwKSwgVXNlcihcIkpvaG5cIiwgOTkpLCBVc2VyKFwiSmFtZXNcIiwgNzcpKVxuICB2YWwgbWFwID0gbGlzdC5hc3NvY2lhdGV7aXQubmFtZSB0byBpdH1cbiAgcHJpbnRsbihtYXApIC8ve1RvbT1Vc2VyKG5hbWU9VG9tLCBzY29yZT0zMCksIEpvaG49VXNlcihuYW1lPUpvaG4sIHNjb3JlPTk5KSwgSmFtZXM9VXNlcihuYW1lPUphbWVzLCBzY29yZT03Nyl9XG59IiwicGxhdGZvcm0iOiJqYXZhIiwiYXJncyI6IiJ9">playground🔗</a></p>
 <p>上述の <code>toMap</code> を使用して以下のように書くこともできます。</p>
-<pre><code class="language-kotlin">data class User(val name: String, val score: Int)
+<pre class="kt">
+data class User(val name: String, val score: Int)
 fun main() {
-  val list = listOf(User(&quot;Tom&quot;, 30), User(&quot;John&quot;, 99), User(&quot;James&quot;, 77))
+  val list = listOf(User("Tom", 30), User("John", 99), User("James", 77))
   val map = list.map{it.name to it}.toMap()
   println(map) //{Tom=User(name=Tom, score=30), John=User(name=John, score=99), James=User(name=James, score=77)}
 }
-</code></pre>
+</pre>
 <p><a href="https://play.kotlinlang.org/#eyJ2ZXJzaW9uIjoiMS4zLjcwIiwiY29kZSI6ImRhdGEgY2xhc3MgVXNlcih2YWwgbmFtZTogU3RyaW5nLCB2YWwgc2NvcmU6IEludClcbmZ1biBtYWluKCkge1xuICB2YWwgbGlzdCA9IGxpc3RPZihVc2VyKFwiVG9tXCIsIDMwKSwgVXNlcihcIkpvaG5cIiwgOTkpLCBVc2VyKFwiSmFtZXNcIiwgNzcpKVxuICB2YWwgbWFwID0gbGlzdC5tYXB7aXQubmFtZSB0byBpdH0udG9NYXAoKVxuICBwcmludGxuKG1hcCkgLy97VG9tPVVzZXIobmFtZT1Ub20sIHNjb3JlPTMwKSwgSm9obj1Vc2VyKG5hbWU9Sm9obiwgc2NvcmU9OTkpLCBKYW1lcz1Vc2VyKG5hbWU9SmFtZXMsIHNjb3JlPTc3KX1cbn0iLCJwbGF0Zm9ybSI6ImphdmEiLCJhcmdzIjoiIn0=">playground🔗</a></p>
 <h3 id="a-hrefhttpskotlinlangorgapilatestjvmstdlibkotlincollectionsgroup-byhtmlgroupbya"><a class="header" href="#a-hrefhttpskotlinlangorgapilatestjvmstdlibkotlincollectionsgroup-byhtmlgroupbya"><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/group-by.html"><code>groupBy</code></a></a></h3>
 <p>value に List を使用したい場合に便利です。</p>
@@ -206,12 +209,13 @@ fun main() {
 </code></pre>
 <p>次のように使用することができます。</p>
 <p>桁数ごとにグルーピング</p>
-<pre><code class="language-kotlin">fun main() {
+<pre class="kt">
+fun main() {
   val list = listOf(1234,12,2,34,1234,6,1,0,-9587,-95,-921)
   val map = list.groupBy{ 
       var ret = 0
-      var value = if (it &gt; 0) {it} else {-it}
-      while (value &gt; 0) {
+      var value = if (it > 0) {it} else {-it}
+      while (value > 0) {
           ret = ret + 1
           value = value / 10
       }
@@ -219,7 +223,7 @@ fun main() {
   }
   println(map) // {4=[1234, 1234, -9587], 2=[12, 34, -95], 1=[2, 6, 1], 0=[0], 3=[-921]}
 }
-</code></pre>
+</pre>
 <p><a href="https://play.kotlinlang.org/#eyJ2ZXJzaW9uIjoiMS4zLjcwIiwiY29kZSI6ImZ1biBtYWluKCkge1xuICB2YWwgbGlzdCA9IGxpc3RPZigxMjM0LDEyLDIsMzQsMTIzNCw2LDEsMCwtOTU4NywtOTUsLTkyMSlcbiAgdmFsIG1hcCA9IGxpc3QuZ3JvdXBCeXsgXG4gICAgICB2YXIgcmV0ID0gMFxuICAgICAgdmFyIHZhbHVlID0gaWYgKGl0ID4gMCkge2l0fSBlbHNlIHstaXR9XG4gICAgICB3aGlsZSAodmFsdWUgPiAwKSB7XG4gICAgICAgICAgcmV0ID0gcmV0ICsgMVxuICAgICAgICAgIHZhbHVlID0gdmFsdWUgLyAxMFxuICAgICAgfVxuICAgICAgcmV0XG4gIH1cbiAgcHJpbnRsbihtYXApIC8vIHs0PVsxMjM0LCAxMjM0LCAtOTU4N10sIDI9WzEyLCAzNCwgLTk1XSwgMT1bMiwgNiwgMV0sIDA9WzBdLCAzPVstOTIxXX1cbn0iLCJwbGF0Zm9ybSI6ImphdmEiLCJhcmdzIjoiIn0=">playground🔗</a></p>
 
                     </main>
@@ -268,6 +272,7 @@ fun main() {
         <script src="book.js" type="text/javascript" charset="utf-8"></script>
 
         <!-- Custom JS scripts -->
+                <script type="text/javascript" src="kotlin-pg.js"></script>
         
         
     </body>

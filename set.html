@@ -154,10 +154,11 @@
 <p>一般的なSetでは重複が許されません。</p>
 <p>また、順序を持たないため <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathnormal">i</span></span></span></span> 番目へのアクセス などの概念がありません。</p>
 <p>そのため、次のようなコードにより List から重複を排除することができます。</p>
-<pre><code class="language-kotlin">val list: List&lt;Int&gt; = listOf(1, 1, 2, 3, 5, 8, 13, 21)
+<pre class="kt">
+val list: List<Int> = listOf(1, 1, 2, 3, 5, 8, 13, 21)
 // dedupList: [1, 2, 3, 5, 8, 13, 21] になる
-val dedupList: List&lt;Int&gt; = list.toSet().toList()
-</code></pre>
+val dedupList: List<Int> = list.toSet().toList()
+</pre>
 <p>Kotlin では <code>distinct()</code> メソッドがあるため、重複を排除したい場合は distinct() メソッドを使用するほうが分かりやすいです。</p>
 <p>※ 
 <a href="https://github.com/JetBrains/kotlin/blob/80cce1dc5280eb9135390270c8644a7b8d198071/libraries/stdlib/common/src/generated/_Arrays.kt#L11828">内部の実装</a>
@@ -209,6 +210,7 @@ val dedupList: List&lt;Int&gt; = list.toSet().toList()
         <script src="book.js" type="text/javascript" charset="utf-8"></script>
 
         <!-- Custom JS scripts -->
+                <script type="text/javascript" src="kotlin-pg.js"></script>
         
         
     </body>
