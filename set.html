@@ -155,9 +155,11 @@
 <p>また、順序を持たないため <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathnormal">i</span></span></span></span> 番目へのアクセス などの概念がありません。</p>
 <p>そのため、次のようなコードにより List から重複を排除することができます。</p>
 <pre class="kt">
-val list: List<Int> = listOf(1, 1, 2, 3, 5, 8, 13, 21)
-// dedupList: [1, 2, 3, 5, 8, 13, 21] になる
-val dedupList: List<Int> = list.toSet().toList()
+fun main() {
+  val list: List&lt;Int&gt; = listOf(1, 1, 2, 3, 5, 8, 13, 21)
+  val dedupList: List&lt;Int&gt; = list.toSet().toList()
+  println(dedupList)
+}
 </pre>
 <p>Kotlin では <code>distinct()</code> メソッドがあるため、重複を排除したい場合は distinct() メソッドを使用するほうが分かりやすいです。</p>
 <p>※ 

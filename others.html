@@ -158,6 +158,31 @@
 </ul>
 <p>用途としてはundo処理などの戻る処理や幅優先探索などがあります。</p>
 <p><code>java.util.Stack</code> などで利用できます。</p>
+<h3 id="使用例-括弧列のバリデーション"><a class="header" href="#使用例-括弧列のバリデーション">使用例: 括弧列のバリデーション</a></h3>
+<pre class="kt">
+import java.util.Stack
+
+fun main() {
+    println(varidate("(あ)((ああ)あああ)(ああ)()"))  // true
+    println(varidate("(あ)((ああ))あああ)(ああ)()")) // false
+}
+
+fun varidate(target: String):Boolean {
+  val stack = Stack&lt;Char&gt;() // スタックを初期化
+
+  for (character in target) {
+    when (character) {
+      '(' -> stack.push(character)
+      ')' -> if (stack.empty()) {
+          return false
+      } else {
+          stack.pop()
+      }
+    }
+  }
+  return stack.empty()
+}
+</pre>
 <h2 id="queue"><a class="header" href="#queue">Queue</a></h2>
 <div align="center">
 <img src="https://res.cloudinary.com/ddaz9etkx/image/upload/v1628516592/ot/toilet_gyouretsu_qigx4p.png" width="50%">
