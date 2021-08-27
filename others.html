@@ -146,7 +146,8 @@
                         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
 <h1 id="その他のデータ構造"><a class="header" href="#その他のデータ構造">その他のデータ構造</a></h1>
 <p>基本的なデータ構造であるスタック（Stack）やキュー（Queue）について触れておきます。</p>
-<p>これらはList構造などを用いて容易に実装できるため、「Listの上手な使い方の１つ」としてとらえられます。</p>
+<p>これらはList構造などを用いて容易に実装できるため、特に際立った機能はありません。</p>
+<p>しかし、特定の機能に制限することで <strong>Less is more</strong> の恩恵を受けることができます。</p>
 <h2 id="stack"><a class="header" href="#stack">Stack</a></h2>
 <p>Stack は LIFO(Last In First Out) のデータ構造です。</p>
 <p>以下のメソッドが用意されており、いずれも<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span> です。</p>
@@ -156,7 +157,7 @@
 <li>先頭の値を取得(peek)</li>
 <li>先頭の値を削除(pop)</li>
 </ul>
-<p>用途としてはundo処理などの戻る処理や幅優先探索などがあります。</p>
+<p>用途としてはundo処理の実装や深さ優先探索(DFS)などがあります。</p>
 <p><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Stack.html"><code>java.util.Stack</code></a> などで利用できます。</p>
 <h3 id="使用例-括弧列のバリデーション"><a class="header" href="#使用例-括弧列のバリデーション">使用例: 括弧列のバリデーション</a></h3>
 <pre class="kt">
@@ -191,11 +192,11 @@ fun validate(target: String):Boolean {
 <p>以下のようなメソッドが用意されており、いずれも<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span> です。</p>
 <ul>
 <li>要素数を取得</li>
-<li>末尾に追加(add)</li>
+<li>末尾に追加(add / enqueue)</li>
 <li>先頭の値を取得(peek)</li>
-<li>先頭の値を削除(remove)</li>
+<li>先頭の値を削除(remove / dequeue)</li>
 </ul>
-<p>用途としてはジョブスケジューリング、トポロジカルソート<sup class="footnote-reference"><a href="#1">1</a></sup>、深さ優先探索などがあります。</p>
+<p>用途としてはジョブスケジューリング、トポロジカルソート<sup class="footnote-reference"><a href="#1">1</a></sup>、幅優先探索(BFS)などがあります。</p>
 <p><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Queue.html"><code>java.util.Queue</code></a> などで利用できます。</p>
 <h3 id="使用例-ラウンドロビン"><a class="header" href="#使用例-ラウンドロビン">使用例: ラウンドロビン</a></h3>
 <pre class="kt">
@@ -214,11 +215,15 @@ fun main() {
 }
 </pre>
 <h2 id="deque"><a class="header" href="#deque">Deque</a></h2>
-<p>Stack と Queue 両方の機能を持ったデータ構造です！</p>
+<p>Stack と Queue 両方の機能を持ったデータ構造です。</p>
 <p>先頭または末尾へのデータ追加・参照・削除がすべて<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span> で行えます。</p>
-<hr>
+<p>用途としては 0-1 BFS<sup class="footnote-reference"><a href="#2">2</a></sup> などがありますが、実務ではあまり使われないと思います。</p>
+<hr />
 <div class="footnote-definition" id="1"><sup class="footnote-definition-label">1</sup>
 <p>有向非巡回グラフ（一般的にDAGと呼ばれる）に順序をつける操作です。</p>
+</div>
+<div class="footnote-definition" id="2"><sup class="footnote-definition-label">2</sup>
+<p>重みが0または1のグラフにおける最短経路問題を解くことができるアルゴリズムです。</p>
 </div>
 
                     </main>
