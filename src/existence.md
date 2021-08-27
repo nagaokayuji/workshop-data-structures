@@ -2,6 +2,8 @@
 
 次のコードはそれぞれサイズN, サイズM のリスト中に何個の重複があるかを確認するためのものです。
 
+## List + filter + contains
+
 <pre class="kt">
 const val N:Int = 100000
 const val M:Int = 100000
@@ -34,6 +36,8 @@ fun main() {
 
 $10^5$ 件 $\times 10^5$ 件の比較が行われるため、これは$O(N^2)$の処理となっており、$10^{10}$ ステップ程度の処理が発生してしまいます。
 
+
+## Set + filter + contains
 次に、list2 を Set に変換して同じ処理を実行してみます。
 
 <pre class="kt">
@@ -81,3 +85,36 @@ fun main() {
 
 上記コードにおいて、$N > M$ の 場合と $N < M$  の場合で比較すると、どちらの効率が良いでしょうか？
 
+## intersect
+
+[便利な関数](./collection_methods.md) で紹介した`intersect`を覚えていますでしょうか。
+
+これを使用して以下のように書くことができます。
+
+<pre class="kt">
+const val N:Int = 100000
+const val M:Int = 100000
+fun main() {
+  val originalList = (0..101000).toList()
+  // サイズNのリスト
+  val list1 = originalList.shuffled().take(N)
+  // サイズMのリスト
+  val list2 = originalList.shuffled().take(M)
+  val startTime = System.currentTimeMillis()
+  // 問題の処理
+  val countInLists = list1.intersect(list2).size
+
+  val endTime = System.currentTimeMillis()
+  println("\${countInLists} 件見つかりました。")
+  println("[実行時間] \${endTime - startTime} ms")
+}
+</pre>
+
+実行結果は以下のようになりました。
+
+```
+99011 件見つかりました。
+[実行時間] 132 ms
+```
+
+内部では`Set`が使用されているため、こちらも高速です。
