@@ -14,7 +14,10 @@ infix fun <T> Iterable<T>.intersect(
 ): Set<T>
 ```
 
-以下のように使用します。
+※ 戻り値が`Set`型であることに注意！
+
+使用例は以下です。
+`list1`, `list2` の重複部分のみ取り出しています。
 
 <pre class="kt">
 fun main() {
@@ -24,6 +27,15 @@ fun main() {
 }
 </pre>
 
+※ `infix fun` として定義されているため、次のようにも書けます。
+
+<pre class="kt">
+fun main() {
+  val list1 = listOf(1,2,3,4,5,6,7,8,9)
+  val list2 = listOf(1,4,7,9,11,13)
+  println(list1 intersect list2) // [1, 4, 7, 9]
+}
+</pre>
 
 ## reduce, fold
 
