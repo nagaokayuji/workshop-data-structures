@@ -146,21 +146,31 @@
                         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
 <h1 id="collection-の便利な関数"><a class="header" href="#collection-の便利な関数">Collection の便利な関数</a></h1>
 <p>知っておくと便利なメソッドをご紹介します。</p>
-<h2 id="chunked"><a class="header" href="#chunked">chunked</a></h2>
-<p>collection を 複数のリストに分割できます。</p>
-<pre><code class="language-kotlin">fun &lt;T, R&gt; Iterable&lt;T&gt;.chunked(
-    size: Int,
-    transform: (List&lt;T&gt;) -&gt; R
-): List&lt;R&gt;
+<h2 id="intersect"><a class="header" href="#intersect">intersect</a></h2>
+<p>重複する要素だけ取り出すことができます。</p>
+<pre><code class="language-kotlin">infix fun &lt;T&gt; Iterable&lt;T&gt;.intersect(
+    other: Iterable&lt;T&gt;
+): Set&lt;T&gt;
 </code></pre>
-<p><code>size</code> に指定した個数ごとに List に分割し、関数を適用できます。</p>
+<p>※ 戻り値が<code>Set</code>型であることに注意！</p>
+<p>使用例は以下です。
+<code>list1</code>, <code>list2</code> の重複部分のみ取り出しています。</p>
 <pre class="kt">
 fun main() {
-  val l = listOf(1,1,2,3,5,8,13,21,34,55)
-  println(l.chunked(3)) // [[1, 1, 2], [3, 5, 8], [13, 21, 34], [55]]
+  val list1 = listOf(1,2,3,4,5,6,7,8,9)
+  val list2 = listOf(1,4,7,9,11,13)
+  println(list1.intersect(list2)) // [1, 4, 7, 9]
 }
 </pre>
-<h2 id="reduce"><a class="header" href="#reduce">reduce</a></h2>
+<p>※ <code>infix fun</code> として定義されているため、次のようにも書けます。</p>
+<pre class="kt">
+fun main() {
+  val list1 = listOf(1,2,3,4,5,6,7,8,9)
+  val list2 = listOf(1,4,7,9,11,13)
+  println(list1 intersect list2) // [1, 4, 7, 9]
+}
+</pre>
+<h2 id="reduce-fold"><a class="header" href="#reduce-fold">reduce, fold</a></h2>
 <p>畳み込み関数です。
 順々に関数を適用していきます。</p>
 <pre><code class="language-kotlin">fun &lt;T, R&gt; Iterable&lt;T&gt;.fold(
