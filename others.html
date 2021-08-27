@@ -197,6 +197,22 @@ fun varidate(target: String):Boolean {
 </ul>
 <p>用途としてはジョブスケジューリング、トポロジカルソート<sup class="footnote-reference"><a href="#1">1</a></sup>、深さ優先探索などがあります。</p>
 <p><code>java.util.Queue</code> などで利用できます。</p>
+<h3 id="使用例-ラウンドロビン"><a class="header" href="#使用例-ラウンドロビン">使用例: ラウンドロビン</a></h3>
+<pre class="kt">
+import java.util.*
+
+fun main() {
+  val st:Queue&lt;String&gt; = LinkedList&lt;String&gt;().apply{
+      add("hoge")
+      add("fuga")
+      add("piyo")
+  }
+  repeat(10) {
+      println(st.peek()) // Queue の先頭を取得
+      st.add(st.poll())  // Queue の先頭を取り出し、末尾に追加
+  }
+}
+</pre>
 <h2 id="deque"><a class="header" href="#deque">Deque</a></h2>
 <p>Stack と Queue 両方の機能を持ったデータ構造です！</p>
 <p>先頭または末尾へのデータ追加・参照・削除がすべて<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span> で行えます。</p>
