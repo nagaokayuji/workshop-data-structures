@@ -35,7 +35,7 @@ ArrayList の弱点である挿入や削除に強いデータ構造です。
 <pre class="kt">
 import java.util.LinkedList
 fun main() {
-    val linkedList: LinkedList<Int> = LinkedList<Int>()
+    val linkedList: LinkedList&lt;Int&gt; = LinkedList&lt;Int&gt;()
     linkedList.addAll(listOf(123,777,2,0,-999,50)) // この順番で挿入
     println(linkedList[2]) // 2
     println(linkedList.contains(777)) // true

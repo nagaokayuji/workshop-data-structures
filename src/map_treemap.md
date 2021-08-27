@@ -30,7 +30,7 @@ import java.util.TreeMap
 - キーがソートされる
 <pre class="kt">
 fun main() {
-    val items = sortedMapOf<String, String>()
+    val items = sortedMapOf&lt;String, String&gt;()
     items["A"] = "VALUE_A"
     items["1"] = "VALUE_1"
     items["X"] = "VALUE_X"

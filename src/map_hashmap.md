@@ -18,7 +18,7 @@ Kotlin で `mapOf()` 等で宣言すると `HashMap` になるようです。
 
 <pre class="kt">
 fun main() {
-    val items = HashMap<String, String>()
+    val items = HashMap&lt;String, String&gt;()
     items["A"] = "VALUE_A"
     items["1"] = "VALUE_1"
     items["X"] = "VALUE_X"

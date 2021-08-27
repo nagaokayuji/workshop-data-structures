@@ -19,9 +19,11 @@ Map 同様に HashSet, TreeSet などの種類がありますが、
 そのため、次のようなコードにより List から重複を排除することができます。
 
 <pre class="kt">
-val list: List<Int> = listOf(1, 1, 2, 3, 5, 8, 13, 21)
-// dedupList: [1, 2, 3, 5, 8, 13, 21] になる
-val dedupList: List<Int> = list.toSet().toList()
+fun main() {
+  val list: List&lt;Int&gt; = listOf(1, 1, 2, 3, 5, 8, 13, 21)
+  val dedupList: List&lt;Int&gt; = list.toSet().toList()
+  println(dedupList)
+}
 </pre>
 
 Kotlin では `distinct()` メソッドがあるため、重複を排除したい場合は distinct() メソッドを使用するほうが分かりやすいです。
