@@ -730,7 +730,14 @@ fun main() {
 <p>より、時間計算量は<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span> となります。</p>
 <div style="break-before: page; page-break-before: always;"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
 <h1 id="何度もfilterする"><a class="header" href="#何度もfilterする">何度もfilterする</a></h1>
-<pre><code class="language-kotlin">const val N:Int = 500000
+<script src="https://unpkg.com/kotlin-playground@1"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  KotlinPlayground('.kt');
+});
+</script>
+<pre class="kt">
+const val N:Int = 500000
 fun main() {
   val originalList = (0..N*2).toList()
   // サイズNのリスト
@@ -742,12 +749,12 @@ fun main() {
   val filteredList = list1.filter{it != 1}.filter{it != 2}.filter{it != 3}.filter{it != 4}.filter{it != 5}
   
   val endTime = System.currentTimeMillis()
-  println(&quot;[実行時間] &quot; + (endTime - startTime).toString() + &quot;ms&quot;)
+  println("[実行時間] " + (endTime - startTime).toString() + "ms")
 }
-</code></pre>
+</pre>
 <p><a href="https://play.kotlinlang.org/#eyJ2ZXJzaW9uIjoiMS4zLjcwIiwiY29kZSI6ImNvbnN0IHZhbCBOOkludCA9IDUwMDAwMFxuZnVuIG1haW4oKSB7XG4gIHZhbCBvcmlnaW5hbExpc3QgPSAoMC4uTioyKS50b0xpc3QoKVxuICAvLyDjgrXjgqTjgrpO44Gu44Oq44K544OIXG4gIHZhbCBsaXN0MSA9IG9yaWdpbmFsTGlzdC5zaHVmZmxlZCgpLnRha2UoTilcblxuICB2YWwgc3RhcnRUaW1lID0gU3lzdGVtLmN1cnJlbnRUaW1lTWlsbGlzKClcblxuICAvLyBmaWx0ZXJcbiAgdmFsIGZpbHRlcmVkTGlzdCA9IGxpc3QxLmZpbHRlcntpdCAhPSAxfS5maWx0ZXJ7aXQgIT0gMn0uZmlsdGVye2l0ICE9IDN9LmZpbHRlcntpdCAhPSA0fS5maWx0ZXJ7aXQgIT0gNX1cbiAgXG4gIHZhbCBlbmRUaW1lID0gU3lzdGVtLmN1cnJlbnRUaW1lTWlsbGlzKClcbiAgcHJpbnRsbihcIlvlrp/ooYzmmYLplpNdIFwiICsgKGVuZFRpbWUgLSBzdGFydFRpbWUpLnRvU3RyaW5nKCkgKyBcIm1zXCIpXG59IiwicGxhdGZvcm0iOiJqYXZhIiwiYXJncyI6IiJ9">playground🔗</a></p>
 <p>実行結果</p>
-<pre><code class="language-kotlin">[実行時間] 964ms
+<pre><code>[実行時間] 964ms
 </code></pre>
 <h2 id="少し改善"><a class="header" href="#少し改善">少し改善</a></h2>
 <p>上記のコードでは、<code>filter</code>のたびに先頭から評価していく処理が走っていることが予想されます。</p>
