@@ -7,12 +7,12 @@
 
 collection を 複数のリストに分割できます。
 
-<pre class="kt">
+```kotlin
 fun <T, R> Iterable<T>.chunked(
     size: Int,
     transform: (List<T>) -> R
 ): List<R>
-</pre>
+```
 
 `size` に指定した個数ごとに List に分割し、関数を適用できます。
 
@@ -31,12 +31,12 @@ fun main() {
 畳み込み関数です。
 順々に関数を適用していきます。
 
-<pre class="kt">
+```kotlin
 fun <T, R> Iterable<T>.fold(
     initial: R,
     operation: (acc: R, T) -> R
 ): R
-</pre>
+```
 
 例えば、次のようにすると簡単に階乗が計算できます。
 <pre class="kt">
