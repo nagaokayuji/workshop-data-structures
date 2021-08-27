@@ -29,11 +29,11 @@ Stack は LIFO(Last In First Out) のデータ構造です。
 import java.util.Stack
 
 fun main() {
-    println(varidate("(あ)((ああ)あああ)(ああ)()"))  // true
-    println(varidate("(あ)((ああ))あああ)(ああ)()")) // false
+    println(validate("(あ)((ああ)あああ)(ああ)()"))  // true
+    println(validate("(あ)((ああ))あああ)(ああ)()")) // false
 }
 
-fun varidate(target: String):Boolean {
+fun validate(target: String):Boolean {
   val stack = Stack&lt;Char&gt;() // スタックを初期化
 
   for (character in target) {
