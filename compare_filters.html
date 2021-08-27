@@ -145,6 +145,8 @@
                     <main>
                         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
 <h1 id="何度もfilterする"><a class="header" href="#何度もfilterする">何度もfilterする</a></h1>
+<p><code>filter</code> 処理を何度も行う場合について比較していきます。</p>
+<h2 id="filter-をつなげる"><a class="header" href="#filter-をつなげる">filter をつなげる</a></h2>
 <pre class="kt">
 const val N:Int = 500000
 fun main() {
@@ -165,7 +167,7 @@ fun main() {
 <p>実行結果</p>
 <pre><code>[実行時間] 964ms
 </code></pre>
-<h2 id="少し改善"><a class="header" href="#少し改善">少し改善</a></h2>
+<h2 id="条件式を改善"><a class="header" href="#条件式を改善">条件式を改善</a></h2>
 <p>上記のコードでは、<code>filter</code>のたびに先頭から評価していく処理が走っていることが予想されます。</p>
 <p>よって、条件式を1つにしてみます。</p>
 <pre class="kt">
@@ -212,6 +214,7 @@ fun main() {
 <p>結果は次のようになりました。</p>
 <pre><code>[実行時間] 305ms
 </code></pre>
+<p>遅延評価によって式の評価回数が削減されています。</p>
 
                     </main>
 
