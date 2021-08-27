@@ -22,7 +22,7 @@ Stack は LIFO(Last In First Out) のデータ構造です。
 
 用途としてはundo処理などの戻る処理や幅優先探索などがあります。
 
-`java.util.Stack` などで利用できます。
+[`java.util.Stack`](https://docs.oracle.com/javase/8/docs/api/java/util/Stack.html) などで利用できます。
 
 ### 使用例: 括弧列のバリデーション
 <pre class="kt">
@@ -69,7 +69,7 @@ Queue は FIFO(First In First Out) のデータ構造です。
 
 用途としてはジョブスケジューリング、トポロジカルソート[^1]、深さ優先探索などがあります。
 
-`java.util.Queue` などで利用できます。
+[`java.util.Queue`](https://docs.oracle.com/javase/8/docs/api/java/util/Queue.html) などで利用できます。
 ### 使用例: ラウンドロビン
 
 <pre class="kt">
