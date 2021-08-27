@@ -814,6 +814,35 @@ fun main() {
 <p>なお、この結果は List <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.36687em;vertical-align:0em;"></span><span class="mrel">⇔</span></span></span></span> Map の変換時間も含んでいます。</p>
 <p>このように List を使用していたところを Map (TreeMap) に変更することにより、</p>
 <p><strong>4027 ms</strong> が <strong>494 ms</strong> に短縮されました。</p>
+<h2 id="優先度付きキューpriority-queue"><a class="header" href="#優先度付きキューpriority-queue">優先度付きキュー(Priority Queue)</a></h2>
+<p>優先度付きキュー（ヒープ）を使用すると以下のように書けます。</p>
+<pre class="kt">
+import java.util.PriorityQueue
+
+const val N:Int = 100000
+const val M:Int = 10000
+fun main() {
+  val originalList = (1..101000).toList()
+  // サイズNのリスト
+  val list = originalList.shuffled().take(N).toMutableList()
+  
+  val startTime = System.currentTimeMillis()
+  // 以下の操作を M 回行いたい！
+  // - 要素の中から最小値を見つけ、2倍したい
+  
+  val priorityQueue = PriorityQueue(list)
+  repeat(M){
+      val min = priorityQueue.poll()
+      priorityQueue.add(min * 2)
+  }
+  val result = priorityQueue.toList()
+  val endTime = System.currentTimeMillis()
+  println("[実行時間] ${endTime - startTime} ms")
+}
+</pre>
+<p>実行結果は以下のようになりました。</p>
+<pre><code>[実行時間] 40 ms
+</code></pre>
 <h2 id="計算量を見積もる"><a class="header" href="#計算量を見積もる">計算量を見積もる</a></h2>
 <ul>
 <li>List の場合
@@ -834,6 +863,69 @@ fun main() {
 </li>
 </ul>
 <p>より、時間計算量は<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span> となります。</p>
+<ul>
+<li>PriorityQueue の場合
+<ul>
+<li>最小値の検索・取得 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span></li>
+<li>2倍して置き換える処理 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span></li>
+</ul>
+</li>
+</ul>
+<p>より、時間計算量は<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span> となります。</p>
+<h2 id="すべて結果が正しいことを確認しておく"><a class="header" href="#すべて結果が正しいことを確認しておく">すべて結果が正しいことを確認しておく</a></h2>
+<p>最後に以下のようなコードで処理結果が等しくなっていることを確認しておきます。</p>
+<p>実行結果が<code>true</code>と表示されればすべて等しいです。</p>
+<pre class="kt">
+import java.util.*
+
+const val N: Int = 100000
+const val M: Int = 10000
+fun main() {
+  val originalList = (1..101000).toList()
+  // サイズNのリスト
+  val list = originalList.shuffled().take(N).toMutableList()
+  val naiveResult = naive(list.toMutableList())
+  val mapResult = map(list)
+  val priorityQueueResult = priorityQueue(list)
+  println(naiveResult == mapResult && mapResult == priorityQueueResult)
+}
+
+fun naive(list: MutableList&lt;Int&gt;): List&lt;Int&gt; {
+  repeat(M) {
+    val min = list.minOrNull()!!
+    val index = list.indexOf(min)
+    list[index] = min * 2
+  }
+  list.sort()
+  return list
+}
+
+fun map(list: List&lt;Int&gt;): List&lt;Int&gt; {
+  val map = list.groupingBy { it }.eachCount().toSortedMap() // key: 要素の値, value: 個数
+  repeat(M) {
+    val minElement = map.asSequence().first() // 先頭の要素 = 最小値
+    val min = minElement.key
+    map[min] = minElement.value - 1
+    if (map[min] == 0) {
+      map.remove(min)
+    }
+    map[min * 2] = map.getOrDefault(min * 2, 0) + 1
+  }
+  val result = map.map { (key, value) -&gt; List&lt;Int&gt;(value, { key }) }.flatten().toList()
+  return result
+}
+
+fun priorityQueue(list: List&lt;Int&gt;): List&lt;Int&gt; {
+  val priorityQueue = PriorityQueue(list)
+  repeat(M) {
+    val min = priorityQueue.poll()
+    priorityQueue.add(min * 2)
+  }
+  val result = priorityQueue.toMutableList()
+  result.sort()
+  return result
+}
+</pre>
 <div style="break-before: page; page-break-before: always;"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
 <h1 id="何度もfilterする"><a class="header" href="#何度もfilterする">何度もfilterする</a></h1>
 <pre class="kt">
