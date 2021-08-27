@@ -1,0 +1,260 @@
+<!DOCTYPE HTML>
+<html lang="ja" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>存在確認 - Kotlin, Java データ構造について</title>
+                
+
+        <!-- Custom HTML head -->
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="workshop materials">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+                <link rel="icon" href="favicon.svg">
+                        <link rel="shortcut icon" href="favicon.png">
+                <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+                <link rel="stylesheet" href="css/print.css" media="print">
+        
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+                <link rel="stylesheet" href="fonts/fonts.css">
+        
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+            </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">Kotlin, Java データ構造</a></li><li class="chapter-item expanded "><a href="collection.html"><strong aria-hidden="true">1.</strong> Collection</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="collection_basic.html"><strong aria-hidden="true">1.1.</strong> 基本的な機能</a></li><li class="chapter-item expanded "><a href="collection_methods.html"><strong aria-hidden="true">1.2.</strong> 便利な関数</a></li></ol></li><li class="chapter-item expanded "><a href="list.html"><strong aria-hidden="true">2.</strong> List</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="list_arraylist.html"><strong aria-hidden="true">2.1.</strong> ArrayList</a></li><li class="chapter-item expanded "><a href="list_linkedlist.html"><strong aria-hidden="true">2.2.</strong> LinkedList</a></li><li class="chapter-item expanded "><a href="list_arraylist_vs_linkedlist.html"><strong aria-hidden="true">2.3.</strong> ArrayList v.s. LinkedList</a></li></ol></li><li class="chapter-item expanded "><a href="map.html"><strong aria-hidden="true">3.</strong> Map</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="map_hashmap.html"><strong aria-hidden="true">3.1.</strong> HashMap</a></li><li class="chapter-item expanded "><a href="map_treemap.html"><strong aria-hidden="true">3.2.</strong> TreeMap</a></li></ol></li><li class="chapter-item expanded "><a href="set.html"><strong aria-hidden="true">4.</strong> Set</a></li><li class="chapter-item expanded "><a href="others.html"><strong aria-hidden="true">5.</strong> その他のデータ構造</a></li><li class="chapter-item expanded "><a href="compare_speed.html"><strong aria-hidden="true">6.</strong> 遅い例と速い例</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="existence.html" class="active"><strong aria-hidden="true">6.1.</strong> 存在確認</a></li><li class="chapter-item expanded "><a href="find_minimum.html"><strong aria-hidden="true">6.2.</strong> 最小値の検索</a></li><li class="chapter-item expanded "><a href="compare_filters.html"><strong aria-hidden="true">6.3.</strong> 何度もfilterする</a></li></ol></li><li class="chapter-item expanded "><a href="conclusion.html"><strong aria-hidden="true">7.</strong> まとめ</a></li><li class="chapter-item expanded "><a href="references.html"><strong aria-hidden="true">8.</strong> 参考</a></li></ol>            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                                                <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                                            </div>
+
+                    <h1 class="menu-title">Kotlin, Java データ構造について</h1>
+
+                    <div class="right-buttons">
+                                                <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                                                                        
+                    </div>
+                </div>
+
+                                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+<h1 id="存在確認"><a class="header" href="#存在確認">存在確認</a></h1>
+<p>次のコードはそれぞれサイズN, サイズM のリスト中に何個の重複があるかを確認するためのものです。</p>
+<pre class="kt">
+const val N:Int = 100000
+const val M:Int = 100000
+fun main() {
+  val originalList = (0..101000).toList()
+  // サイズNのリスト
+  val list1 = originalList.shuffled().take(N)
+  // サイズMのリスト
+  val list2 = originalList.shuffled().take(M)
+  val startTime = System.currentTimeMillis()
+  // 問題の処理
+  val countInLists = list1.filter{
+    list2.contains(it)
+  }.size
+
+  val endTime = System.currentTimeMillis()
+  println("${countInLists} 件見つかりました。")
+  println("[実行時間] ${endTime - startTime} ms")
+}
+</pre>
+<p><a href="https://play.kotlinlang.org/#eyJ2ZXJzaW9uIjoiMS4zLjcwIiwiY29kZSI6ImNvbnN0IHZhbCBOOkludCA9IDEwMDAwMFxuY29uc3QgdmFsIE06SW50ID0gMTAwMDAwXG5mdW4gbWFpbigpIHtcbiAgdmFsIG9yaWdpbmFsTGlzdCA9ICgwLi4xMDEwMDApLnRvTGlzdCgpXG4gIC8vIOOCteOCpOOCuk7jga7jg6rjgrnjg4hcbiAgdmFsIGxpc3QxID0gb3JpZ2luYWxMaXN0LnNodWZmbGVkKCkudGFrZShOKVxuICAvLyDjgrXjgqTjgrpN44Gu44Oq44K544OIXG4gIHZhbCBsaXN0MiA9IG9yaWdpbmFsTGlzdC5zaHVmZmxlZCgpLnRha2UoTSlcbiAgdmFsIHN0YXJ0VGltZSA9IFN5c3RlbS5jdXJyZW50VGltZU1pbGxpcygpXG4gIC8vIOWVj+mhjOOBruWHpueQhlxuICB2YWwgY291bnRJbkxpc3RzID0gbGlzdDEuZmlsdGVye1xuICAgIGxpc3QyLmNvbnRhaW5zKGl0KVxuICB9LnNpemVcblxuICB2YWwgZW5kVGltZSA9IFN5c3RlbS5jdXJyZW50VGltZU1pbGxpcygpXG4gIHByaW50bG4oXCIke2NvdW50SW5MaXN0c30g5Lu26KaL44Gk44GL44KK44G+44GX44Gf44CCXCIpXG4gIHByaW50bG4oXCJb5a6f6KGM5pmC6ZaTXSAke2VuZFRpbWUgLSBzdGFydFRpbWV9IG1zXCIpXG59IiwicGxhdGZvcm0iOiJqYXZhIiwiYXJncyI6IiJ9">playground🔗</a></p>
+<p>これを実行してみると、以下のように出力されました。</p>
+<pre><code>99005 件見つかりました。
+[実行時間] 7080 ms
+</code></pre>
+<p><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">5</span></span></span></span></span></span></span></span></span></span></span> 件 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.897438em;vertical-align:-0.08333em;"></span><span class="mord">×</span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">5</span></span></span></span></span></span></span></span></span></span></span> 件の比較が行われるため、これは<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span>の処理となっており、<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mord mtight">0</span></span></span></span></span></span></span></span></span></span></span></span> ステップ程度の処理が発生してしまいます。</p>
+<p>次に、list2 を Set に変換して同じ処理を実行してみます。</p>
+<pre class="kt">
+const val N:Int = 100000
+const val M:Int = 100000
+fun main() {
+  val originalList = (0..101000).toList()
+  // サイズNのリスト
+  val list1 = originalList.shuffled().take(N)
+  // サイズMのリスト
+  val list2 = originalList.shuffled().take(M)
+  val startTime = System.currentTimeMillis()
+  // 問題の処理
+  val list2Set = list2.toSet() // Set に変換しておく
+  val countInLists = list1.filter{
+    list2Set.contains(it)
+  }.size
+
+  val endTime = System.currentTimeMillis()
+  println("${countInLists} 件見つかりました。")
+  println("[実行時間] ${endTime - startTime} ms")
+}
+</pre>
+<p>こちらのコードのリンクは以下です。</p>
+<p><a href="https://play.kotlinlang.org/#eyJ2ZXJzaW9uIjoiMS4zLjcwIiwiY29kZSI6ImNvbnN0IHZhbCBOOkludCA9IDEwMDAwMFxuY29uc3QgdmFsIE06SW50ID0gMTAwMDAwXG5mdW4gbWFpbigpIHtcbiAgdmFsIG9yaWdpbmFsTGlzdCA9ICgwLi4xMDEwMDApLnRvTGlzdCgpXG4gIC8vIOOCteOCpOOCuk7jga7jg6rjgrnjg4hcbiAgdmFsIGxpc3QxID0gb3JpZ2luYWxMaXN0LnNodWZmbGVkKCkudGFrZShOKVxuICAvLyDjgrXjgqTjgrpN44Gu44Oq44K544OIXG4gIHZhbCBsaXN0MiA9IG9yaWdpbmFsTGlzdC5zaHVmZmxlZCgpLnRha2UoTSlcbiAgdmFsIHN0YXJ0VGltZSA9IFN5c3RlbS5jdXJyZW50VGltZU1pbGxpcygpXG4gIC8vIOWVj+mhjOOBruWHpueQhlxuICB2YWwgbGlzdDJTZXQgPSBsaXN0Mi50b1NldCgpIC8vIFNldCDjgavlpInmj5vjgZfjgabjgYrjgY9cbiAgdmFsIGNvdW50SW5MaXN0cyA9IGxpc3QxLmZpbHRlcntcbiAgICBsaXN0MlNldC5jb250YWlucyhpdClcbiAgfS5zaXplXG5cbiAgdmFsIGVuZFRpbWUgPSBTeXN0ZW0uY3VycmVudFRpbWVNaWxsaXMoKVxuICBwcmludGxuKFwiJHtjb3VudEluTGlzdHN9IOS7tuimi+OBpOOBi+OCiuOBvuOBl+OBn+OAglwiKVxuICBwcmludGxuKFwiW+Wun+ihjOaZgumWk10gJHtlbmRUaW1lIC0gc3RhcnRUaW1lfSBtc1wiKVxufSIsInBsYXRmb3JtIjoiamF2YSIsImFyZ3MiOiIifQ==">playground🔗</a></p>
+<p>結果は次のようになりました。</p>
+<pre><code>99005 件見つかりました。
+[実行時間] 77 ms
+</code></pre>
+<p><strong>7080 ms</strong> だった処理が <strong>77 ms</strong> に短縮されています。</p>
+<p>違いは <code>contains</code> メソッドの実装が異なっているためであり、<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span> での検索を実現していることです。</p>
+<p>よって、全体での計算量は <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span>となり、同等の処理を数十倍の速度で達成できました。</p>
+<p>また、オブジェクトの比較では、Map のキーに ID となる値を格納することで同様の高速化が期待できます。</p>
+<h2 id="問題"><a class="header" href="#問題">問題</a></h2>
+<p>上記コードにおいて、<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72243em;vertical-align:-0.0391em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&gt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span></span></span></span> の 場合と <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72243em;vertical-align:-0.0391em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span></span></span></span>  の場合で比較すると、どちらの効率が良いでしょうか？</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                                                    <a rel="prev" href="compare_speed.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+                                                    <a rel="next" href="find_minimum.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                                    <a rel="prev" href="compare_speed.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+                                    <a rel="next" href="find_minimum.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                            </nav>
+
+        </div>
+
+        
+        
+        
+                <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+        
+                <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+                <script type="text/javascript" src="kotlin-pg.js"></script>
+        
+        
+    </body>
+</html>

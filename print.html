@@ -83,7 +83,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">Kotlin, Java データ構造</a></li><li class="chapter-item expanded "><a href="collection.html"><strong aria-hidden="true">1.</strong> Collection</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="collection_basic.html"><strong aria-hidden="true">1.1.</strong> 基本的な機能</a></li><li class="chapter-item expanded "><a href="collection_methods.html"><strong aria-hidden="true">1.2.</strong> 便利な関数</a></li></ol></li><li class="chapter-item expanded "><a href="list.html"><strong aria-hidden="true">2.</strong> List</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="list_arraylist.html"><strong aria-hidden="true">2.1.</strong> ArrayList</a></li><li class="chapter-item expanded "><a href="list_linkedlist.html"><strong aria-hidden="true">2.2.</strong> LinkedList</a></li><li class="chapter-item expanded "><a href="list_arraylist_vs_linkedlist.html"><strong aria-hidden="true">2.3.</strong> ArrayList v.s. LinkedList</a></li></ol></li><li class="chapter-item expanded "><a href="map.html"><strong aria-hidden="true">3.</strong> Map</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="map_hashmap.html"><strong aria-hidden="true">3.1.</strong> HashMap</a></li><li class="chapter-item expanded "><a href="map_treemap.html"><strong aria-hidden="true">3.2.</strong> TreeMap</a></li></ol></li><li class="chapter-item expanded "><a href="set.html"><strong aria-hidden="true">4.</strong> Set</a></li><li class="chapter-item expanded "><a href="compare_speed.html"><strong aria-hidden="true">5.</strong> 遅い例と速い例</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="compare_filters.html"><strong aria-hidden="true">5.1.</strong> 何度もfilterする</a></li></ol></li><li class="chapter-item expanded "><a href="others.html"><strong aria-hidden="true">6.</strong> その他のデータ構造</a></li><li class="chapter-item expanded "><a href="conclusion.html"><strong aria-hidden="true">7.</strong> まとめ</a></li><li class="chapter-item expanded "><a href="references.html"><strong aria-hidden="true">8.</strong> 参考</a></li></ol>            </div>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">Kotlin, Java データ構造</a></li><li class="chapter-item expanded "><a href="collection.html"><strong aria-hidden="true">1.</strong> Collection</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="collection_basic.html"><strong aria-hidden="true">1.1.</strong> 基本的な機能</a></li><li class="chapter-item expanded "><a href="collection_methods.html"><strong aria-hidden="true">1.2.</strong> 便利な関数</a></li></ol></li><li class="chapter-item expanded "><a href="list.html"><strong aria-hidden="true">2.</strong> List</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="list_arraylist.html"><strong aria-hidden="true">2.1.</strong> ArrayList</a></li><li class="chapter-item expanded "><a href="list_linkedlist.html"><strong aria-hidden="true">2.2.</strong> LinkedList</a></li><li class="chapter-item expanded "><a href="list_arraylist_vs_linkedlist.html"><strong aria-hidden="true">2.3.</strong> ArrayList v.s. LinkedList</a></li></ol></li><li class="chapter-item expanded "><a href="map.html"><strong aria-hidden="true">3.</strong> Map</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="map_hashmap.html"><strong aria-hidden="true">3.1.</strong> HashMap</a></li><li class="chapter-item expanded "><a href="map_treemap.html"><strong aria-hidden="true">3.2.</strong> TreeMap</a></li></ol></li><li class="chapter-item expanded "><a href="set.html"><strong aria-hidden="true">4.</strong> Set</a></li><li class="chapter-item expanded "><a href="others.html"><strong aria-hidden="true">5.</strong> その他のデータ構造</a></li><li class="chapter-item expanded "><a href="compare_speed.html"><strong aria-hidden="true">6.</strong> 遅い例と速い例</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="existence.html"><strong aria-hidden="true">6.1.</strong> 存在確認</a></li><li class="chapter-item expanded "><a href="find_minimum.html"><strong aria-hidden="true">6.2.</strong> 最小値の検索</a></li><li class="chapter-item expanded "><a href="compare_filters.html"><strong aria-hidden="true">6.3.</strong> 何度もfilterする</a></li></ol></li><li class="chapter-item expanded "><a href="conclusion.html"><strong aria-hidden="true">7.</strong> まとめ</a></li><li class="chapter-item expanded "><a href="references.html"><strong aria-hidden="true">8.</strong> 参考</a></li></ol>            </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
 
@@ -599,8 +599,91 @@ fun main() {
 <a href="https://github.com/JetBrains/kotlin/blob/80cce1dc5280eb9135390270c8644a7b8d198071/libraries/stdlib/common/src/generated/_Arrays.kt#L11828">内部の実装</a>
 では同様の操作を行っています。</p>
 <div style="break-before: page; page-break-before: always;"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+<h1 id="その他のデータ構造"><a class="header" href="#その他のデータ構造">その他のデータ構造</a></h1>
+<p>基本的なデータ構造であるスタック（Stack）やキュー（Queue）について触れておきます。</p>
+<p>これらはList構造などを用いて容易に実装できるため、特に際立った機能はありません。</p>
+<p>しかし、特定の機能に制限することで <strong>Less is more</strong> の恩恵を受けることができます。</p>
+<h2 id="stack"><a class="header" href="#stack">Stack</a></h2>
+<p>Stack は LIFO(Last In First Out) のデータ構造です。</p>
+<p>以下のメソッドが用意されており、いずれも<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span> です。</p>
+<ul>
+<li>要素数を取得</li>
+<li>先頭に追加(push)</li>
+<li>先頭の値を取得(peek)</li>
+<li>先頭の値を削除(pop)</li>
+</ul>
+<p>用途としてはundo処理の実装や深さ優先探索(DFS)などがあります。</p>
+<p><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Stack.html"><code>java.util.Stack</code></a> などで利用できます。</p>
+<h3 id="使用例-括弧列のバリデーション"><a class="header" href="#使用例-括弧列のバリデーション">使用例: 括弧列のバリデーション</a></h3>
+<pre class="kt">
+import java.util.Stack
+
+fun main() {
+    println(validate("(あ)((ああ)あああ)(ああ)()"))  // true
+    println(validate("(あ)((ああ))あああ)(ああ)()")) // false
+}
+
+fun validate(target: String):Boolean {
+  val stack = Stack&lt;Char&gt;() // スタックを初期化
+
+  for (character in target) {
+    when (character) {
+      '(' -> stack.push(character)
+      ')' -> if (stack.empty()) {
+          return false
+      } else {
+          stack.pop()
+      }
+    }
+  }
+  return stack.empty()
+}
+</pre>
+<h2 id="queue"><a class="header" href="#queue">Queue</a></h2>
+<div align="center">
+<img src="https://res.cloudinary.com/ddaz9etkx/image/upload/v1628516592/ot/toilet_gyouretsu_qigx4p.png" width="50%">
+</div>
+<p>Queue は FIFO(First In First Out) のデータ構造です。</p>
+<p>以下のようなメソッドが用意されており、いずれも<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span> です。</p>
+<ul>
+<li>要素数を取得</li>
+<li>末尾に追加(add / enqueue)</li>
+<li>先頭の値を取得(peek)</li>
+<li>先頭の値を削除(remove / dequeue)</li>
+</ul>
+<p>用途としてはジョブスケジューリング、トポロジカルソート<sup class="footnote-reference"><a href="#1">1</a></sup>、幅優先探索(BFS)などがあります。</p>
+<p><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Queue.html"><code>java.util.Queue</code></a> などで利用できます。</p>
+<h3 id="使用例-ラウンドロビン"><a class="header" href="#使用例-ラウンドロビン">使用例: ラウンドロビン</a></h3>
+<pre class="kt">
+import java.util.*
+
+fun main() {
+  val st:Queue&lt;String&gt; = LinkedList&lt;String&gt;().apply{
+      add("hoge")
+      add("fuga")
+      add("piyo")
+  }
+  repeat(10) {
+      println(st.peek()) // Queue の先頭を取得
+      st.add(st.poll())  // Queue の先頭を取り出し、末尾に追加
+  }
+}
+</pre>
+<h2 id="deque"><a class="header" href="#deque">Deque</a></h2>
+<p>Stack と Queue 両方の機能を持ったデータ構造です。</p>
+<p>先頭または末尾へのデータ追加・参照・削除がすべて<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span> で行えます。</p>
+<p>用途としては 0-1 BFS<sup class="footnote-reference"><a href="#2">2</a></sup> などがありますが、実務ではあまり使われないと思います。</p>
+<hr />
+<div class="footnote-definition" id="1"><sup class="footnote-definition-label">1</sup>
+<p>有向非巡回グラフ（一般的にDAGと呼ばれる）に順序をつける操作です。</p>
+</div>
+<div class="footnote-definition" id="2"><sup class="footnote-definition-label">2</sup>
+<p>重みが0または1のグラフにおける最短経路問題を解くことができるアルゴリズムです。</p>
+</div>
+<div style="break-before: page; page-break-before: always;"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
 <h1 id="遅い例と速い例"><a class="header" href="#遅い例と速い例">遅い例と速い例</a></h1>
-<h2 id="存在確認"><a class="header" href="#存在確認">存在確認</a></h2>
+<div style="break-before: page; page-break-before: always;"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+<h1 id="存在確認"><a class="header" href="#存在確認">存在確認</a></h1>
 <p>次のコードはそれぞれサイズN, サイズM のリスト中に何個の重複があるかを確認するためのものです。</p>
 <pre class="kt">
 const val N:Int = 100000
@@ -662,13 +745,14 @@ fun main() {
 <p>また、オブジェクトの比較では、Map のキーに ID となる値を格納することで同様の高速化が期待できます。</p>
 <h2 id="問題"><a class="header" href="#問題">問題</a></h2>
 <p>上記コードにおいて、<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72243em;vertical-align:-0.0391em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&gt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span></span></span></span> の 場合と <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72243em;vertical-align:-0.0391em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span></span></span></span>  の場合で比較すると、どちらの効率が良いでしょうか？</p>
-<h2 id="最小値の検索"><a class="header" href="#最小値の検索">最小値の検索</a></h2>
+<div style="break-before: page; page-break-before: always;"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+<h1 id="最小値の検索"><a class="header" href="#最小値の検索">最小値の検索</a></h1>
 <p>次のような処理を考えます。</p>
 <ul>
 <li>以下を<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span></span></span></span>回繰り返す</li>
 <li>長さ<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span></span>のリストの中から最小値を探し、2倍したものに置き換える</li>
 </ul>
-<h3 id="list-で処理する"><a class="header" href="#list-で処理する">List で処理する</a></h3>
+<h2 id="list-で処理する場合"><a class="header" href="#list-で処理する場合">List で処理する場合</a></h2>
 <p>以下は最小値の検索に <code>minOrNull()</code>、インデックスの検索に <code>indexOf()</code> を用いた実装です。</p>
 <pre class="kt">
 const val N:Int = 100000
@@ -694,7 +778,7 @@ fun main() {
 <p>実行すると以下のようになりました。</p>
 <pre><code>[実行時間] 4027 ms
 </code></pre>
-<h3 id="map-で処理する"><a class="header" href="#map-で処理する">Map で処理する</a></h3>
+<h2 id="map-で処理する場合"><a class="header" href="#map-で処理する場合">Map で処理する場合</a></h2>
 <p>一方、TreeMap を利用して以下のように同様の処理を実施できます。</p>
 <pre class="kt">
 const val N:Int = 100000
@@ -730,7 +814,7 @@ fun main() {
 <p>なお、この結果は List <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.36687em;vertical-align:0em;"></span><span class="mrel">⇔</span></span></span></span> Map の変換時間も含んでいます。</p>
 <p>このように List を使用していたところを Map (TreeMap) に変更することにより、</p>
 <p><strong>4027 ms</strong> が <strong>494 ms</strong> に短縮されました。</p>
-<h3 id="計算量を見積もる"><a class="header" href="#計算量を見積もる">計算量を見積もる</a></h3>
+<h2 id="計算量を見積もる"><a class="header" href="#計算量を見積もる">計算量を見積もる</a></h2>
 <ul>
 <li>List の場合
 <ul>
@@ -820,93 +904,11 @@ fun main() {
 <pre><code>[実行時間] 305ms
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
-<h1 id="その他のデータ構造"><a class="header" href="#その他のデータ構造">その他のデータ構造</a></h1>
-<p>基本的なデータ構造であるスタック（Stack）やキュー（Queue）について触れておきます。</p>
-<p>これらはList構造などを用いて容易に実装できるため、特に際立った機能はありません。</p>
-<p>しかし、特定の機能に制限することで <strong>Less is more</strong> の恩恵を受けることができます。</p>
-<h2 id="stack"><a class="header" href="#stack">Stack</a></h2>
-<p>Stack は LIFO(Last In First Out) のデータ構造です。</p>
-<p>以下のメソッドが用意されており、いずれも<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span> です。</p>
-<ul>
-<li>要素数を取得</li>
-<li>先頭に追加(push)</li>
-<li>先頭の値を取得(peek)</li>
-<li>先頭の値を削除(pop)</li>
-</ul>
-<p>用途としてはundo処理の実装や深さ優先探索(DFS)などがあります。</p>
-<p><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Stack.html"><code>java.util.Stack</code></a> などで利用できます。</p>
-<h3 id="使用例-括弧列のバリデーション"><a class="header" href="#使用例-括弧列のバリデーション">使用例: 括弧列のバリデーション</a></h3>
-<pre class="kt">
-import java.util.Stack
-
-fun main() {
-    println(validate("(あ)((ああ)あああ)(ああ)()"))  // true
-    println(validate("(あ)((ああ))あああ)(ああ)()")) // false
-}
-
-fun validate(target: String):Boolean {
-  val stack = Stack&lt;Char&gt;() // スタックを初期化
-
-  for (character in target) {
-    when (character) {
-      '(' -> stack.push(character)
-      ')' -> if (stack.empty()) {
-          return false
-      } else {
-          stack.pop()
-      }
-    }
-  }
-  return stack.empty()
-}
-</pre>
-<h2 id="queue"><a class="header" href="#queue">Queue</a></h2>
-<div align="center">
-<img src="https://res.cloudinary.com/ddaz9etkx/image/upload/v1628516592/ot/toilet_gyouretsu_qigx4p.png" width="50%">
-</div>
-<p>Queue は FIFO(First In First Out) のデータ構造です。</p>
-<p>以下のようなメソッドが用意されており、いずれも<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span> です。</p>
-<ul>
-<li>要素数を取得</li>
-<li>末尾に追加(add / enqueue)</li>
-<li>先頭の値を取得(peek)</li>
-<li>先頭の値を削除(remove / dequeue)</li>
-</ul>
-<p>用途としてはジョブスケジューリング、トポロジカルソート<sup class="footnote-reference"><a href="#1">1</a></sup>、幅優先探索(BFS)などがあります。</p>
-<p><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Queue.html"><code>java.util.Queue</code></a> などで利用できます。</p>
-<h3 id="使用例-ラウンドロビン"><a class="header" href="#使用例-ラウンドロビン">使用例: ラウンドロビン</a></h3>
-<pre class="kt">
-import java.util.*
-
-fun main() {
-  val st:Queue&lt;String&gt; = LinkedList&lt;String&gt;().apply{
-      add("hoge")
-      add("fuga")
-      add("piyo")
-  }
-  repeat(10) {
-      println(st.peek()) // Queue の先頭を取得
-      st.add(st.poll())  // Queue の先頭を取り出し、末尾に追加
-  }
-}
-</pre>
-<h2 id="deque"><a class="header" href="#deque">Deque</a></h2>
-<p>Stack と Queue 両方の機能を持ったデータ構造です。</p>
-<p>先頭または末尾へのデータ追加・参照・削除がすべて<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span> で行えます。</p>
-<p>用途としては 0-1 BFS<sup class="footnote-reference"><a href="#2">2</a></sup> などがありますが、実務ではあまり使われないと思います。</p>
-<hr />
-<div class="footnote-definition" id="1"><sup class="footnote-definition-label">1</sup>
-<p>有向非巡回グラフ（一般的にDAGと呼ばれる）に順序をつける操作です。</p>
-</div>
-<div class="footnote-definition" id="2"><sup class="footnote-definition-label">2</sup>
-<p>重みが0または1のグラフにおける最短経路問題を解くことができるアルゴリズムです。</p>
-</div>
-<div style="break-before: page; page-break-before: always;"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
 <h1 id="まとめ"><a class="header" href="#まとめ">まとめ</a></h1>
 <ul>
 <li>基本的なデータ構造の List, Set, Map について触れました。</li>
-<li>数万件以上などの大きなデータを扱う場合、線形時間の処理<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span> が <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span> や <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span> になると、実行時間はだいぶ変わってきます。</li>
 <li>Kotlin の collection 間の変換（List ⇔ Set など）は容易なため、これを利用すると簡単に高速化が期待できます。</li>
+<li>Collection のメソッドは便利なものが多いですが、内部では単純な処理が走っていることを認識しておくと良いと思います。</li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
 <h1 id="参考"><a class="header" href="#参考">参考</a></h1>

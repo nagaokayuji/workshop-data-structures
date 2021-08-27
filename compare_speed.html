@@ -82,7 +82,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">Kotlin, Java データ構造</a></li><li class="chapter-item expanded "><a href="collection.html"><strong aria-hidden="true">1.</strong> Collection</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="collection_basic.html"><strong aria-hidden="true">1.1.</strong> 基本的な機能</a></li><li class="chapter-item expanded "><a href="collection_methods.html"><strong aria-hidden="true">1.2.</strong> 便利な関数</a></li></ol></li><li class="chapter-item expanded "><a href="list.html"><strong aria-hidden="true">2.</strong> List</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="list_arraylist.html"><strong aria-hidden="true">2.1.</strong> ArrayList</a></li><li class="chapter-item expanded "><a href="list_linkedlist.html"><strong aria-hidden="true">2.2.</strong> LinkedList</a></li><li class="chapter-item expanded "><a href="list_arraylist_vs_linkedlist.html"><strong aria-hidden="true">2.3.</strong> ArrayList v.s. LinkedList</a></li></ol></li><li class="chapter-item expanded "><a href="map.html"><strong aria-hidden="true">3.</strong> Map</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="map_hashmap.html"><strong aria-hidden="true">3.1.</strong> HashMap</a></li><li class="chapter-item expanded "><a href="map_treemap.html"><strong aria-hidden="true">3.2.</strong> TreeMap</a></li></ol></li><li class="chapter-item expanded "><a href="set.html"><strong aria-hidden="true">4.</strong> Set</a></li><li class="chapter-item expanded "><a href="compare_speed.html" class="active"><strong aria-hidden="true">5.</strong> 遅い例と速い例</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="compare_filters.html"><strong aria-hidden="true">5.1.</strong> 何度もfilterする</a></li></ol></li><li class="chapter-item expanded "><a href="others.html"><strong aria-hidden="true">6.</strong> その他のデータ構造</a></li><li class="chapter-item expanded "><a href="conclusion.html"><strong aria-hidden="true">7.</strong> まとめ</a></li><li class="chapter-item expanded "><a href="references.html"><strong aria-hidden="true">8.</strong> 参考</a></li></ol>            </div>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">Kotlin, Java データ構造</a></li><li class="chapter-item expanded "><a href="collection.html"><strong aria-hidden="true">1.</strong> Collection</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="collection_basic.html"><strong aria-hidden="true">1.1.</strong> 基本的な機能</a></li><li class="chapter-item expanded "><a href="collection_methods.html"><strong aria-hidden="true">1.2.</strong> 便利な関数</a></li></ol></li><li class="chapter-item expanded "><a href="list.html"><strong aria-hidden="true">2.</strong> List</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="list_arraylist.html"><strong aria-hidden="true">2.1.</strong> ArrayList</a></li><li class="chapter-item expanded "><a href="list_linkedlist.html"><strong aria-hidden="true">2.2.</strong> LinkedList</a></li><li class="chapter-item expanded "><a href="list_arraylist_vs_linkedlist.html"><strong aria-hidden="true">2.3.</strong> ArrayList v.s. LinkedList</a></li></ol></li><li class="chapter-item expanded "><a href="map.html"><strong aria-hidden="true">3.</strong> Map</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="map_hashmap.html"><strong aria-hidden="true">3.1.</strong> HashMap</a></li><li class="chapter-item expanded "><a href="map_treemap.html"><strong aria-hidden="true">3.2.</strong> TreeMap</a></li></ol></li><li class="chapter-item expanded "><a href="set.html"><strong aria-hidden="true">4.</strong> Set</a></li><li class="chapter-item expanded "><a href="others.html"><strong aria-hidden="true">5.</strong> その他のデータ構造</a></li><li class="chapter-item expanded "><a href="compare_speed.html" class="active"><strong aria-hidden="true">6.</strong> 遅い例と速い例</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="existence.html"><strong aria-hidden="true">6.1.</strong> 存在確認</a></li><li class="chapter-item expanded "><a href="find_minimum.html"><strong aria-hidden="true">6.2.</strong> 最小値の検索</a></li><li class="chapter-item expanded "><a href="compare_filters.html"><strong aria-hidden="true">6.3.</strong> 何度もfilterする</a></li></ol></li><li class="chapter-item expanded "><a href="conclusion.html"><strong aria-hidden="true">7.</strong> まとめ</a></li><li class="chapter-item expanded "><a href="references.html"><strong aria-hidden="true">8.</strong> 参考</a></li></ol>            </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
 
@@ -145,166 +145,16 @@
                     <main>
                         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
 <h1 id="遅い例と速い例"><a class="header" href="#遅い例と速い例">遅い例と速い例</a></h1>
-<h2 id="存在確認"><a class="header" href="#存在確認">存在確認</a></h2>
-<p>次のコードはそれぞれサイズN, サイズM のリスト中に何個の重複があるかを確認するためのものです。</p>
-<pre class="kt">
-const val N:Int = 100000
-const val M:Int = 100000
-fun main() {
-  val originalList = (0..101000).toList()
-  // サイズNのリスト
-  val list1 = originalList.shuffled().take(N)
-  // サイズMのリスト
-  val list2 = originalList.shuffled().take(M)
-  val startTime = System.currentTimeMillis()
-  // 問題の処理
-  val countInLists = list1.filter{
-    list2.contains(it)
-  }.size
-
-  val endTime = System.currentTimeMillis()
-  println("${countInLists} 件見つかりました。")
-  println("[実行時間] ${endTime - startTime} ms")
-}
-</pre>
-<p><a href="https://play.kotlinlang.org/#eyJ2ZXJzaW9uIjoiMS4zLjcwIiwiY29kZSI6ImNvbnN0IHZhbCBOOkludCA9IDEwMDAwMFxuY29uc3QgdmFsIE06SW50ID0gMTAwMDAwXG5mdW4gbWFpbigpIHtcbiAgdmFsIG9yaWdpbmFsTGlzdCA9ICgwLi4xMDEwMDApLnRvTGlzdCgpXG4gIC8vIOOCteOCpOOCuk7jga7jg6rjgrnjg4hcbiAgdmFsIGxpc3QxID0gb3JpZ2luYWxMaXN0LnNodWZmbGVkKCkudGFrZShOKVxuICAvLyDjgrXjgqTjgrpN44Gu44Oq44K544OIXG4gIHZhbCBsaXN0MiA9IG9yaWdpbmFsTGlzdC5zaHVmZmxlZCgpLnRha2UoTSlcbiAgdmFsIHN0YXJ0VGltZSA9IFN5c3RlbS5jdXJyZW50VGltZU1pbGxpcygpXG4gIC8vIOWVj+mhjOOBruWHpueQhlxuICB2YWwgY291bnRJbkxpc3RzID0gbGlzdDEuZmlsdGVye1xuICAgIGxpc3QyLmNvbnRhaW5zKGl0KVxuICB9LnNpemVcblxuICB2YWwgZW5kVGltZSA9IFN5c3RlbS5jdXJyZW50VGltZU1pbGxpcygpXG4gIHByaW50bG4oXCIke2NvdW50SW5MaXN0c30g5Lu26KaL44Gk44GL44KK44G+44GX44Gf44CCXCIpXG4gIHByaW50bG4oXCJb5a6f6KGM5pmC6ZaTXSAke2VuZFRpbWUgLSBzdGFydFRpbWV9IG1zXCIpXG59IiwicGxhdGZvcm0iOiJqYXZhIiwiYXJncyI6IiJ9">playground🔗</a></p>
-<p>これを実行してみると、以下のように出力されました。</p>
-<pre><code>99005 件見つかりました。
-[実行時間] 7080 ms
-</code></pre>
-<p><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">5</span></span></span></span></span></span></span></span></span></span></span> 件 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.897438em;vertical-align:-0.08333em;"></span><span class="mord">×</span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">5</span></span></span></span></span></span></span></span></span></span></span> 件の比較が行われるため、これは<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span>の処理となっており、<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mord mtight">0</span></span></span></span></span></span></span></span></span></span></span></span> ステップ程度の処理が発生してしまいます。</p>
-<p>次に、list2 を Set に変換して同じ処理を実行してみます。</p>
-<pre class="kt">
-const val N:Int = 100000
-const val M:Int = 100000
-fun main() {
-  val originalList = (0..101000).toList()
-  // サイズNのリスト
-  val list1 = originalList.shuffled().take(N)
-  // サイズMのリスト
-  val list2 = originalList.shuffled().take(M)
-  val startTime = System.currentTimeMillis()
-  // 問題の処理
-  val list2Set = list2.toSet() // Set に変換しておく
-  val countInLists = list1.filter{
-    list2Set.contains(it)
-  }.size
-
-  val endTime = System.currentTimeMillis()
-  println("${countInLists} 件見つかりました。")
-  println("[実行時間] ${endTime - startTime} ms")
-}
-</pre>
-<p>こちらのコードのリンクは以下です。</p>
-<p><a href="https://play.kotlinlang.org/#eyJ2ZXJzaW9uIjoiMS4zLjcwIiwiY29kZSI6ImNvbnN0IHZhbCBOOkludCA9IDEwMDAwMFxuY29uc3QgdmFsIE06SW50ID0gMTAwMDAwXG5mdW4gbWFpbigpIHtcbiAgdmFsIG9yaWdpbmFsTGlzdCA9ICgwLi4xMDEwMDApLnRvTGlzdCgpXG4gIC8vIOOCteOCpOOCuk7jga7jg6rjgrnjg4hcbiAgdmFsIGxpc3QxID0gb3JpZ2luYWxMaXN0LnNodWZmbGVkKCkudGFrZShOKVxuICAvLyDjgrXjgqTjgrpN44Gu44Oq44K544OIXG4gIHZhbCBsaXN0MiA9IG9yaWdpbmFsTGlzdC5zaHVmZmxlZCgpLnRha2UoTSlcbiAgdmFsIHN0YXJ0VGltZSA9IFN5c3RlbS5jdXJyZW50VGltZU1pbGxpcygpXG4gIC8vIOWVj+mhjOOBruWHpueQhlxuICB2YWwgbGlzdDJTZXQgPSBsaXN0Mi50b1NldCgpIC8vIFNldCDjgavlpInmj5vjgZfjgabjgYrjgY9cbiAgdmFsIGNvdW50SW5MaXN0cyA9IGxpc3QxLmZpbHRlcntcbiAgICBsaXN0MlNldC5jb250YWlucyhpdClcbiAgfS5zaXplXG5cbiAgdmFsIGVuZFRpbWUgPSBTeXN0ZW0uY3VycmVudFRpbWVNaWxsaXMoKVxuICBwcmludGxuKFwiJHtjb3VudEluTGlzdHN9IOS7tuimi+OBpOOBi+OCiuOBvuOBl+OBn+OAglwiKVxuICBwcmludGxuKFwiW+Wun+ihjOaZgumWk10gJHtlbmRUaW1lIC0gc3RhcnRUaW1lfSBtc1wiKVxufSIsInBsYXRmb3JtIjoiamF2YSIsImFyZ3MiOiIifQ==">playground🔗</a></p>
-<p>結果は次のようになりました。</p>
-<pre><code>99005 件見つかりました。
-[実行時間] 77 ms
-</code></pre>
-<p><strong>7080 ms</strong> だった処理が <strong>77 ms</strong> に短縮されています。</p>
-<p>違いは <code>contains</code> メソッドの実装が異なっているためであり、<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span> での検索を実現していることです。</p>
-<p>よって、全体での計算量は <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span>となり、同等の処理を数十倍の速度で達成できました。</p>
-<p>また、オブジェクトの比較では、Map のキーに ID となる値を格納することで同様の高速化が期待できます。</p>
-<h2 id="問題"><a class="header" href="#問題">問題</a></h2>
-<p>上記コードにおいて、<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72243em;vertical-align:-0.0391em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&gt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span></span></span></span> の 場合と <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72243em;vertical-align:-0.0391em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span></span></span></span>  の場合で比較すると、どちらの効率が良いでしょうか？</p>
-<h2 id="最小値の検索"><a class="header" href="#最小値の検索">最小値の検索</a></h2>
-<p>次のような処理を考えます。</p>
-<ul>
-<li>以下を<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span></span></span></span>回繰り返す</li>
-<li>長さ<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span></span>のリストの中から最小値を探し、2倍したものに置き換える</li>
-</ul>
-<h3 id="list-で処理する"><a class="header" href="#list-で処理する">List で処理する</a></h3>
-<p>以下は最小値の検索に <code>minOrNull()</code>、インデックスの検索に <code>indexOf()</code> を用いた実装です。</p>
-<pre class="kt">
-const val N:Int = 100000
-const val M:Int = 10000
-fun main() {
-  val originalList = (1..101000).toList()
-  // サイズNのリスト
-  val list = originalList.shuffled().take(N).toMutableList()
-  
-  val startTime = System.currentTimeMillis()
-  // 以下の操作を M 回行いたい！
-  // - 要素の中から最小値を見つけ、2倍したい
-  repeat(M){
-      val min = list.minOrNull()!!
-      val index = list.indexOf(min)
-      list[index] = min * 2
-  }
-  val endTime = System.currentTimeMillis()
-  println("[実行時間] ${endTime - startTime} ms")
-}
-</pre>
-<p><a href="https://play.kotlinlang.org/#eyJ2ZXJzaW9uIjoiMS4zLjcwIiwiY29kZSI6ImNvbnN0IHZhbCBOOkludCA9IDEwMDAwMFxuY29uc3QgdmFsIE06SW50ID0gMTAwMDBcbmZ1biBtYWluKCkge1xuICB2YWwgb3JpZ2luYWxMaXN0ID0gKDEuLjEwMTAwMCkudG9MaXN0KClcbiAgLy8g44K144Kk44K6TuOBruODquOCueODiFxuICB2YWwgbGlzdCA9IG9yaWdpbmFsTGlzdC5zaHVmZmxlZCgpLnRha2UoTikudG9NdXRhYmxlTGlzdCgpXG4gIFxuICB2YWwgc3RhcnRUaW1lID0gU3lzdGVtLmN1cnJlbnRUaW1lTWlsbGlzKClcbiAgLy8g5Lul5LiL44Gu5pON5L2c44KSIE0g5Zue6KGM44GE44Gf44GE77yBXG4gIC8vIC0g6KaB57Sg44Gu5Lit44GL44KJ5pyA5bCP5YCk44KS6KaL44Gk44GR44CBMuWAjeOBl+OBn+OBhFxuICByZXBlYXQoTSl7XG4gICAgICB2YWwgbWluID0gbGlzdC5taW5Pck51bGwoKSEhXG4gICAgICB2YWwgaW5kZXggPSBsaXN0LmluZGV4T2YobWluKVxuICAgICAgbGlzdFtpbmRleF0gPSBtaW4gKiAyXG4gIH1cbiAgdmFsIGVuZFRpbWUgPSBTeXN0ZW0uY3VycmVudFRpbWVNaWxsaXMoKVxuICBwcmludGxuKFwiW+Wun+ihjOaZgumWk10gJHtlbmRUaW1lIC0gc3RhcnRUaW1lfSBtc1wiKVxufSIsInBsYXRmb3JtIjoiamF2YSIsImFyZ3MiOiIifQ==">playground🔗</a></p>
-<p>実行すると以下のようになりました。</p>
-<pre><code>[実行時間] 4027 ms
-</code></pre>
-<h3 id="map-で処理する"><a class="header" href="#map-で処理する">Map で処理する</a></h3>
-<p>一方、TreeMap を利用して以下のように同様の処理を実施できます。</p>
-<pre class="kt">
-const val N:Int = 100000
-const val M:Int = 10000
-fun main() {
-  val originalList = (1..101000).toList()
-  // サイズNのリスト
-  val list = originalList.shuffled().take(N).toList()
-  
-  val startTime = System.currentTimeMillis()
-
-  // 以下の操作を M 回行いたい！
-  // - 要素の中から最小値を見つけ、2倍したい
-  val map = list.groupingBy{it}.eachCount().toSortedMap() // key: 要素の値, value: 個数
-  repeat(M){
-    val minElement = map.asSequence().first() // 先頭の要素 = 最小値
-    val min = minElement.key
-    map[min] = minElement.value - 1
-    if (map[min] == 0) {
-        map.remove(min)
-    }
-    map[min*2] = map.getOrDefault(min*2, 0) + 1
-  }
-  val result = map.map{ (key, value) -> List<Int>(value, {key})}.flatten().toList()
-  val endTime = System.currentTimeMillis()
-  println("[実行時間] ${endTime - startTime} ms")
-}
-</pre>
-<p><a href="https://play.kotlinlang.org/#eyJ2ZXJzaW9uIjoiMS4zLjcwIiwiY29kZSI6ImNvbnN0IHZhbCBOOkludCA9IDEwMDAwMFxuY29uc3QgdmFsIE06SW50ID0gMTAwMDBcbmZ1biBtYWluKCkge1xuICB2YWwgb3JpZ2luYWxMaXN0ID0gKDEuLjEwMTAwMCkudG9MaXN0KClcbiAgLy8g44K144Kk44K6TuOBruODquOCueODiFxuICB2YWwgbGlzdCA9IG9yaWdpbmFsTGlzdC5zaHVmZmxlZCgpLnRha2UoTikudG9MaXN0KClcbiAgXG4gIHZhbCBzdGFydFRpbWUgPSBTeXN0ZW0uY3VycmVudFRpbWVNaWxsaXMoKVxuICAvLyDku6XkuIvjga7mk43kvZzjgpIgTSDlm57ooYzjgYTjgZ/jgYTvvIFcbiAgLy8gLSDopoHntKDjga7kuK3jgYvjgonmnIDlsI/lgKTjgpLopovjgaTjgZHjgIEy5YCN44GX44Gf44GEXG5cbiAgdmFsIG1hcCA9IGxpc3QuZ3JvdXBpbmdCeXtpdH0uZWFjaENvdW50KCkudG9Tb3J0ZWRNYXAoKSAvLyBrZXk6IOimgee0oOOBruWApCwgdmFsdWU6IOWAi+aVsFxuICByZXBlYXQoTSl7XG4gICAgdmFsIG1pbkVsZW1lbnQgPSBtYXAuYXNTZXF1ZW5jZSgpLmZpcnN0KClcbiAgICB2YWwgbWluID0gbWluRWxlbWVudC5rZXlcbiAgICBtYXBbbWluXSA9IG1pbkVsZW1lbnQudmFsdWUgLSAxXG4gICAgaWYgKG1hcFttaW5dID09IDApIHtcbiAgICAgICAgbWFwLnJlbW92ZShtaW4pXG4gICAgfVxuICAgIG1hcFttaW4qMl0gPSBtYXAuZ2V0T3JEZWZhdWx0KG1pbioyLCAwKSArIDFcbiAgfVxuICB2YWwgcmVzdWx0ID0gbWFwLm1hcHsgKGtleSwgdmFsdWUpIC0+IExpc3Q8SW50Pih2YWx1ZSwge2tleX0pfS5mbGF0dGVuKCkudG9MaXN0KClcbiAgdmFsIGVuZFRpbWUgPSBTeXN0ZW0uY3VycmVudFRpbWVNaWxsaXMoKVxuICBwcmludGxuKFwiW+Wun+ihjOaZgumWk10gJHtlbmRUaW1lIC0gc3RhcnRUaW1lfSBtc1wiKVxufSIsInBsYXRmb3JtIjoiamF2YSIsImFyZ3MiOiIifQ==">playground🔗</a></p>
-<p>この実行結果は以下のようになりました。</p>
-<pre><code>[実行時間] 494 ms
-</code></pre>
-<p>なお、この結果は List <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.36687em;vertical-align:0em;"></span><span class="mrel">⇔</span></span></span></span> Map の変換時間も含んでいます。</p>
-<p>このように List を使用していたところを Map (TreeMap) に変更することにより、</p>
-<p><strong>4027 ms</strong> が <strong>494 ms</strong> に短縮されました。</p>
-<h3 id="計算量を見積もる"><a class="header" href="#計算量を見積もる">計算量を見積もる</a></h3>
-<ul>
-<li>List の場合
-<ul>
-<li>最小値の検索 平均 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span></li>
-<li>インデックスの取得 平均 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span></li>
-<li>2倍して置き換える処理 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span></li>
-</ul>
-</li>
-</ul>
-<p>より、時間計算量は<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span> となります。</p>
-<ul>
-<li>Map の場合
-<ul>
-<li>最小値の検索・取得 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span></li>
-<li>2倍して置き換える処理 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span></li>
-</ul>
-</li>
-</ul>
-<p>より、時間計算量は<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span> となります。</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                                                    <a rel="prev" href="set.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                                    <a rel="prev" href="others.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
                         
-                                                    <a rel="next" href="compare_filters.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                                    <a rel="next" href="existence.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         
@@ -314,11 +164,11 @@ fun main() {
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                                    <a rel="prev" href="set.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                    <a rel="prev" href="others.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
                 
-                                    <a rel="next" href="compare_filters.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                    <a rel="next" href="existence.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
                             </nav>
