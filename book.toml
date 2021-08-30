@@ -9,4 +9,4 @@ description = "workshop materials"
 [preprocessor.katex]
 
 [output.html]
-additional-js = ["kotlin-pg.js"]
+additional-js = ["kotlin-pg.js"] # CDN 経由にしたい
