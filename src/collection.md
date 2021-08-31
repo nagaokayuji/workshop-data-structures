@@ -2,6 +2,8 @@
 
 今回扱うデータ構造である List や Set が継承しているインタフェースです。
 
+複数の要素を扱う上で便利な機能が揃っています。
+
 ```kotlin
 interface Collection<out E> : Iterable<E>
 ```
