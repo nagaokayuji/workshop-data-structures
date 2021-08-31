@@ -83,7 +83,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">Kotlin, Java データ構造</a></li><li class="chapter-item expanded "><a href="collection.html"><strong aria-hidden="true">1.</strong> Collection</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="collection_basic.html"><strong aria-hidden="true">1.1.</strong> 基本的な機能</a></li><li class="chapter-item expanded "><a href="collection_methods.html"><strong aria-hidden="true">1.2.</strong> 便利な関数</a></li></ol></li><li class="chapter-item expanded "><a href="list.html"><strong aria-hidden="true">2.</strong> List</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="list_arraylist.html"><strong aria-hidden="true">2.1.</strong> ArrayList</a></li><li class="chapter-item expanded "><a href="list_linkedlist.html"><strong aria-hidden="true">2.2.</strong> LinkedList</a></li><li class="chapter-item expanded "><a href="list_arraylist_vs_linkedlist.html"><strong aria-hidden="true">2.3.</strong> ArrayList v.s. LinkedList</a></li></ol></li><li class="chapter-item expanded "><a href="map.html"><strong aria-hidden="true">3.</strong> Map</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="map_hashmap.html"><strong aria-hidden="true">3.1.</strong> HashMap</a></li><li class="chapter-item expanded "><a href="map_treemap.html"><strong aria-hidden="true">3.2.</strong> TreeMap</a></li></ol></li><li class="chapter-item expanded "><a href="set.html"><strong aria-hidden="true">4.</strong> Set</a></li><li class="chapter-item expanded "><a href="others.html"><strong aria-hidden="true">5.</strong> その他のデータ構造</a></li><li class="chapter-item expanded "><a href="compare_speed.html"><strong aria-hidden="true">6.</strong> 遅い例と速い例</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="existence.html"><strong aria-hidden="true">6.1.</strong> 存在確認</a></li><li class="chapter-item expanded "><a href="find_minimum.html"><strong aria-hidden="true">6.2.</strong> 最小値の検索</a></li><li class="chapter-item expanded "><a href="compare_filters.html"><strong aria-hidden="true">6.3.</strong> 何度もfilterする</a></li></ol></li><li class="chapter-item expanded "><a href="conclusion.html"><strong aria-hidden="true">7.</strong> まとめ</a></li><li class="chapter-item expanded "><a href="references.html"><strong aria-hidden="true">8.</strong> 参考</a></li></ol>            </div>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">Kotlin, Java データ構造</a></li><li class="chapter-item expanded "><a href="list.html"><strong aria-hidden="true">1.</strong> List</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="list_arraylist.html"><strong aria-hidden="true">1.1.</strong> ArrayList</a></li><li class="chapter-item expanded "><a href="list_linkedlist.html"><strong aria-hidden="true">1.2.</strong> LinkedList</a></li><li class="chapter-item expanded "><a href="list_arraylist_vs_linkedlist.html"><strong aria-hidden="true">1.3.</strong> ArrayList v.s. LinkedList</a></li></ol></li><li class="chapter-item expanded "><a href="map.html"><strong aria-hidden="true">2.</strong> Map</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="map_hashmap.html"><strong aria-hidden="true">2.1.</strong> HashMap</a></li><li class="chapter-item expanded "><a href="map_treemap.html"><strong aria-hidden="true">2.2.</strong> TreeMap</a></li></ol></li><li class="chapter-item expanded "><a href="set.html"><strong aria-hidden="true">3.</strong> Set</a></li><li class="chapter-item expanded "><a href="others.html"><strong aria-hidden="true">4.</strong> その他のデータ構造</a></li><li class="chapter-item expanded "><a href="collection.html"><strong aria-hidden="true">5.</strong> Collection</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="collection_basic.html"><strong aria-hidden="true">5.1.</strong> 基本的な機能</a></li><li class="chapter-item expanded "><a href="collection_methods.html"><strong aria-hidden="true">5.2.</strong> 便利な関数</a></li></ol></li><li class="chapter-item expanded "><a href="compare_speed.html"><strong aria-hidden="true">6.</strong> 遅い例と速い例</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="existence.html"><strong aria-hidden="true">6.1.</strong> 存在確認</a></li><li class="chapter-item expanded "><a href="find_minimum.html"><strong aria-hidden="true">6.2.</strong> 最小値の検索</a></li><li class="chapter-item expanded "><a href="compare_filters.html"><strong aria-hidden="true">6.3.</strong> 何度もfilterする</a></li></ol></li><li class="chapter-item expanded "><a href="conclusion.html"><strong aria-hidden="true">7.</strong> まとめ</a></li><li class="chapter-item expanded "><a href="references.html"><strong aria-hidden="true">8.</strong> 参考</a></li></ol>            </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
 
@@ -150,99 +150,6 @@
 <p>計算量については各コレクションに格納するサイズを<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span></span>として記載します。</p>
 <p><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/">kotlin.collections - Kotlin Programming Language</a></p>
 <p>※ Javaの内容も含みます。</p>
-<div style="break-before: page; page-break-before: always;"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
-<h1 id="collection-について"><a class="header" href="#collection-について">Collection について</a></h1>
-<p>今回扱うデータ構造である List や Set が継承しているインタフェースです。</p>
-<pre><code class="language-kotlin">interface Collection&lt;out E&gt; : Iterable&lt;E&gt;
-</code></pre>
-<p>詳しくは以下に記載があります。</p>
-<p><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-collection/">Collection - Kotlin Programming Language</a></p>
-<div style="break-before: page; page-break-before: always;"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
-<h1 id="基本的な機能"><a class="header" href="#基本的な機能">基本的な機能</a></h1>
-<p>以下のような機能が使用できます。</p>
-<h2 id="size"><a class="header" href="#size"><code>size</code></a></h2>
-<p>要素数を取得できます。</p>
-<pre class="kt">
-fun main() {
-  val l = listOf(1,1,2)
-  println(l.size) // 3
-}
-</pre>
-<h2 id="contains"><a class="header" href="#contains"><code>contains()</code></a></h2>
-<p>ある要素を含むかどうかを返します。
-存在判定を簡潔に書けるため重宝します。</p>
-<pre class="kt">
-fun main() {
-  val l = listOf(1,1,2)
-  println(l.contains(1)) // true
-}
-</pre>
-<h2 id="map"><a class="header" href="#map"><code>map()</code></a></h2>
-<p><a href="https://ja.wikipedia.org/wiki/%E9%AB%98%E9%9A%8E%E9%96%A2%E6%95%B0">高階関数</a> (関数を引数に取る)の一種です。</p>
-<p>各要素に対して、与えられた関数を順番に処理していきます。</p>
-<p>例えば、各要素を二乗する場合は次のようになります。</p>
-<pre class="kt">
-fun main() {
-  val l = listOf(1,1,2)
-  println(l.map{it * it}) // [1, 1, 4]
-}
-</pre>
-<h2 id="filter"><a class="header" href="#filter"><code>filter()</code></a></h2>
-<p>条件に合致する（渡した関数での評価結果が真となる）要素のみ残します。</p>
-<pre class="kt">
-fun main() {
-  val l = listOf(1,1,2)
-  println(l.filter{it == 1}) // [1, 1]
-}
-</pre>
-<div style="break-before: page; page-break-before: always;"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
-<h1 id="collection-の便利な関数"><a class="header" href="#collection-の便利な関数">Collection の便利な関数</a></h1>
-<p>知っておくと便利なメソッドをご紹介します。</p>
-<h2 id="intersect"><a class="header" href="#intersect">intersect</a></h2>
-<p>重複する要素だけ取り出すことができます。</p>
-<pre><code class="language-kotlin">infix fun &lt;T&gt; Iterable&lt;T&gt;.intersect(
-    other: Iterable&lt;T&gt;
-): Set&lt;T&gt;
-</code></pre>
-<p>※ 戻り値が<code>Set</code>型であることに注意！</p>
-<p>使用例は以下です。
-<code>list1</code>, <code>list2</code> の重複部分のみ取り出しています。</p>
-<pre class="kt">
-fun main() {
-  val list1 = listOf(1,2,3,4,5,6,7,8,9)
-  val list2 = listOf(1,4,7,9,11,13)
-  println(list1.intersect(list2)) // [1, 4, 7, 9]
-}
-</pre>
-<p>※ <code>infix fun</code> として定義されているため、次のようにも書けます。</p>
-<pre class="kt">
-fun main() {
-  val list1 = listOf(1,2,3,4,5,6,7,8,9)
-  val list2 = listOf(1,4,7,9,11,13)
-  println(list1 intersect list2) // [1, 4, 7, 9]
-}
-</pre>
-<h2 id="reduce-fold"><a class="header" href="#reduce-fold">reduce, fold</a></h2>
-<p>畳み込み関数です。
-順々に関数を適用していきます。</p>
-<pre><code class="language-kotlin">fun &lt;T, R&gt; Iterable&lt;T&gt;.fold(
-    initial: R,
-    operation: (acc: R, T) -&gt; R
-): R
-</code></pre>
-<p>例えば、次のようにすると簡単に階乗が計算できます。</p>
-<pre class="kt">
-fun main() {
-  println((1..10).reduce{a, b -> a * b}) // 9! = 362880
-}
-</pre>
-<p>また、<code>reduce</code> の 初期値ありバージョンが <code>fold</code> です。</p>
-<p>これを利用すると以下のようにフィボナッチ数列の項も求められます。</p>
-<pre class="kt">
-fun main() {
-  println((3..10).fold(Pair(1,1)){(a,b), _ -> Pair(b, a+b)}.second) // 55
-}
-</pre>
 <div style="break-before: page; page-break-before: always;"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
 <h1 id="list"><a class="header" href="#list">List</a></h1>
 <div align="center">
@@ -411,7 +318,7 @@ fun main() {
 <p>ArrayList では連続したメモリ領域に格納されるため、読み込み効率が高いため。</p>
 </div>
 <div style="break-before: page; page-break-before: always;"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
-<h1 id="map-1"><a class="header" href="#map-1">Map</a></h1>
+<h1 id="map"><a class="header" href="#map">Map</a></h1>
 <p>整数以外でも添字に取れる配列のように扱えることから <strong>連想配列</strong> とも呼ばれます。Key-Value 型のデータ構造です。</p>
 <p><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-map/">Map - Kotlin Programming Language</a></p>
 <pre><code class="language-kotlin">interface Map&lt;K, out V&gt;
@@ -690,6 +597,99 @@ fun main() {
 <div class="footnote-definition" id="2"><sup class="footnote-definition-label">2</sup>
 <p>重みが0または1のグラフにおける最短経路問題を解くことができるアルゴリズムです。</p>
 </div>
+<div style="break-before: page; page-break-before: always;"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+<h1 id="collection-について"><a class="header" href="#collection-について">Collection について</a></h1>
+<p>今回扱うデータ構造である List や Set が継承しているインタフェースです。</p>
+<pre><code class="language-kotlin">interface Collection&lt;out E&gt; : Iterable&lt;E&gt;
+</code></pre>
+<p>詳しくは以下に記載があります。</p>
+<p><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-collection/">Collection - Kotlin Programming Language</a></p>
+<div style="break-before: page; page-break-before: always;"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+<h1 id="基本的な機能"><a class="header" href="#基本的な機能">基本的な機能</a></h1>
+<p>以下のような機能が使用できます。</p>
+<h2 id="size"><a class="header" href="#size"><code>size</code></a></h2>
+<p>要素数を取得できます。</p>
+<pre class="kt">
+fun main() {
+  val l = listOf(1,1,2)
+  println(l.size) // 3
+}
+</pre>
+<h2 id="contains"><a class="header" href="#contains"><code>contains()</code></a></h2>
+<p>ある要素を含むかどうかを返します。
+存在判定を簡潔に書けるため重宝します。</p>
+<pre class="kt">
+fun main() {
+  val l = listOf(1,1,2)
+  println(l.contains(1)) // true
+}
+</pre>
+<h2 id="map-1"><a class="header" href="#map-1"><code>map()</code></a></h2>
+<p><a href="https://ja.wikipedia.org/wiki/%E9%AB%98%E9%9A%8E%E9%96%A2%E6%95%B0">高階関数</a> (関数を引数に取る)の一種です。</p>
+<p>各要素に対して、与えられた関数を順番に処理していきます。</p>
+<p>例えば、各要素を二乗する場合は次のようになります。</p>
+<pre class="kt">
+fun main() {
+  val l = listOf(1,1,2)
+  println(l.map{it * it}) // [1, 1, 4]
+}
+</pre>
+<h2 id="filter"><a class="header" href="#filter"><code>filter()</code></a></h2>
+<p>条件に合致する（渡した関数での評価結果が真となる）要素のみ残します。</p>
+<pre class="kt">
+fun main() {
+  val l = listOf(1,1,2)
+  println(l.filter{it == 1}) // [1, 1]
+}
+</pre>
+<div style="break-before: page; page-break-before: always;"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+<h1 id="collection-の便利な関数"><a class="header" href="#collection-の便利な関数">Collection の便利な関数</a></h1>
+<p>知っておくと便利なメソッドをご紹介します。</p>
+<h2 id="intersect"><a class="header" href="#intersect">intersect</a></h2>
+<p>重複する要素だけ取り出すことができます。</p>
+<pre><code class="language-kotlin">infix fun &lt;T&gt; Iterable&lt;T&gt;.intersect(
+    other: Iterable&lt;T&gt;
+): Set&lt;T&gt;
+</code></pre>
+<p>※ 戻り値が<code>Set</code>型であることに注意！</p>
+<p>使用例は以下です。
+<code>list1</code>, <code>list2</code> の重複部分のみ取り出しています。</p>
+<pre class="kt">
+fun main() {
+  val list1 = listOf(1,2,3,4,5,6,7,8,9)
+  val list2 = listOf(1,4,7,9,11,13)
+  println(list1.intersect(list2)) // [1, 4, 7, 9]
+}
+</pre>
+<p>※ <code>infix fun</code> として定義されているため、次のようにも書けます。</p>
+<pre class="kt">
+fun main() {
+  val list1 = listOf(1,2,3,4,5,6,7,8,9)
+  val list2 = listOf(1,4,7,9,11,13)
+  println(list1 intersect list2) // [1, 4, 7, 9]
+}
+</pre>
+<h2 id="reduce-fold"><a class="header" href="#reduce-fold">reduce, fold</a></h2>
+<p>畳み込み関数です。
+順々に関数を適用していきます。</p>
+<pre><code class="language-kotlin">fun &lt;T, R&gt; Iterable&lt;T&gt;.fold(
+    initial: R,
+    operation: (acc: R, T) -&gt; R
+): R
+</code></pre>
+<p>例えば、次のようにすると簡単に階乗が計算できます。</p>
+<pre class="kt">
+fun main() {
+  println((1..10).reduce{a, b -> a * b}) // 9! = 362880
+}
+</pre>
+<p>また、<code>reduce</code> の 初期値ありバージョンが <code>fold</code> です。</p>
+<p>これを利用すると以下のようにフィボナッチ数列の項も求められます。</p>
+<pre class="kt">
+fun main() {
+  println((3..10).fold(Pair(1,1)){(a,b), _ -> Pair(b, a+b)}.second) // 55
+}
+</pre>
 <div style="break-before: page; page-break-before: always;"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
 <h1 id="遅い例と速い例"><a class="header" href="#遅い例と速い例">遅い例と速い例</a></h1>
 <p>基本的なデータ構造の解説は以上です。</p>
