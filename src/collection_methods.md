@@ -3,7 +3,7 @@
 知っておくと便利なメソッドをご紹介します。
 
 
-## intersect
+## intersect()
 
 重複する要素だけ取り出すことができます。
 
@@ -16,8 +16,9 @@ infix fun <T> Iterable<T>.intersect(
 
 ※ 戻り値が`Set`型であることに注意！
 
-使用例は以下です。
-`list1`, `list2` の重複部分のみ取り出しています。
+### 使用例
+
+`list1`, `list2` の重複部分のみ取り出してみます。
 
 <pre class="kt">
 fun main() {
@@ -37,17 +38,19 @@ fun main() {
 }
 </pre>
 
-## reduce, fold
-
-畳み込み関数です。
-順々に関数を適用していきます。
+## reduce()
 
 ```kotlin
-fun <T, R> Iterable<T>.fold(
-    initial: R,
-    operation: (acc: R, T) -> R
-): R
+fun <S, T : S> Iterable<T>.reduce(
+    operation: (acc: S, T) -> S
+): S
 ```
+
+幅広い用途に使える畳み込み関数です。
+
+順々に関数を適用していくことができます。
+
+### 使用例
 
 例えば、次のようにすると簡単に階乗が計算できます。
 <pre class="kt">
@@ -56,19 +59,27 @@ fun main() {
 }
 </pre>
 
+
+
+## fold()
+
+
+```kotlin
+fun <T, R> Iterable<T>.fold(
+    initial: R,
+    operation: (acc: R, T) -> R
+): R
+```
+
+
 また、`reduce` の 初期値ありバージョンが `fold` です。
 
-これを利用すると以下のようにフィボナッチ数列の項も求められます。
+
+## 使用例
+例えば、以下のようにフィボナッチ数列の項が求められます。
 
 <pre class="kt">
 fun main() {
   println((3..10).fold(Pair(1,1)){(a,b), _ -> Pair(b, a+b)}.second) // 55
 }
 </pre>
-
-
-
-
-
-
-
