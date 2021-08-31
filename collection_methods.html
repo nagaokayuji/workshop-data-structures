@@ -146,15 +146,15 @@
                         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
 <h1 id="collection-の便利な関数"><a class="header" href="#collection-の便利な関数">Collection の便利な関数</a></h1>
 <p>知っておくと便利なメソッドをご紹介します。</p>
-<h2 id="intersect"><a class="header" href="#intersect">intersect</a></h2>
+<h2 id="intersect"><a class="header" href="#intersect">intersect()</a></h2>
 <p>重複する要素だけ取り出すことができます。</p>
 <pre><code class="language-kotlin">infix fun &lt;T&gt; Iterable&lt;T&gt;.intersect(
     other: Iterable&lt;T&gt;
 ): Set&lt;T&gt;
 </code></pre>
 <p>※ 戻り値が<code>Set</code>型であることに注意！</p>
-<p>使用例は以下です。
-<code>list1</code>, <code>list2</code> の重複部分のみ取り出しています。</p>
+<h3 id="使用例"><a class="header" href="#使用例">使用例</a></h3>
+<p><code>list1</code>, <code>list2</code> の重複部分のみ取り出してみます。</p>
 <pre class="kt">
 fun main() {
   val list1 = listOf(1,2,3,4,5,6,7,8,9)
@@ -170,22 +170,29 @@ fun main() {
   println(list1 intersect list2) // [1, 4, 7, 9]
 }
 </pre>
-<h2 id="reduce-fold"><a class="header" href="#reduce-fold">reduce, fold</a></h2>
-<p>畳み込み関数です。
-順々に関数を適用していきます。</p>
-<pre><code class="language-kotlin">fun &lt;T, R&gt; Iterable&lt;T&gt;.fold(
-    initial: R,
-    operation: (acc: R, T) -&gt; R
-): R
+<h2 id="reduce"><a class="header" href="#reduce">reduce()</a></h2>
+<pre><code class="language-kotlin">fun &lt;S, T : S&gt; Iterable&lt;T&gt;.reduce(
+    operation: (acc: S, T) -&gt; S
+): S
 </code></pre>
+<p>幅広い用途に使える畳み込み関数です。</p>
+<p>順々に関数を適用していくことができます。</p>
+<h3 id="使用例-1"><a class="header" href="#使用例-1">使用例</a></h3>
 <p>例えば、次のようにすると簡単に階乗が計算できます。</p>
 <pre class="kt">
 fun main() {
   println((1..10).reduce{a, b -> a * b}) // 9! = 362880
 }
 </pre>
+<h2 id="fold"><a class="header" href="#fold">fold()</a></h2>
+<pre><code class="language-kotlin">fun &lt;T, R&gt; Iterable&lt;T&gt;.fold(
+    initial: R,
+    operation: (acc: R, T) -&gt; R
+): R
+</code></pre>
 <p>また、<code>reduce</code> の 初期値ありバージョンが <code>fold</code> です。</p>
-<p>これを利用すると以下のようにフィボナッチ数列の項も求められます。</p>
+<h2 id="使用例-2"><a class="header" href="#使用例-2">使用例</a></h2>
+<p>例えば、以下のようにフィボナッチ数列の項が求められます。</p>
 <pre class="kt">
 fun main() {
   println((3..10).fold(Pair(1,1)){(a,b), _ -> Pair(b, a+b)}.second) // 55

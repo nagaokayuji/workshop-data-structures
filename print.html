@@ -150,6 +150,12 @@
 <p>計算量については各コレクションに格納するサイズを<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span></span>として記載します。</p>
 <p><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/">kotlin.collections - Kotlin Programming Language</a></p>
 <p>※ Javaの内容も含みます。</p>
+<h2 id="内容"><a class="header" href="#内容">内容</a></h2>
+<ul>
+<li>Collection の便利なメソッドの紹介</li>
+<li>基本的なデータ構造の紹介</li>
+<li>高速化例</li>
+</ul>
 <div style="break-before: page; page-break-before: always;"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
 <h1 id="list"><a class="header" href="#list">List</a></h1>
 <div align="center">
@@ -600,22 +606,19 @@ fun main() {
 <div style="break-before: page; page-break-before: always;"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
 <h1 id="collection-について"><a class="header" href="#collection-について">Collection について</a></h1>
 <p>今回扱うデータ構造である List や Set が継承しているインタフェースです。</p>
+<p>複数の要素を扱う上で便利な機能が揃っています。</p>
 <pre><code class="language-kotlin">interface Collection&lt;out E&gt; : Iterable&lt;E&gt;
 </code></pre>
 <p>詳しくは以下に記載があります。</p>
 <p><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-collection/">Collection - Kotlin Programming Language</a></p>
 <div style="break-before: page; page-break-before: always;"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
-<h1 id="基本的な機能"><a class="header" href="#基本的な機能">基本的な機能</a></h1>
-<p>以下のような機能が使用できます。</p>
-<h2 id="size"><a class="header" href="#size"><code>size</code></a></h2>
-<p>要素数を取得できます。</p>
-<pre class="kt">
-fun main() {
-  val l = listOf(1,1,2)
-  println(l.size) // 3
-}
-</pre>
+<h1 id="基本的な関数"><a class="header" href="#基本的な関数">基本的な関数</a></h1>
+<p>Collection のよく使われる関数としては以下のようなものがあります。</p>
 <h2 id="contains"><a class="header" href="#contains"><code>contains()</code></a></h2>
+<pre><code class="language-kotlin">abstract operator fun contains(
+    element: @UnsafeVariance E
+): Boolean
+</code></pre>
 <p>ある要素を含むかどうかを返します。
 存在判定を簡潔に書けるため重宝します。</p>
 <pre class="kt">
@@ -625,6 +628,10 @@ fun main() {
 }
 </pre>
 <h2 id="map-1"><a class="header" href="#map-1"><code>map()</code></a></h2>
+<pre><code class="language-kotlin">inline fun &lt;T, R&gt; Iterable&lt;T&gt;.map(
+    transform: (T) -&gt; R
+): List&lt;R&gt;
+</code></pre>
 <p><a href="https://ja.wikipedia.org/wiki/%E9%AB%98%E9%9A%8E%E9%96%A2%E6%95%B0">高階関数</a> (関数を引数に取る)の一種です。</p>
 <p>各要素に対して、与えられた関数を順番に処理していきます。</p>
 <p>例えば、各要素を二乗する場合は次のようになります。</p>
@@ -635,6 +642,10 @@ fun main() {
 }
 </pre>
 <h2 id="filter"><a class="header" href="#filter"><code>filter()</code></a></h2>
+<pre><code class="language-kotlin">fun &lt;T&gt; Iterable&lt;T&gt;.filter(
+    predicate: (T) -&gt; Boolean
+): List&lt;T&gt;
+</code></pre>
 <p>条件に合致する（渡した関数での評価結果が真となる）要素のみ残します。</p>
 <pre class="kt">
 fun main() {
@@ -645,15 +656,15 @@ fun main() {
 <div style="break-before: page; page-break-before: always;"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
 <h1 id="collection-の便利な関数"><a class="header" href="#collection-の便利な関数">Collection の便利な関数</a></h1>
 <p>知っておくと便利なメソッドをご紹介します。</p>
-<h2 id="intersect"><a class="header" href="#intersect">intersect</a></h2>
+<h2 id="intersect"><a class="header" href="#intersect">intersect()</a></h2>
 <p>重複する要素だけ取り出すことができます。</p>
 <pre><code class="language-kotlin">infix fun &lt;T&gt; Iterable&lt;T&gt;.intersect(
     other: Iterable&lt;T&gt;
 ): Set&lt;T&gt;
 </code></pre>
 <p>※ 戻り値が<code>Set</code>型であることに注意！</p>
-<p>使用例は以下です。
-<code>list1</code>, <code>list2</code> の重複部分のみ取り出しています。</p>
+<h3 id="使用例"><a class="header" href="#使用例">使用例</a></h3>
+<p><code>list1</code>, <code>list2</code> の重複部分のみ取り出してみます。</p>
 <pre class="kt">
 fun main() {
   val list1 = listOf(1,2,3,4,5,6,7,8,9)
@@ -669,22 +680,29 @@ fun main() {
   println(list1 intersect list2) // [1, 4, 7, 9]
 }
 </pre>
-<h2 id="reduce-fold"><a class="header" href="#reduce-fold">reduce, fold</a></h2>
-<p>畳み込み関数です。
-順々に関数を適用していきます。</p>
-<pre><code class="language-kotlin">fun &lt;T, R&gt; Iterable&lt;T&gt;.fold(
-    initial: R,
-    operation: (acc: R, T) -&gt; R
-): R
+<h2 id="reduce"><a class="header" href="#reduce">reduce()</a></h2>
+<pre><code class="language-kotlin">fun &lt;S, T : S&gt; Iterable&lt;T&gt;.reduce(
+    operation: (acc: S, T) -&gt; S
+): S
 </code></pre>
+<p>幅広い用途に使える畳み込み関数です。</p>
+<p>順々に関数を適用していくことができます。</p>
+<h3 id="使用例-1"><a class="header" href="#使用例-1">使用例</a></h3>
 <p>例えば、次のようにすると簡単に階乗が計算できます。</p>
 <pre class="kt">
 fun main() {
   println((1..10).reduce{a, b -> a * b}) // 9! = 362880
 }
 </pre>
+<h2 id="fold"><a class="header" href="#fold">fold()</a></h2>
+<pre><code class="language-kotlin">fun &lt;T, R&gt; Iterable&lt;T&gt;.fold(
+    initial: R,
+    operation: (acc: R, T) -&gt; R
+): R
+</code></pre>
 <p>また、<code>reduce</code> の 初期値ありバージョンが <code>fold</code> です。</p>
-<p>これを利用すると以下のようにフィボナッチ数列の項も求められます。</p>
+<h2 id="使用例-2"><a class="header" href="#使用例-2">使用例</a></h2>
+<p>例えば、以下のようにフィボナッチ数列の項が求められます。</p>
 <pre class="kt">
 fun main() {
   println((3..10).fold(Pair(1,1)){(a,b), _ -> Pair(b, a+b)}.second) // 55
@@ -1045,8 +1063,8 @@ fun main() {
 <h1 id="まとめ"><a class="header" href="#まとめ">まとめ</a></h1>
 <ul>
 <li>基本的なデータ構造の List, Set, Map について触れました。</li>
+<li>Kotlin 標準ではそれぞれ ArrayList, HashSet, HashMap が実装されています。</li>
 <li>Kotlin の collection 間の変換（List ⇔ Set など）は容易なため、これを利用すると簡単に高速化が期待できます。</li>
-<li>Collection のメソッドは便利なものが多いですが、内部では単純な処理が走っていることを認識しておくと良いと思います。</li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
 <h1 id="参考"><a class="header" href="#参考">参考</a></h1>

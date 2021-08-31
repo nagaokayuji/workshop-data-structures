@@ -144,17 +144,13 @@
                 <div id="content" class="content">
                     <main>
                         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
-<h1 id="基本的な機能"><a class="header" href="#基本的な機能">基本的な機能</a></h1>
-<p>以下のような機能が使用できます。</p>
-<h2 id="size"><a class="header" href="#size"><code>size</code></a></h2>
-<p>要素数を取得できます。</p>
-<pre class="kt">
-fun main() {
-  val l = listOf(1,1,2)
-  println(l.size) // 3
-}
-</pre>
+<h1 id="基本的な関数"><a class="header" href="#基本的な関数">基本的な関数</a></h1>
+<p>Collection のよく使われる関数としては以下のようなものがあります。</p>
 <h2 id="contains"><a class="header" href="#contains"><code>contains()</code></a></h2>
+<pre><code class="language-kotlin">abstract operator fun contains(
+    element: @UnsafeVariance E
+): Boolean
+</code></pre>
 <p>ある要素を含むかどうかを返します。
 存在判定を簡潔に書けるため重宝します。</p>
 <pre class="kt">
@@ -164,6 +160,10 @@ fun main() {
 }
 </pre>
 <h2 id="map"><a class="header" href="#map"><code>map()</code></a></h2>
+<pre><code class="language-kotlin">inline fun &lt;T, R&gt; Iterable&lt;T&gt;.map(
+    transform: (T) -&gt; R
+): List&lt;R&gt;
+</code></pre>
 <p><a href="https://ja.wikipedia.org/wiki/%E9%AB%98%E9%9A%8E%E9%96%A2%E6%95%B0">高階関数</a> (関数を引数に取る)の一種です。</p>
 <p>各要素に対して、与えられた関数を順番に処理していきます。</p>
 <p>例えば、各要素を二乗する場合は次のようになります。</p>
@@ -174,6 +174,10 @@ fun main() {
 }
 </pre>
 <h2 id="filter"><a class="header" href="#filter"><code>filter()</code></a></h2>
+<pre><code class="language-kotlin">fun &lt;T&gt; Iterable&lt;T&gt;.filter(
+    predicate: (T) -&gt; Boolean
+): List&lt;T&gt;
+</code></pre>
 <p>条件に合致する（渡した関数での評価結果が真となる）要素のみ残します。</p>
 <pre class="kt">
 fun main() {
