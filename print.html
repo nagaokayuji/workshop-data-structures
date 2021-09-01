@@ -750,8 +750,7 @@ fun main() {
   println("[実行時間] ${endTime - startTime} ms")
 }
 </pre>
-<p><a href="https://play.kotlinlang.org/#eyJ2ZXJzaW9uIjoiMS4zLjcwIiwiY29kZSI6ImNvbnN0IHZhbCBOOkludCA9IDEwMDAwMFxuY29uc3QgdmFsIE06SW50ID0gMTAwMDAwXG5mdW4gbWFpbigpIHtcbiAgdmFsIG9yaWdpbmFsTGlzdCA9ICgwLi4xMDEwMDApLnRvTGlzdCgpXG4gIC8vIOOCteOCpOOCuk7jga7jg6rjgrnjg4hcbiAgdmFsIGxpc3QxID0gb3JpZ2luYWxMaXN0LnNodWZmbGVkKCkudGFrZShOKVxuICAvLyDjgrXjgqTjgrpN44Gu44Oq44K544OIXG4gIHZhbCBsaXN0MiA9IG9yaWdpbmFsTGlzdC5zaHVmZmxlZCgpLnRha2UoTSlcbiAgdmFsIHN0YXJ0VGltZSA9IFN5c3RlbS5jdXJyZW50VGltZU1pbGxpcygpXG4gIC8vIOWVj+mhjOOBruWHpueQhlxuICB2YWwgY291bnRJbkxpc3RzID0gbGlzdDEuZmlsdGVye1xuICAgIGxpc3QyLmNvbnRhaW5zKGl0KVxuICB9LnNpemVcblxuICB2YWwgZW5kVGltZSA9IFN5c3RlbS5jdXJyZW50VGltZU1pbGxpcygpXG4gIHByaW50bG4oXCIke2NvdW50SW5MaXN0c30g5Lu26KaL44Gk44GL44KK44G+44GX44Gf44CCXCIpXG4gIHByaW50bG4oXCJb5a6f6KGM5pmC6ZaTXSAke2VuZFRpbWUgLSBzdGFydFRpbWV9IG1zXCIpXG59IiwicGxhdGZvcm0iOiJqYXZhIiwiYXJncyI6IiJ9">playground🔗</a></p>
-<p>これを実行してみると、以下のように出力されました。</p>
+<p>結果は以下です。</p>
 <pre><code>99005 件見つかりました。
 [実行時間] 7080 ms
 </code></pre>
@@ -779,9 +778,7 @@ fun main() {
   println("[実行時間] ${endTime - startTime} ms")
 }
 </pre>
-<p>こちらのコードのリンクは以下です。</p>
-<p><a href="https://play.kotlinlang.org/#eyJ2ZXJzaW9uIjoiMS4zLjcwIiwiY29kZSI6ImNvbnN0IHZhbCBOOkludCA9IDEwMDAwMFxuY29uc3QgdmFsIE06SW50ID0gMTAwMDAwXG5mdW4gbWFpbigpIHtcbiAgdmFsIG9yaWdpbmFsTGlzdCA9ICgwLi4xMDEwMDApLnRvTGlzdCgpXG4gIC8vIOOCteOCpOOCuk7jga7jg6rjgrnjg4hcbiAgdmFsIGxpc3QxID0gb3JpZ2luYWxMaXN0LnNodWZmbGVkKCkudGFrZShOKVxuICAvLyDjgrXjgqTjgrpN44Gu44Oq44K544OIXG4gIHZhbCBsaXN0MiA9IG9yaWdpbmFsTGlzdC5zaHVmZmxlZCgpLnRha2UoTSlcbiAgdmFsIHN0YXJ0VGltZSA9IFN5c3RlbS5jdXJyZW50VGltZU1pbGxpcygpXG4gIC8vIOWVj+mhjOOBruWHpueQhlxuICB2YWwgbGlzdDJTZXQgPSBsaXN0Mi50b1NldCgpIC8vIFNldCDjgavlpInmj5vjgZfjgabjgYrjgY9cbiAgdmFsIGNvdW50SW5MaXN0cyA9IGxpc3QxLmZpbHRlcntcbiAgICBsaXN0MlNldC5jb250YWlucyhpdClcbiAgfS5zaXplXG5cbiAgdmFsIGVuZFRpbWUgPSBTeXN0ZW0uY3VycmVudFRpbWVNaWxsaXMoKVxuICBwcmludGxuKFwiJHtjb3VudEluTGlzdHN9IOS7tuimi+OBpOOBi+OCiuOBvuOBl+OBn+OAglwiKVxuICBwcmludGxuKFwiW+Wun+ihjOaZgumWk10gJHtlbmRUaW1lIC0gc3RhcnRUaW1lfSBtc1wiKVxufSIsInBsYXRmb3JtIjoiamF2YSIsImFyZ3MiOiIifQ==">playground🔗</a></p>
-<p>結果は次のようになりました。</p>
+<p>以下のような結果が得られます。</p>
 <pre><code>99005 件見つかりました。
 [実行時間] 77 ms
 </code></pre>
@@ -812,7 +809,7 @@ fun main() {
   println("[実行時間] ${endTime - startTime} ms")
 }
 </pre>
-<p>実行結果は以下のようになりました。</p>
+<p>以下のような結果が得られます。</p>
 <pre><code>99011 件見つかりました。
 [実行時間] 132 ms
 </code></pre>
@@ -915,7 +912,7 @@ fun main() {
 <p>実行結果は以下のようになりました。</p>
 <pre><code>[実行時間] 40 ms
 </code></pre>
-<p>非常に高速です。</p>
+<p>特化したデータ構造なので非常に高速です。</p>
 <h2 id="考察"><a class="header" href="#考察">考察</a></h2>
 <ul>
 <li>List の場合
@@ -1045,11 +1042,10 @@ fun main() {
 }
 </pre>
 <p><a href="https://play.kotlinlang.org/#eyJ2ZXJzaW9uIjoiMS4zLjcwIiwiY29kZSI6ImNvbnN0IHZhbCBOOkludCA9IDUwMDAwMFxuZnVuIG1haW4oKSB7XG4gIHZhbCBvcmlnaW5hbExpc3QgPSAoMC4uTioyKS50b0xpc3QoKVxuICAvLyDjgrXjgqTjgrpO44Gu44Oq44K544OIXG4gIHZhbCBsaXN0MSA9IG9yaWdpbmFsTGlzdC5zaHVmZmxlZCgpLnRha2UoTilcblxuICB2YWwgc3RhcnRUaW1lID0gU3lzdGVtLmN1cnJlbnRUaW1lTWlsbGlzKClcblxuICAvLyBmaWx0ZXJcbiAgdmFsIGZpbHRlcmVkTGlzdCA9IGxpc3QxLmZpbHRlcntpdCAhPSAxICYmIGl0ICE9IDIgJiYgaXQgIT0gMyAmJiBpdCAhPSA0ICYmIGl0ICE9IDV9XG4gIFxuICB2YWwgZW5kVGltZSA9IFN5c3RlbS5jdXJyZW50VGltZU1pbGxpcygpXG4gIHByaW50bG4oXCJb5a6f6KGM5pmC6ZaTXSBcIiArIChlbmRUaW1lIC0gc3RhcnRUaW1lKS50b1N0cmluZygpICsgXCJtc1wiKVxufSIsInBsYXRmb3JtIjoiamF2YSIsImFyZ3MiOiIifQ==">playground</a></p>
-<p>実行結果は以下です。</p>
 <pre><code>[実行時間] 383ms
 </code></pre>
 <p>だいぶ改善されました。</p>
-<h2 id="遅延評価"><a class="header" href="#遅延評価">遅延評価</a></h2>
+<h2 id="sequence-を使う"><a class="header" href="#sequence-を使う">Sequence を使う</a></h2>
 <p>これまでは<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-iterable/"><code>Iterable</code></a>インタフェースの<code>filter</code> (戻り値がList)処理を行ってきました。</p>
 <p>続いて、<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.sequences/-sequence/"><code>Sequence</code></a>インタフェースの<code>filter</code>を使用し、遅延評価にしてみます。</p>
 <pre class="kt">
@@ -1069,10 +1065,48 @@ fun main() {
 }
 </pre>
 <p><a href="https://play.kotlinlang.org/#eyJ2ZXJzaW9uIjoiMS4zLjcwIiwiY29kZSI6ImNvbnN0IHZhbCBOOkludCA9IDUwMDAwMFxuZnVuIG1haW4oKSB7XG4gIHZhbCBvcmlnaW5hbExpc3QgPSAoMC4uTioyKS50b0xpc3QoKVxuICAvLyDjgrXjgqTjgrpO44Gu44Oq44K544OIXG4gIHZhbCBsaXN0MSA9IG9yaWdpbmFsTGlzdC5zaHVmZmxlZCgpLnRha2UoTilcblxuICB2YWwgc3RhcnRUaW1lID0gU3lzdGVtLmN1cnJlbnRUaW1lTWlsbGlzKClcblxuICAvLyBmaWx0ZXJcbiAgdmFsIGZpbHRlcmVkTGlzdCA9IGxpc3QxLmFzU2VxdWVuY2UoKS5maWx0ZXJ7aXQgIT0gMX0uZmlsdGVye2l0ICE9IDJ9LmZpbHRlcntpdCAhPSAzfS5maWx0ZXJ7aXQgIT0gNH0uZmlsdGVye2l0ICE9IDV9LnRvTGlzdCgpXG4gIFxuICB2YWwgZW5kVGltZSA9IFN5c3RlbS5jdXJyZW50VGltZU1pbGxpcygpXG4gIHByaW50bG4oXCJb5a6f6KGM5pmC6ZaTXSBcIiArIChlbmRUaW1lIC0gc3RhcnRUaW1lKS50b1N0cmluZygpICsgXCJtc1wiKVxufSIsInBsYXRmb3JtIjoiamF2YSIsImFyZ3MiOiIifQ==">playground</a></p>
-<p>結果は次のようになりました。</p>
 <pre><code>[実行時間] 305ms
 </code></pre>
-<p>遅延評価によって式の評価回数が削減されています。</p>
+<h3 id="遅延評価lazy-evaluationとは"><a class="header" href="#遅延評価lazy-evaluationとは">遅延評価（lazy evaluation）とは？</a></h3>
+<p>値が必要になるときまで式の評価を遅らせることです。</p>
+<p>Java の Stream API も同様に遅延評価を行っています。</p>
+<pre class="kt">
+fun main() {
+  val numbers = 1..10
+  var compareCount = 0
+  
+  numbers.toList()
+    .asSequence() // ← 切り替える
+    .filter {
+      println("$it != 4")
+      compareCount += 1
+      it != 4
+    }.filter {
+      println("$it != 9")
+      compareCount += 1
+      it != 9
+    }.filter {
+      println("$it != 2")
+      compareCount += 1
+      it != 2
+    }.filter {
+      println("$it != 1")
+      compareCount += 1
+      it != 1
+    }.filter {
+      println("$it != 7")
+      compareCount += 1
+      it != 7
+    }.filter {
+      println("$it != 10")
+      compareCount += 1
+      it != 10
+    }.toList()
+  // 比較回数を出力
+  println(compareCount)
+}
+</pre>
+<p>上記の例では<code>toList()</code> を行うまで式の評価が行われません。</p>
 <div style="break-before: page; page-break-before: always;"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
 <h1 id="まとめ"><a class="header" href="#まとめ">まとめ</a></h1>
 <ul>
@@ -1088,6 +1122,8 @@ fun main() {
 <li><a href="https://atcoder.jp/contests/apg4b/tasks/APG4b_aa">STLのコンテナ</a></li>
 <li><a href="https://qiita.com/opengl-8080/items/36351dca891b6d9c9687#fold">Kotlin のコレクション使い方メモ - Qiita</a></li>
 <li><a href="https://www.raywenderlich.com/books/data-structures-algorithms-in-kotlin/v1.0/">Data Structures &amp; Algorithms in Kotlin | raywenderlich.com</a></li>
+<li><a href="https://winterbe.com/posts/2018/07/23/kotlin-sequence-tutorial/">Kotlin Sequence Tutorial</a></li>
+<li><a href="https://kotlinlang.org/docs/sequences.html">Sequences | Kotlin</a></li>
 </ul>
 
                     </main>
