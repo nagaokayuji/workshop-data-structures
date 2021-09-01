@@ -81,9 +81,8 @@ fun main() {
 
 ## intersect
 
-[便利な関数](./collection_methods.md) で紹介した`intersect`を覚えていますでしょうか。
-
-これを使用して以下のように書くことができます。
+[便利な関数](./collection_methods.md) で紹介した`intersect`
+を使用して以下のように書くことができます。
 
 <pre class="kt">
 const val N:Int = 100000
